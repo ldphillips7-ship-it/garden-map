@@ -61,9 +61,9 @@ const hotspots = [
   { id: "Section 11", left: "16%", top: "51%", width: "15%", height: "4%" },
   
   // Far right beds (12-18)
-  { id: "Section 12", left: "88%", top: "74%", width: "9%", height: "6%" },
-  { id: "Section 13", left: "88%", top: "64%", width: "9%", height: "8%" },
-  { id: "Section 14", left: "88%", top: "52%", width: "9%", height: "10%" },
+  { id: "Section 12", left: "85%", top: "74%", width: "9%", height: "6%" },
+  { id: "Section 13", left: "85%", top: "64%", width: "9%", height: "8%" },
+  { id: "Section 14", left: "85%", top: "52%", width: "9%", height: "10%" },
   { id: "Section 15", left: "78%", top: "40%", width: "14%", height: "9%" },
   { id: "Section 16", left: "78%", top: "32%", width: "14%", height: "7%" },
   { id: "Section 17", left: "21%", top: "44%", width: "19%", height: "3%" },
@@ -108,14 +108,19 @@ function App() {
   const [searchResults, setSearchResults] = useState([]);
   const [searching, setSearching] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
-  const [showSidebar, setShowSidebar] = useState(false); // For mobile toggle
+  const [showSidebar, setShowSidebar] = useState(false);
+  
+  // Zoom and pan state
+  const [scale, setScale] = useState(1);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
 
   const handlePlantClick = (plantName) => {
     setLoadingPlant(true);
     setPlantError(null);
     setPlantInfo(null);
     
-    // Search local database
     const plant = getPlantByName(plantName);
     
     if (plant) {
@@ -135,7 +140,6 @@ function App() {
     setSearchResults([]);
     setPlantError(null);
     
-    // Search local database
     const results = searchLocalPlants(searchQuery);
     setSearchResults(results);
     
@@ -151,6 +155,88 @@ function App() {
     setShowSearch(false);
     setSearchResults([]);
     setSearchQuery("");
+    setShowSidebar(false);
+  };
+
+  // Zoom handlers
+  const handleWheel = (e) => {
+    e.preventDefault();
+    const delta = e.deltaY * -0.001;
+    const newScale = Math.min(Math.max(0.5, scale + delta), 4);
+    setScale(newScale);
+  };
+
+  const handleTouchStart = (e) => {
+    if (e.touches.length === 2) {
+      const touch1 = e.touches[0];
+      const touch2 = e.touches[1];
+      const distance = Math.hypot(
+        touch1.clientX - touch2.clientX,
+        touch1.clientY - touch2.clientY
+      );
+      setDragStart({ x: 0, y: 0, distance });
+    } else if (e.touches.length === 1 && scale > 1) {
+      setIsDragging(true);
+      setDragStart({
+        x: e.touches[0].clientX - position.x,
+        y: e.touches[0].clientY - position.y
+      });
+    }
+  };
+
+  const handleTouchMove = (e) => {
+    if (e.touches.length === 2 && dragStart.distance) {
+      e.preventDefault();
+      const touch1 = e.touches[0];
+      const touch2 = e.touches[1];
+      const distance = Math.hypot(
+        touch1.clientX - touch2.clientX,
+        touch1.clientY - touch2.clientY
+      );
+      const delta = (distance - dragStart.distance) * 0.01;
+      const newScale = Math.min(Math.max(0.5, scale + delta), 4);
+      setScale(newScale);
+      setDragStart({ ...dragStart, distance });
+    } else if (e.touches.length === 1 && isDragging) {
+      e.preventDefault();
+      setPosition({
+        x: e.touches[0].clientX - dragStart.x,
+        y: e.touches[0].clientY - dragStart.y
+      });
+    }
+  };
+
+  const handleTouchEnd = () => {
+    setIsDragging(false);
+    setDragStart({ x: 0, y: 0 });
+  };
+
+  const handleMouseDown = (e) => {
+    if (scale > 1) {
+      setIsDragging(true);
+      setDragStart({
+        x: e.clientX - position.x,
+        y: e.clientY - position.y
+      });
+    }
+  };
+
+  const handleMouseMove = (e) => {
+    if (isDragging) {
+      setPosition({
+        x: e.clientX - dragStart.x,
+        y: e.clientY - dragStart.y
+      });
+    }
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const resetZoom = () => {
+    setScale(1);
+    setPosition({ x: 0, y: 0 });
   };
 
   return (
@@ -163,7 +249,7 @@ function App() {
         {showSidebar ? "✕" : "☰"}
       </button>
 
-      {/* Sidebar - Hidden on mobile by default, overlay when shown */}
+      {/* Sidebar */}
       <aside className={`
         ${showSidebar ? 'translate-x-0' : '-translate-x-full'}
         md:translate-x-0
@@ -271,7 +357,7 @@ function App() {
         )}
       </aside>
 
-      {/* Backdrop for mobile sidebar */}
+      {/* Backdrop */}
       {showSidebar && (
         <div 
           className="md:hidden fixed inset-0 bg-black bg-opacity-50 z-30"
@@ -280,13 +366,64 @@ function App() {
       )}
 
       {/* Map + Info Panel */}
-      <main className="flex-1 relative bg-gray-50 p-2 md:p-4 overflow-auto w-full">
-        <div className="relative mx-auto max-w-4xl">
-          <img
-            src={IMAGE_SRC}
-            alt="Garden layout"
-            className="w-full h-auto"
-          />
+      <main className="flex-1 relative bg-gray-50 p-2 md:p-4 overflow-hidden w-full">
+        {/* Zoom controls */}
+        <div className="absolute top-4 right-4 z-30 flex flex-col gap-2">
+          <button
+            onClick={() => setScale(Math.min(scale + 0.2, 4))}
+            className="bg-white border-2 border-gray-300 w-10 h-10 rounded-lg shadow-lg text-xl font-bold hover:bg-gray-100"
+            title="Zoom in"
+          >
+            +
+          </button>
+          <button
+            onClick={() => setScale(Math.max(scale - 0.2, 0.5))}
+            className="bg-white border-2 border-gray-300 w-10 h-10 rounded-lg shadow-lg text-xl font-bold hover:bg-gray-100"
+            title="Zoom out"
+          >
+            −
+          </button>
+          {scale !== 1 && (
+            <button
+              onClick={resetZoom}
+              className="bg-white border-2 border-gray-300 w-10 h-10 rounded-lg shadow-lg text-sm font-bold hover:bg-gray-100"
+              title="Reset zoom"
+            >
+              ⟲
+            </button>
+          )}
+        </div>
+        
+        <div 
+          className="relative mx-auto max-w-4xl h-full overflow-auto"
+          onWheel={handleWheel}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseUp}
+          style={{ 
+            cursor: scale > 1 ? (isDragging ? 'grabbing' : 'grab') : 'default',
+            touchAction: 'none'
+          }}
+        >
+          <div
+            style={{
+              transform: `translate(${position.x}px, ${position.y}px) scale(${scale})`,
+              transformOrigin: 'center center',
+              transition: isDragging ? 'none' : 'transform 0.1s ease-out',
+              position: 'relative',
+              display: 'inline-block'
+            }}
+          >
+            <img
+              src={IMAGE_SRC}
+              alt="Garden layout"
+              className="w-full h-auto pointer-events-none"
+              draggable={false}
+            />
           {hotspots.map((h) => (
             <button
               key={h.id}
@@ -295,7 +432,7 @@ function App() {
                 setPlantInfo(null);
                 setPlantError(null);
                 setShowSearch(false);
-                setShowSidebar(false); // Close sidebar on mobile when section clicked
+                setShowSidebar(false);
               }}
               title={h.id}
               className="touch-manipulation"
@@ -319,12 +456,12 @@ function App() {
               }}
             />
           ))}
+          </div>
         </div>
 
-        {/* Plant info panel - Bottom drawer on mobile, floating panel on desktop */}
+        {/* Plant info panel */}
         {(selected || plantInfo) && (
           <div className="fixed md:absolute bottom-0 left-0 right-0 md:right-6 md:bottom-6 md:left-auto w-full md:w-96 max-h-[60vh] md:max-h-[80vh] overflow-auto p-4 bg-white md:rounded-lg shadow-lg z-20 border-t-4 md:border-t-0 border-sky-500">
-            {/* Close button for mobile */}
             <button
               onClick={() => {
                 setSelected(null);
