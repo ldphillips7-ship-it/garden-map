@@ -108,6 +108,7 @@ function App() {
   const [searchResults, setSearchResults] = useState([]);
   const [searching, setSearching] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
+  const [showSidebar, setShowSidebar] = useState(false); // For mobile toggle
 
   const handlePlantClick = (plantName) => {
     setLoadingPlant(true);
@@ -153,14 +154,33 @@ function App() {
   };
 
   return (
-    <div className="flex h-screen">
-      {/* Sidebar */}
-      <aside className="w-80 p-4 bg-white border-r overflow-auto">
+    <div className="flex h-screen relative">
+      {/* Mobile Menu Button */}
+      <button
+        onClick={() => setShowSidebar(!showSidebar)}
+        className="md:hidden fixed top-4 left-4 z-50 bg-sky-500 text-white p-3 rounded-lg shadow-lg"
+      >
+        {showSidebar ? "✕" : "☰"}
+      </button>
+
+      {/* Sidebar - Hidden on mobile by default, overlay when shown */}
+      <aside className={`
+        ${showSidebar ? 'translate-x-0' : '-translate-x-full'}
+        md:translate-x-0
+        fixed md:relative
+        w-80 h-full
+        p-4 bg-white 
+        border-r 
+        overflow-auto
+        z-40
+        transition-transform duration-300
+        md:block
+      `}>
         <div className="mb-4">
-          <h1 className="text-2xl font-bold mb-2">Garden Map</h1>
+          <h1 className="text-xl md:text-2xl font-bold mb-2">Riverside Nursery Map</h1>
           <button
             onClick={() => setShowSearch(!showSearch)}
-            className="w-full px-3 py-2 bg-sky-500 text-white rounded hover:bg-sky-600 transition"
+            className="w-full px-3 py-2 bg-sky-500 text-white rounded hover:bg-sky-600 transition text-sm md:text-base"
           >
             {showSearch ? "View Garden Map" : "🔍 Search Plant Database"}
           </button>
@@ -174,12 +194,12 @@ function App() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search for any plant..."
-                className="w-full px-3 py-2 border rounded mb-2"
+                className="w-full px-3 py-2 border rounded mb-2 text-sm md:text-base"
               />
               <button
                 type="submit"
                 disabled={searching}
-                className="w-full px-3 py-2 bg-green-500 text-white rounded hover:bg-green-600 disabled:bg-gray-400 transition"
+                className="w-full px-3 py-2 bg-green-500 text-white rounded hover:bg-green-600 disabled:bg-gray-400 transition text-sm md:text-base"
               >
                 {searching ? "Searching..." : "Search"}
               </button>
@@ -187,7 +207,7 @@ function App() {
 
             {searchResults.length > 0 && (
               <div>
-                <h3 className="font-semibold mb-2">
+                <h3 className="font-semibold mb-2 text-sm md:text-base">
                   Found {searchResults.length} plants
                 </h3>
                 <ul className="space-y-2">
@@ -202,11 +222,11 @@ function App() {
                           <img
                             src={plant.image}
                             alt={plant.name}
-                            className="w-12 h-12 object-cover rounded"
+                            className="w-10 h-10 md:w-12 md:h-12 object-cover rounded flex-shrink-0"
                           />
                         )}
                         <div className="flex-1 min-w-0">
-                          <p className="font-medium text-sm truncate">
+                          <p className="font-medium text-xs md:text-sm truncate">
                             {plant.name}
                           </p>
                           <p className="text-xs text-gray-500 italic truncate">
@@ -229,8 +249,8 @@ function App() {
           <>
             {selected ? (
               <>
-                <h2 className="font-semibold text-lg mb-2">{selected}</h2>
-                <ul className="list-disc list-inside text-sm">
+                <h2 className="font-semibold text-base md:text-lg mb-2">{selected}</h2>
+                <ul className="list-disc list-inside text-xs md:text-sm">
                   {gardenData[selected].map((plant) => (
                     <li
                       key={plant}
@@ -243,7 +263,7 @@ function App() {
                 </ul>
               </>
             ) : (
-              <p className="text-gray-500 text-sm">
+              <p className="text-gray-500 text-xs md:text-sm">
                 Click a section on the map to see plants.
               </p>
             )}
@@ -251,13 +271,21 @@ function App() {
         )}
       </aside>
 
+      {/* Backdrop for mobile sidebar */}
+      {showSidebar && (
+        <div 
+          className="md:hidden fixed inset-0 bg-black bg-opacity-50 z-30"
+          onClick={() => setShowSidebar(false)}
+        />
+      )}
+
       {/* Map + Info Panel */}
-      <main className="flex-1 relative bg-gray-50 p-4 overflow-auto">
-        <div className="relative mx-auto" style={{ maxWidth: 900 }}>
+      <main className="flex-1 relative bg-gray-50 p-2 md:p-4 overflow-auto w-full">
+        <div className="relative mx-auto max-w-4xl">
           <img
             src={IMAGE_SRC}
             alt="Garden layout"
-            style={{ width: "100%", display: "block" }}
+            className="w-full h-auto"
           />
           {hotspots.map((h) => (
             <button
@@ -267,8 +295,10 @@ function App() {
                 setPlantInfo(null);
                 setPlantError(null);
                 setShowSearch(false);
+                setShowSidebar(false); // Close sidebar on mobile when section clicked
               }}
               title={h.id}
+              className="touch-manipulation"
               style={{
                 position: "absolute",
                 left: h.left,
@@ -284,23 +314,39 @@ function App() {
                   selected === h.id
                     ? "rgba(6,182,212,0.15)"
                     : "rgba(255,255,255,0.001)",
+                minWidth: "44px",
+                minHeight: "44px",
               }}
             />
           ))}
         </div>
 
-        {/* Plant info panel */}
+        {/* Plant info panel - Bottom drawer on mobile, floating panel on desktop */}
         {(selected || plantInfo) && (
-          <div className="absolute right-6 bottom-6 w-80 max-h-[80vh] overflow-auto p-4 bg-white rounded shadow-lg">
+          <div className="fixed md:absolute bottom-0 left-0 right-0 md:right-6 md:bottom-6 md:left-auto w-full md:w-96 max-h-[60vh] md:max-h-[80vh] overflow-auto p-4 bg-white md:rounded-lg shadow-lg z-20 border-t-4 md:border-t-0 border-sky-500">
+            {/* Close button for mobile */}
+            <button
+              onClick={() => {
+                setSelected(null);
+                setPlantInfo(null);
+              }}
+              className="md:hidden absolute top-2 right-2 text-gray-500 text-xl"
+            >
+              ✕
+            </button>
+
             {selected && !showSearch && (
               <>
-                <h3 className="font-bold text-lg mb-2">Section: {selected}</h3>
-                <ul className="text-sm mb-4">
+                <h3 className="font-bold text-base md:text-lg mb-2 pr-8 md:pr-0">Section: {selected}</h3>
+                <ul className="text-sm mb-4 max-h-40 overflow-auto">
                   {gardenData[selected].map((plant) => (
                     <li
                       key={plant}
                       className="border-b last:border-0 py-2 cursor-pointer hover:text-sky-600 hover:bg-sky-50 px-2 -mx-2 rounded transition"
-                      onClick={() => handlePlantClick(plant)}
+                      onClick={() => {
+                        handlePlantClick(plant);
+                        setShowSidebar(false);
+                      }}
                     >
                       {plant}
                     </li>
@@ -310,31 +356,31 @@ function App() {
             )}
 
             {loadingPlant && (
-              <p className="text-sm text-gray-500">Loading plant details...</p>
+              <p className="text-xs md:text-sm text-gray-500">Loading plant details...</p>
             )}
-            {plantError && <p className="text-sm text-red-500">{plantError}</p>}
+            {plantError && <p className="text-xs md:text-sm text-red-500">{plantError}</p>}
 
             {plantInfo && (
               <div className="text-sm">
-                <h4 className="font-bold text-lg mb-2">{plantInfo.name}</h4>
+                <h4 className="font-bold text-base md:text-lg mb-2">{plantInfo.name}</h4>
                 {plantInfo.image && (
                   <img
                     src={plantInfo.image}
                     alt={plantInfo.name}
-                    className="w-full h-48 object-cover rounded mb-3"
+                    className="w-full h-40 md:h-48 object-cover rounded mb-3"
                   />
                 )}
-                <p className="italic text-gray-600 mb-1">
+                <p className="italic text-gray-600 mb-1 text-xs md:text-sm">
                   {plantInfo.scientific_name}
                 </p>
                 {plantInfo.family && (
-                  <p className="text-gray-600 mb-3">
+                  <p className="text-gray-600 mb-3 text-xs md:text-sm">
                     Family: {plantInfo.family}
                   </p>
                 )}
-                <p className="mb-3">{plantInfo.description}</p>
+                <p className="mb-3 text-xs md:text-sm">{plantInfo.description}</p>
 
-                <div className="space-y-2 bg-gray-50 p-3 rounded">
+                <div className="space-y-2 bg-gray-50 p-3 rounded text-xs md:text-sm">
                   {plantInfo.type && (
                     <p>
                       <span className="font-semibold">Type:</span>{" "}
