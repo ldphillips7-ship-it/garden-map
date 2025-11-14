@@ -124,7 +124,15 @@ function App() {
     const plant = getPlantByName(plantName);
     
     if (plant) {
-      setPlantInfo(plant);
+      // Find which sections contain this plant
+      const sections = [];
+      for (const [sectionName, plants] of Object.entries(gardenData)) {
+        if (plants.some(p => p.toLowerCase().includes(plant.name.toLowerCase()) || 
+                            plant.name.toLowerCase().includes(p.toLowerCase()))) {
+          sections.push(sectionName);
+        }
+      }
+      setPlantInfo({ ...plant, sections });
     } else {
       setPlantError("No information found for this plant.");
     }
@@ -141,7 +149,20 @@ function App() {
     setPlantError(null);
     
     const results = searchLocalPlants(searchQuery);
-    setSearchResults(results);
+    
+    // Add section information to each result
+    const resultsWithSections = results.map(plant => {
+      const sections = [];
+      for (const [sectionName, plants] of Object.entries(gardenData)) {
+        if (plants.some(p => p.toLowerCase().includes(plant.name.toLowerCase()) || 
+                            plant.name.toLowerCase().includes(p.toLowerCase()))) {
+          sections.push(sectionName);
+        }
+      }
+      return { ...plant, sections };
+    });
+    
+    setSearchResults(resultsWithSections);
     
     if (results.length === 0) {
       setPlantError("No plants found. Try a different search term.");
@@ -162,7 +183,7 @@ function App() {
   const handleWheel = (e) => {
     e.preventDefault();
     const delta = e.deltaY * -0.001;
-    const newScale = Math.min(Math.max(0.5, scale + delta), 4);
+    const newScale = Math.min(Math.max(1, scale + delta), 4);
     setScale(newScale);
   };
 
@@ -194,7 +215,7 @@ function App() {
         touch1.clientY - touch2.clientY
       );
       const delta = (distance - dragStart.distance) * 0.01;
-      const newScale = Math.min(Math.max(0.5, scale + delta), 4);
+      const newScale = Math.min(Math.max(1, scale + delta), 4);
       setScale(newScale);
       setDragStart({ ...dragStart, distance });
     } else if (e.touches.length === 1 && isDragging) {
@@ -318,6 +339,11 @@ function App() {
                           <p className="text-xs text-gray-500 italic truncate">
                             {plant.scientific_name}
                           </p>
+                          {plant.sections && plant.sections.length > 0 && (
+                            <p className="text-xs text-sky-600 font-medium mt-1">
+                              📍 {plant.sections.join(", ")}
+                            </p>
+                          )}
                           {plant.watering && (
                             <p className="text-xs text-gray-600">
                               💧 {plant.watering}
@@ -377,7 +403,7 @@ function App() {
             +
           </button>
           <button
-            onClick={() => setScale(Math.max(scale - 0.2, 0.5))}
+            onClick={() => setScale(Math.max(scale - 0.2, 1))}
             className="bg-white border-2 border-gray-300 w-10 h-10 rounded-lg shadow-lg text-xl font-bold hover:bg-gray-100"
             title="Zoom out"
           >
@@ -500,6 +526,11 @@ function App() {
             {plantInfo && (
               <div className="text-sm">
                 <h4 className="font-bold text-base md:text-lg mb-2">{plantInfo.name}</h4>
+                {plantInfo.sections && plantInfo.sections.length > 0 && (
+                  <p className="text-xs md:text-sm text-sky-600 font-medium mb-2">
+                    📍 Located in: {plantInfo.sections.join(", ")}
+                  </p>
+                )}
                 {plantInfo.image && (
                   <img
                     src={plantInfo.image}
