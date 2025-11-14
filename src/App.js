@@ -126,9 +126,19 @@ function App() {
     if (plant) {
       // Find which sections contain this plant
       const sections = [];
+      const plantNameLower = plant.name.toLowerCase();
+      
       for (const [sectionName, plants] of Object.entries(gardenData)) {
-        if (plants.some(p => p.toLowerCase().includes(plant.name.toLowerCase()) || 
-                            plant.name.toLowerCase().includes(p.toLowerCase()))) {
+        if (plants.some(p => {
+          const pLower = p.toLowerCase();
+          // Check if it's the same plant (accounting for plurals and variations)
+          return pLower === plantNameLower || 
+                 pLower === plantNameLower + 's' ||
+                 pLower === plantNameLower + 'es' ||
+                 plantNameLower === pLower + 's' ||
+                 plantNameLower === pLower + 'es' ||
+                 (pLower.includes(plantNameLower) && pLower.startsWith(plantNameLower));
+        })) {
           sections.push(sectionName);
         }
       }
@@ -153,9 +163,19 @@ function App() {
     // Add section information to each result
     const resultsWithSections = results.map(plant => {
       const sections = [];
+      const plantNameLower = plant.name.toLowerCase();
+      
       for (const [sectionName, plants] of Object.entries(gardenData)) {
-        if (plants.some(p => p.toLowerCase().includes(plant.name.toLowerCase()) || 
-                            plant.name.toLowerCase().includes(p.toLowerCase()))) {
+        if (plants.some(p => {
+          const pLower = p.toLowerCase();
+          // Check if it's the same plant (accounting for plurals and variations)
+          return pLower === plantNameLower || 
+                 pLower === plantNameLower + 's' ||
+                 pLower === plantNameLower + 'es' ||
+                 plantNameLower === pLower + 's' ||
+                 plantNameLower === pLower + 'es' ||
+                 (pLower.includes(plantNameLower) && pLower.startsWith(plantNameLower));
+        })) {
           sections.push(sectionName);
         }
       }
