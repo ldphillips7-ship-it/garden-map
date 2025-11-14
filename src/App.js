@@ -46,53 +46,53 @@ const gardenData = {
 
 const hotspots = [
   // Bottom right beds (1-9)
-  { id: "Section 1", left: "57%", top: "81%", width: "14%", height: "3%" },
-  { id: "Section 2", left: "57%", top: "77%", width: "14%", height: "3%" },
-  { id: "Section 3", left: "57%", top: "73%", width: "14%", height: "3%" },
-  { id: "Section 4", left: "57%", top: "69%", width: "14%", height: "3%" },
-  { id: "Section 5", left: "57%", top: "65%", width: "14%", height: "3%" },
-  { id: "Section 6", left: "57%", top: "61%", width: "14%", height: "3%" },
-  { id: "Section 7", left: "57%", top: "57%", width: "14%", height: "3%" },
-  { id: "Section 8", left: "57%", top: "53%", width: "14%", height: "3%" },
-  { id: "Section 9", left: "57%", top: "49%", width: "14%", height: "3%" },
+  { id: "Section 1", left: "57%", top: "79%", width: "25%", height: "1%" },
+  { id: "Section 2", left: "57%", top: "75.5%", width: "25%", height: "1%" },
+  { id: "Section 3", left: "57%", top: "72%", width: "25%", height: "1%" },
+  { id: "Section 4", left: "57%", top: "69%", width: "25%", height: "1%" },
+  { id: "Section 5", left: "57%", top: "65%", width: "25%", height: "1%" },
+  { id: "Section 6", left: "57%", top: "61.5%", width: "25%", height: "1%" },
+  { id: "Section 7", left: "57%", top: "57.5%", width: "25%", height: "1%" },
+  { id: "Section 8", left: "57%", top: "54%", width: "25%", height: "1%" },
+  { id: "Section 9", left: "57%", top: "50%", width: "25%", height: "1%" },
   
   // Left side beds (10-11)
-  { id: "Section 10", left: "37%", top: "51%", width: "9%", height: "4%" },
-  { id: "Section 11", left: "16%", top: "51%", width: "15%", height: "4%" },
+  { id: "Section 10", left: "37%", top: "50%", width: "9%", height: "2%" },
+  { id: "Section 11", left: "16%", top: "49%", width: "15%", height: "4%" },
   
   // Far right beds (12-18)
-  { id: "Section 12", left: "85%", top: "74%", width: "9%", height: "6%" },
-  { id: "Section 13", left: "85%", top: "64%", width: "9%", height: "8%" },
-  { id: "Section 14", left: "85%", top: "52%", width: "9%", height: "10%" },
-  { id: "Section 15", left: "78%", top: "40%", width: "14%", height: "9%" },
-  { id: "Section 16", left: "78%", top: "32%", width: "14%", height: "7%" },
-  { id: "Section 17", left: "21%", top: "44%", width: "19%", height: "3%" },
-  { id: "Section 18", left: "78%", top: "26%", width: "14%", height: "5%" },
+  { id: "Section 12", left: "88%", top: "73%", width: "9%", height: "9%" },
+  { id: "Section 13", left: "88%", top: "63%", width: "9%", height: "9%" },
+  { id: "Section 14", left: "88%", top: "51%", width: "9%", height: "11%" },
+  { id: "Section 15", left: "80%", top: "40%", width: "13%", height: "8%" },
+  { id: "Section 16", left: "80%", top: "32%", width: "13%", height: "7%" },
+  { id: "Section 17", left: "21%", top: "44%", width: "22%", height: "0.1%" },
+  { id: "Section 18", left: "80%", top: "26%", width: "13%", height: "5%" },
   
   // Grid beds (19-24)
-  { id: "Section 19", left: "37%", top: "33%", width: "8%", height: "5%" },
-  { id: "Section 20", left: "27%", top: "33%", width: "8%", height: "5%" },
-  { id: "Section 21", left: "17%", top: "33%", width: "8%", height: "5%" },
-  { id: "Section 22", left: "37%", top: "27%", width: "8%", height: "5%" },
-  { id: "Section 23", left: "27%", top: "27%", width: "8%", height: "5%" },
-  { id: "Section 24", left: "17%", top: "27%", width: "8%", height: "5%" },
+  { id: "Section 19", left: "37%", top: "32%", width: "8%", height: "1%" },
+  { id: "Section 20", left: "27%", top: "32%", width: "8%", height: "1%" },
+  { id: "Section 21", left: "16%", top: "32%", width: "8%", height: "1%" },
+  { id: "Section 22", left: "37%", top: "28%", width: "8%", height: "1%" },
+  { id: "Section 23", left: "27%", top: "28%", width: "8%", height: "1%" },
+  { id: "Section 24", left: "16%", top: "28%", width: "8%", height: "1%" },
   
   // Top beds (25-31)
-  { id: "Section 25", left: "17%", top: "21%", width: "19%", height: "3%" },
-  { id: "Section 26", left: "17%", top: "17%", width: "21%", height: "3%" },
-  { id: "Section 27", left: "17%", top: "13%", width: "16%", height: "3%" },
-  { id: "Section 28", left: "17%", top: "9%", width: "16%", height: "3%" },
-  { id: "Section 29", left: "17%", top: "5%", width: "16%", height: "3%" },
-  { id: "Section 30", left: "17%", top: "1%", width: "16%", height: "3%" },
-  { id: "Section 31", left: "17.5%", top: "-3%", width: "23%", height: "3%" },
+  { id: "Section 25", left: "17%", top: "22%", width: "32%", height: "0.1%" },
+  { id: "Section 26", left: "17%", top: "18%", width: "30%", height: "0.5%" },
+  { id: "Section 27", left: "17%", top: "15%", width: "26%", height: "0.5%" },
+  { id: "Section 28", left: "17%", top: "12%", width: "26%", height: "0.1%" },
+  { id: "Section 29", left: "17%", top: "10%", width: "26%", height: "0.1%" },
+  { id: "Section 30", left: "17%", top: "7%", width: "26%", height: "0.2%" },
+  { id: "Section 31", left: "17.5%", top: "3%", width: "23%", height: "2%" },
   
   // Top right tall beds (32-34)
-  { id: "Section 32", left: "78%", top: "0%", width: "14%", height: "4%" },
-  { id: "Section 33", left: "78%", top: "5%", width: "14%", height: "4%" },
-  { id: "Section 34", left: "78%", top: "10%", width: "14%", height: "4%" },
+  { id: "Section 32", left: "80%", top: "1%", width: "13%", height: "4%" },
+  { id: "Section 33", left: "80%", top: "6%", width: "13%", height: "4%" },
+  { id: "Section 34", left: "80%", top: "11%", width: "13%", height: "4%" },
   
   // Letter sections (bottom)
-  { id: "Section A", left: "40%", top: "62%", width: "5%", height: "8%" },
+  { id: "Section A", left: "39%", top: "60%", width: "5%", height: "8%" },
   { id: "Section B", left: "88%", top: "84%", width: "8%", height: "5%" },
   { id: "Section C", left: "88%", top: "93%", width: "9%", height: "5%" },
 ];
@@ -127,17 +127,37 @@ function App() {
       // Find which sections contain this plant
       const sections = [];
       const plantNameLower = plant.name.toLowerCase();
+      const plantWords = plantNameLower.split(/\s+/);
       
       for (const [sectionName, plants] of Object.entries(gardenData)) {
         if (plants.some(p => {
           const pLower = p.toLowerCase();
-          // Check if it's the same plant (accounting for plurals and variations)
-          return pLower === plantNameLower || 
-                 pLower === plantNameLower + 's' ||
-                 pLower === plantNameLower + 'es' ||
-                 plantNameLower === pLower + 's' ||
-                 plantNameLower === pLower + 'es' ||
-                 (pLower.includes(plantNameLower) && pLower.startsWith(plantNameLower));
+          const pWords = pLower.split(/\s+/);
+          
+          // Exact match
+          if (pLower === plantNameLower) {
+            return true;
+          }
+          
+          // Plural match (Rose matches Roses, but not Rose of Sharon)
+          if (pLower === plantNameLower + 's' || pLower === plantNameLower + 'es' ||
+              plantNameLower === pLower + 's' || plantNameLower === pLower + 'es') {
+            return true;
+          }
+          
+          // Check if first 2-3 significant words match (for "Green Giants" vs "Green Giant Arborvitae")
+          const significantPlantWords = plantWords.filter(w => w.length > 3);
+          const significantPWords = pWords.filter(w => w.length > 3);
+          if (significantPlantWords.length >= 2 && significantPWords.length >= 2) {
+            const match = significantPlantWords.slice(0, 2).every((word, i) => 
+              significantPWords[i] && (word === significantPWords[i] || 
+                                        word === significantPWords[i] + 's' ||
+                                        word + 's' === significantPWords[i])
+            );
+            if (match) return true;
+          }
+          
+          return false;
         })) {
           sections.push(sectionName);
         }
@@ -164,17 +184,37 @@ function App() {
     const resultsWithSections = results.map(plant => {
       const sections = [];
       const plantNameLower = plant.name.toLowerCase();
+      const plantWords = plantNameLower.split(/\s+/);
       
       for (const [sectionName, plants] of Object.entries(gardenData)) {
         if (plants.some(p => {
           const pLower = p.toLowerCase();
-          // Check if it's the same plant (accounting for plurals and variations)
-          return pLower === plantNameLower || 
-                 pLower === plantNameLower + 's' ||
-                 pLower === plantNameLower + 'es' ||
-                 plantNameLower === pLower + 's' ||
-                 plantNameLower === pLower + 'es' ||
-                 (pLower.includes(plantNameLower) && pLower.startsWith(plantNameLower));
+          const pWords = pLower.split(/\s+/);
+          
+          // Exact match
+          if (pLower === plantNameLower) {
+            return true;
+          }
+          
+          // Plural match (Rose matches Roses, but not Rose of Sharon)
+          if (pLower === plantNameLower + 's' || pLower === plantNameLower + 'es' ||
+              plantNameLower === pLower + 's' || plantNameLower === pLower + 'es') {
+            return true;
+          }
+          
+          // Check if first 2-3 significant words match (for "Green Giants" vs "Green Giant Arborvitae")
+          const significantPlantWords = plantWords.filter(w => w.length > 3);
+          const significantPWords = pWords.filter(w => w.length > 3);
+          if (significantPlantWords.length >= 2 && significantPWords.length >= 2) {
+            const match = significantPlantWords.slice(0, 2).every((word, i) => 
+              significantPWords[i] && (word === significantPWords[i] || 
+                                        word === significantPWords[i] + 's' ||
+                                        word + 's' === significantPWords[i])
+            );
+            if (match) return true;
+          }
+          
+          return false;
         })) {
           sections.push(sectionName);
         }
@@ -513,14 +553,14 @@ function App() {
                 setSelected(null);
                 setPlantInfo(null);
               }}
-              className="md:hidden absolute top-2 right-2 text-gray-500 text-xl"
+              className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-xl font-bold"
             >
               ✕
             </button>
 
             {selected && !showSearch && (
               <>
-                <h3 className="font-bold text-base md:text-lg mb-2 pr-8 md:pr-0">Section: {selected}</h3>
+                <h3 className="font-bold text-base md:text-lg mb-2 pr-8">Section: {selected}</h3>
                 <ul className="text-sm mb-4 max-h-40 overflow-auto">
                   {gardenData[selected].map((plant) => (
                     <li
@@ -545,7 +585,7 @@ function App() {
 
             {plantInfo && (
               <div className="text-sm">
-                <h4 className="font-bold text-base md:text-lg mb-2">{plantInfo.name}</h4>
+                <h4 className="font-bold text-base md:text-lg mb-2 pr-8">{plantInfo.name}</h4>
                 {plantInfo.sections && plantInfo.sections.length > 0 && (
                   <p className="text-xs md:text-sm text-sky-600 font-medium mb-2">
                     📍 Located in: {plantInfo.sections.join(", ")}
