@@ -97,59 +97,6 @@ const hotspots = [
   { id: "Section C", left: "86%", top: "92.5%", width: "12%", height: "6%" },
 ];
 
-const mobileHotspots = [
-  // Bottom right beds (1-9) - MUCH SMALLER
-  { id: "Section 1", left: "57%", top: "79%", width: "25%", height: "1%" },
-  { id: "Section 2", left: "57%", top: "75.5%", width: "25%", height: "1%" },
-  { id: "Section 3", left: "57%", top: "72%", width: "25%", height: "1%" },
-  { id: "Section 4", left: "57%", top: "69%", width: "25%", height: "1%" },
-  { id: "Section 5", left: "57%", top: "65%", width: "25%", height: "1%" },
-  { id: "Section 6", left: "57%", top: "61.5%", width: "25%", height: "1%" },
-  { id: "Section 7", left: "57%", top: "57.5%", width: "25%", height: "1%" },
-  { id: "Section 8", left: "57%", top: "54%", width: "25%", height: "1%" },
-  { id: "Section 9", left: "57%", top: "50%", width: "25%", height: "1%" },
-  
-  // Left side beds (10-11) - MUCH SMALLER
-  { id: "Section 10", left: "37%", top: "50%", width: "9%", height: "2%" },
-  { id: "Section 11", left: "16%", top: "49%", width: "15%", height: "4%" },
-  
-  // Far right beds (12-18) - KEEP THESE AS THEY ARE (GOOD)
-  { id: "Section 12", left: "88%", top: "73%", width: "10%", height: "9.5%" },
-  { id: "Section 13", left: "88%", top: "63%", width: "10%", height: "9.5%" },
-  { id: "Section 14", left: "88%", top: "51%", width: "10%", height: "11.5%" },
-  { id: "Section 15", left: "80%", top: "40%", width: "14%", height: "8.5%" },
-  { id: "Section 16", left: "80%", top: "32%", width: "14%", height: "7.5%" },
-  { id: "Section 17", left: "21%", top: "44%", width: "22%", height: "0.1%" },
-  { id: "Section 18", left: "80%", top: "26%", width: "14%", height: "5.5%" },
-  
-  // Grid beds (19-24) - MUCH SMALLER
-  { id: "Section 19", left: "37%", top: "32%", width: "8%", height: "1%" },
-  { id: "Section 20", left: "27%", top: "32%", width: "8%", height: "1%" },
-  { id: "Section 21", left: "16%", top: "32%", width: "8%", height: "1%" },
-  { id: "Section 22", left: "37%", top: "28%", width: "8%", height: "1%" },
-  { id: "Section 23", left: "27%", top: "28%", width: "8%", height: "1%" },
-  { id: "Section 24", left: "16%", top: "28%", width: "8%", height: "1%" },
-  
-  // Top beds (25-31) - MUCH SMALLER
-  { id: "Section 25", left: "17%", top: "22%", width: "32%", height: "0.001%" },
-  { id: "Section 26", left: "17%", top: "18%", width: "30%", height: "0.5%" },
-  { id: "Section 27", left: "17%", top: "15%", width: "26%", height: "0.5%" },
-  { id: "Section 28", left: "17%", top: "12%", width: "26%", height: "0.1%" },
-  { id: "Section 29", left: "17%", top: "10%", width: "26%", height: "0.1%" },
-  { id: "Section 30", left: "17%", top: "7%", width: "26%", height: "0.2%" },
-  { id: "Section 31", left: "17.5%", top: "3%", width: "23%", height: "0.1%" },
-  
-  // Top right tall beds (32-34) - MUCH SMALLER
-  { id: "Section 32", left: "80%", top: "1%", width: "13%", height: "4%" },
-  { id: "Section 33", left: "80%", top: "6%", width: "13%", height: "4%" },
-  { id: "Section 34", left: "80%", top: "11%", width: "13%", height: "4%" },
-  
-  // Letter sections (bottom) - A MUCH SMALLER, B and C KEEP AS IS (GOOD)
-  { id: "Section A", left: "39%", top: "60%", width: "5%", height: "8%" },
-  { id: "Section B", left: "88%", top: "84%", width: "9%", height: "5.5%" },
-  { id: "Section C", left: "88%", top: "93%", width: "10%", height: "5.5%" },
-];
-
 function App() {
   const [selected, setSelected] = useState(null);
   const [plantInfo, setPlantInfo] = useState(null);
@@ -168,17 +115,6 @@ function App() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
-  const [isMobile, setIsMobile] = useState(false);
-
-  // Detect mobile on mount and resize
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
 
   const handlePlantClick = (plantName) => {
     setLoadingPlant(true);
@@ -574,7 +510,7 @@ function App() {
               className="w-full h-auto pointer-events-none"
               draggable={false}
             />
-          {(isMobile ? mobileHotspots : hotspots).map((h) => (
+          {hotspots.map((h) => (
             <button
               key={h.id}
               onClick={() => {
