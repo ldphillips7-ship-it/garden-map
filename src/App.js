@@ -528,11 +528,17 @@ function App() {
   top: h.top,
   width: h.width,
   height: h.height,
-  border: "none",
-  background: "transparent",
+  border:
+    selected === h.id
+      ? "3px solid #22d3ee"
+      : "1px solid rgba(0,0,0,0.1)",
+  borderRadius: 8,
+  background:
+    selected === h.id
+      ? "rgba(6,182,212,0.15)"
+      : "rgba(255,255,255,0.001)",
   minWidth: "44px",
   minHeight: "44px",
-  cursor: "pointer",
 }}
             />
           ))}
