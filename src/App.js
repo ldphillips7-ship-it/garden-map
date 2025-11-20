@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./index.css";
 import { searchLocalPlants, getPlantByName } from "./plantDatabase.js";
 
@@ -97,6 +97,59 @@ const hotspots = [
   { id: "Section C", left: "86%", top: "92.5%", width: "12%", height: "6%" },
 ];
 
+const mobileHotspots = [
+    // Bottom right beds (1-9)
+  { id: "Section 1", left: "57%", top: "79.5%", width: "25%", height: "1.5%" },
+  { id: "Section 2", left: "57%", top: "76%", width: "25%", height: "1.5%" },
+  { id: "Section 3", left: "57%", top: "72.5%", width: "25%", height: "1.5%" },
+  { id: "Section 4", left: "57%", top: "69%", width: "25%", height: "1.5%" },
+  { id: "Section 5", left: "57%", top: "65%", width: "25%", height: "1.5%" },
+  { id: "Section 6", left: "57%", top: "61.5%", width: "25%", height: "1.5%" },
+  { id: "Section 7", left: "57%", top: "58%", width: "25%", height: "1.5%" },
+  { id: "Section 8", left: "57%", top: "54%", width: "25%", height: "1.5%" },
+  { id: "Section 9", left: "57%", top: "46%", width: "25%", height: "0.5%" },
+  
+  // Left side beds (10-11)
+  { id: "Section 10", left: "36%", top: "50%", width: "9%", height: "2%" },
+  { id: "Section 11", left: "16%", top: "49%", width: "15%", height: "4%" },
+  
+  // Far right beds (12-18)
+  { id: "Section 12", left: "88%", top: "73%", width: "9%", height: "9%" },
+  { id: "Section 13", left: "88%", top: "63%", width: "9%", height: "9%" },
+  { id: "Section 14", left: "88%", top: "51%", width: "9%", height: "11%" },
+  { id: "Section 15", left: "80%", top: "40%", width: "13%", height: "8%" },
+  { id: "Section 16", left: "80%", top: "32%", width: "13%", height: "7%" },
+  { id: "Section 17", left: "21%", top: "44%", width: "22%", height: "0.001%" },
+  { id: "Section 18", left: "80%", top: "26%", width: "13%", height: "5%" },
+  
+  // Grid beds (19-24)
+  { id: "Section 19", left: "37%", top: "32%", width: "8%", height: "1%" },
+  { id: "Section 20", left: "27%", top: "32%", width: "8%", height: "1%" },
+  { id: "Section 21", left: "16%", top: "32%", width: "8%", height: "1%" },
+  { id: "Section 22", left: "37%", top: "28%", width: "8%", height: "1%" },
+  { id: "Section 23", left: "27%", top: "28%", width: "8%", height: "1%" },
+  { id: "Section 24", left: "16%", top: "28%", width: "8%", height: "1%" },
+  
+  // Top beds (25-31)
+  { id: "Section 25", left: "17%", top: "22%", width: "32%", height: "0.01%" },
+  { id: "Section 26", left: "17%", top: "18%", width: "30%", height: "0.5%" },
+  { id: "Section 27", left: "17%", top: "15%", width: "26%", height: "0.5%" },
+  { id: "Section 28", left: "17%", top: "12%", width: "26%", height: "0.1%" },
+  { id: "Section 29", left: "17%", top: "10%", width: "26%", height: "0.01%" },
+  { id: "Section 30", left: "17%", top: "7%", width: "26%", height: "0.02%" },
+  { id: "Section 31", left: "17.5%", top: "3%", width: "23%", height: "4%" },
+  
+  // Top right tall beds (32-34)
+  { id: "Section 32", left: "80%", top: "1%", width: "13%", height: "4%" },
+  { id: "Section 33", left: "80%", top: "6%", width: "13%", height: "4%" },
+  { id: "Section 34", left: "80%", top: "10.5%", width: "13%", height: "4%" },
+  
+  // Letter sections (bottom)
+  { id: "Section A", left: "39.5%", top: "60%", width: "5.5%", height: "8%" },
+  { id: "Section B", left: "86%", top: "84%", width: "12%", height: "6%" },
+  { id: "Section C", left: "86%", top: "92.5%", width: "12%", height: "6%" },
+];
+
 function App() {
   const [selected, setSelected] = useState(null);
   const [plantInfo, setPlantInfo] = useState(null);
@@ -115,6 +168,16 @@ function App() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
+  const [isMobile, setIsMobile] = useState(false);
+
+useEffect(() => {
+  const checkMobile = () => {
+    setIsMobile(window.innerWidth < 768);
+  };
+  checkMobile();
+  window.addEventListener('resize', checkMobile);
+  return () => window.removeEventListener('resize', checkMobile);
+}, []);
 
   const handlePlantClick = (plantName) => {
     setLoadingPlant(true);
@@ -240,12 +303,14 @@ function App() {
   };
 
   // Zoom handlers
-  const handleWheel = (e) => {
+ const handleWheel = (e) => {
+  if (window.innerWidth < 768) {  // Only zoom on mobile
     e.preventDefault();
     const delta = e.deltaY * -0.001;
     const newScale = Math.min(Math.max(1, scale + delta), 4);
     setScale(newScale);
-  };
+  }
+};
 
   const handleTouchStart = (e) => {
     if (e.touches.length === 2) {
@@ -293,14 +358,15 @@ function App() {
   };
 
   const handleMouseDown = (e) => {
-    if (scale > 1) {
-      setIsDragging(true);
-      setDragStart({
-        x: e.clientX - position.x,
-        y: e.clientY - position.y
-      });
-    }
-  };
+  // Remove desktop pan/drag - only works on mobile now
+  if (scale > 1 && window.innerWidth < 768) {
+    setIsDragging(true);
+    setDragStart({
+      x: e.clientX - position.x,
+      y: e.clientY - position.y
+    });
+  }
+};
 
   const handleMouseMove = (e) => {
     if (isDragging) {
@@ -510,7 +576,7 @@ function App() {
               className="w-full h-auto pointer-events-none"
               draggable={false}
             />
-          {hotspots.map((h) => (
+{(isMobile ? mobileHotspots : hotspots).map((h) => (
             <button
               key={h.id}
               onClick={() => {
