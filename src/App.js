@@ -110,8 +110,8 @@ const mobileHotspots = [
   { id: "Section 9", left: "57%", top: "35%", width: "25%", height: "0.1%" },
   
   // Left side beds (10-11)
-  { id: "Section 10", left: "36%", top: "50%", width: "9%", height: "2%" },
-  { id: "Section 11", left: "16%", top: "49%", width: "15%", height: "4%" },
+  { id: "Section 10", left: "36%", top: "50%", width: "9%", height: "0.5%" },
+  { id: "Section 11", left: "16%", top: "49%", width: "15%", height: "2%" },
   
   // Far right beds (12-18)
   { id: "Section 12", left: "88%", top: "73%", width: "9%", height: "9%" },
@@ -123,12 +123,12 @@ const mobileHotspots = [
   { id: "Section 18", left: "80%", top: "26%", width: "13%", height: "5%" },
   
   // Grid beds (19-24)
-  { id: "Section 19", left: "37%", top: "32%", width: "8%", height: "1%" },
-  { id: "Section 20", left: "27%", top: "32%", width: "8%", height: "1%" },
-  { id: "Section 21", left: "16%", top: "32%", width: "8%", height: "1%" },
-  { id: "Section 22", left: "37%", top: "28%", width: "8%", height: "1%" },
-  { id: "Section 23", left: "27%", top: "28%", width: "8%", height: "1%" },
-  { id: "Section 24", left: "16%", top: "28%", width: "8%", height: "1%" },
+  { id: "Section 19", left: "37%", top: "32%", width: "4%", height: "0.1%" },
+  { id: "Section 20", left: "27%", top: "32%", width: "4%", height: "0.1%" },
+  { id: "Section 21", left: "16%", top: "32%", width: "4%", height: "0.1" },
+  { id: "Section 22", left: "37%", top: "28%", width: "4%", height: "0.1%" },
+  { id: "Section 23", left: "27%", top: "28%", width: "4%", height: "0.1%" },
+  { id: "Section 24", left: "16%", top: "28%", width: "4%", height: "0.1%" },
   
   // Top beds (25-31)
   { id: "Section 25", left: "17%", top: "22%", width: "32%", height: "0.01%" },
