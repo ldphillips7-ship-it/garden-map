@@ -603,8 +603,8 @@ useEffect(() => {
     selected === h.id
       ? "rgba(6,182,212,0.15)"
       : "rgba(255,255,255,0.001)",
-  minWidth: "44px",
-  minHeight: "44px",
+  minWidth: window.innerWidth < 768 ? "0px" : "44px",
+  minHeight: window.innerWidth < 768 ? "0px" : "44px",
 }}
             />
           ))}
