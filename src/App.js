@@ -719,22 +719,27 @@ function App() {
             
             {/* ✅ TAP HINT - ADDED HERE */}
             {isMobile && showTapHint && (
-              <div 
-                className="absolute top-4 left-1/2 transform -translate-x-1/2 z-30 bg-sky-500 text-white px-4 py-2 rounded-lg shadow-lg text-sm flex items-center gap-2 animate-pulse"
-                style={{ pointerEvents: 'auto' }}
-              >
-                <span>👆 Tap sections to explore plants</span>
-                <button 
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setShowTapHint(false);
-                  }}
-                  className="ml-2 text-white hover:text-gray-200 font-bold"
-                >
-                  ✕
-                </button>
-              </div>
-            )}
+  <div 
+    className="absolute top-4 left-1/2 transform -translate-x-1/2 z-30 bg-sky-500 text-white px-4 py-2 rounded-lg shadow-lg text-sm animate-pulse"
+    style={{ pointerEvents: 'auto', maxWidth: '90vw' }}
+  >
+    <div className="flex items-start gap-2">
+  <div className="text-center">
+    <div>👆 Tap sections to explore plants</div>
+    <div>Use ☰ menu to search</div>
+  </div>
+  <button 
+    onClick={(e) => {
+      e.stopPropagation();
+      setShowTapHint(false);
+    }}
+    className="text-white hover:text-gray-200 font-bold"
+  >
+    ✕
+  </button>
+</div>
+  </div>
+)}
             
             {/* ✅ HOTSPOTS - UPDATED STYLING */}
             {(isMobile ? mobileHotspots : hotspots).map((h) => (
