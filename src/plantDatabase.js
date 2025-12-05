@@ -1,4 +1,7 @@
-// src/plantDatabase.js
+// src/plantDatabase.js - PART 1 OF 3
+// Updated with native status information based on BONAP (Biota of North America Program) data
+// Copy all three parts and combine them into one file
+
 export const plantDatabase = {
   // Roses
   "roses": {
@@ -6,7 +9,6 @@ export const plantDatabase = {
     name: "Rose",
     scientific_name: "Rosa spp.",
     family: "Rosaceae",
-    image: "",
     description: "Roses are woody perennial flowering plants known for their beautiful blooms and fragrance. They come in many colors and varieties.",
     type: "Perennial",
     cycle: "Perennial",
@@ -18,7 +20,9 @@ export const plantDatabase = {
     attracts: "Bees, Butterflies",
     maintenance: "Medium",
     deer_resistance: "C",
-    deer_resistance_note: "Occasionally severely damaged"
+    deer_resistance_note: "Occasionally severely damaged",
+    native_status: "Varies",
+    native_region: "Some species native to North America, many cultivated varieties are introduced from Europe and Asia"
   },
 
   // Groundcover Juniper
@@ -27,7 +31,6 @@ export const plantDatabase = {
     name: "Groundcover Juniper",
     scientific_name: "Juniperus horizontalis",
     family: "Cupressaceae",
-    image: "",
     description: "A low-growing evergreen shrub perfect for groundcover. Drought-tolerant and requires minimal maintenance.",
     type: "Shrub",
     cycle: "Perennial",
@@ -39,7 +42,9 @@ export const plantDatabase = {
     attracts: "Birds",
     maintenance: "Low",
     deer_resistance: "A",
-    deer_resistance_note: "Rarely damaged"
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Native",
+    native_region: "Northern and central United States and Canada"
   },
 
   // Hosta
@@ -48,7 +53,6 @@ export const plantDatabase = {
     name: "Hosta",
     scientific_name: "Hosta spp.",
     family: "Asparagaceae",
-    image: "",
     description: "Shade-loving perennial known for its attractive foliage. Hostas come in various sizes with leaves in shades of green, blue, and variegated patterns.",
     type: "Perennial",
     cycle: "Perennial",
@@ -60,7 +64,9 @@ export const plantDatabase = {
     attracts: "Hummingbirds",
     maintenance: "Low",
     deer_resistance: "D",
-    deer_resistance_note: "Frequently severely damaged - deer candy!"
+    deer_resistance_note: "Frequently severely damaged - deer candy!",
+    native_status: "Introduced",
+    native_region: "Native to East Asia (China, Japan, Korea)"
   },
 
   // Hydrangea
@@ -69,7 +75,6 @@ export const plantDatabase = {
     name: "Hydrangea",
     scientific_name: "Hydrangea macrophylla",
     family: "Hydrangeaceae",
-    image: "",
     description: "Popular flowering shrub with large, showy flower clusters. Flower color can change based on soil pH.",
     type: "Shrub",
     cycle: "Perennial",
@@ -81,7 +86,9 @@ export const plantDatabase = {
     attracts: "Butterflies",
     maintenance: "Medium",
     deer_resistance: "B",
-    deer_resistance_note: "Seldom severely damaged"
+    deer_resistance_note: "Seldom severely damaged",
+    native_status: "Introduced",
+    native_region: "Native to Japan and Korea"
   },
 
   // Azalea
@@ -90,7 +97,6 @@ export const plantDatabase = {
     name: "Azalea",
     scientific_name: "Rhododendron spp.",
     family: "Ericaceae",
-    image: "",
     description: "Flowering shrub that produces masses of colorful blooms in spring. Prefers acidic soil.",
     type: "Shrub",
     cycle: "Perennial",
@@ -101,8 +107,10 @@ export const plantDatabase = {
     flowering_season: "Spring",
     attracts: "Bees, Butterflies, Hummingbirds",
     maintenance: "Medium",
-    deer_resistance: "A",
-    deer_resistance_note: "Rarely damaged"
+    deer_resistance: "D",
+    deer_resistance_note: "Frequently severely damaged - deer candy!",
+    native_status: "Varies",
+    native_region: "Some species native to eastern US, many cultivars from Asia"
   },
 
   // Weigela
@@ -111,7 +119,6 @@ export const plantDatabase = {
     name: "Weigela",
     scientific_name: "Weigela florida",
     family: "Caprifoliaceae",
-    image: "",
     description: "Deciduous shrub with tubular flowers that bloom profusely in late spring. Attracts hummingbirds.",
     type: "Shrub",
     cycle: "Perennial",
@@ -123,7 +130,9 @@ export const plantDatabase = {
     attracts: "Hummingbirds, Butterflies",
     maintenance: "Low",
     deer_resistance: "B",
-    deer_resistance_note: "Seldom severely damaged"
+    deer_resistance_note: "Seldom severely damaged",
+    native_status: "Introduced",
+    native_region: "Native to East Asia (China, Korea, Japan)"
   },
 
   // Ninebark
@@ -132,7 +141,6 @@ export const plantDatabase = {
     name: "Ninebark",
     scientific_name: "Physocarpus opulifolius",
     family: "Rosaceae",
-    image: "",
     description: "Hardy native shrub with attractive foliage and exfoliating bark. Very low maintenance and adaptable.",
     type: "Shrub",
     cycle: "Perennial",
@@ -144,7 +152,9 @@ export const plantDatabase = {
     attracts: "Bees, Butterflies, Birds",
     maintenance: "Low",
     deer_resistance: "B",
-    deer_resistance_note: "Seldom severely damaged"
+    deer_resistance_note: "Seldom severely damaged",
+    native_status: "Native",
+    native_region: "Eastern and central North America"
   },
 
   // Butterfly Bush
@@ -153,7 +163,6 @@ export const plantDatabase = {
     name: "Butterfly Bush",
     scientific_name: "Buddleja davidii",
     family: "Scrophulariaceae",
-    image: "",
     description: "Fast-growing deciduous shrub known for attracting butterflies and other pollinators. Produces fragrant flower spikes.",
     type: "Shrub",
     cycle: "Perennial",
@@ -165,17 +174,16 @@ export const plantDatabase = {
     attracts: "Butterflies, Bees, Hummingbirds",
     maintenance: "Low",
     deer_resistance: "A",
-    deer_resistance_note: "Rarely damaged"
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Introduced",
+    native_region: "Native to China; considered invasive in some areas"
   },
 
-  // Common additional plants people might search for:
-  
   "tomato": {
     id: "local_tomato",
     name: "Tomato",
     scientific_name: "Solanum lycopersicum",
     family: "Solanaceae",
-    image: "",
     description: "Popular vegetable garden plant producing edible fruits. Requires warm weather and full sun.",
     type: "Annual",
     cycle: "Annual",
@@ -187,7 +195,9 @@ export const plantDatabase = {
     attracts: "Bees",
     maintenance: "Medium",
     deer_resistance: "C",
-    deer_resistance_note: "Occasionally severely damaged"
+    deer_resistance_note: "Occasionally severely damaged",
+    native_status: "Introduced",
+    native_region: "Native to South America (Peru, Ecuador)"
   },
 
   "lavender": {
@@ -195,7 +205,6 @@ export const plantDatabase = {
     name: "Lavender",
     scientific_name: "Lavandula angustifolia",
     family: "Lamiaceae",
-    image: "",
     description: "Aromatic perennial herb with purple flower spikes. Drought-tolerant and attracts pollinators.",
     type: "Perennial",
     cycle: "Perennial",
@@ -207,7 +216,9 @@ export const plantDatabase = {
     attracts: "Bees, Butterflies",
     maintenance: "Low",
     deer_resistance: "A",
-    deer_resistance_note: "Rarely damaged - deer don't like the scent"
+    deer_resistance_note: "Rarely damaged - deer don't like the scent",
+    native_status: "Introduced",
+    native_region: "Native to Mediterranean region"
   },
 
   "basil": {
@@ -215,7 +226,6 @@ export const plantDatabase = {
     name: "Basil",
     scientific_name: "Ocimum basilicum",
     family: "Lamiaceae",
-    image: "",
     description: "Popular culinary herb with aromatic leaves. Easy to grow in warm weather.",
     type: "Annual",
     cycle: "Annual",
@@ -227,7 +237,9 @@ export const plantDatabase = {
     attracts: "Bees",
     maintenance: "Low",
     deer_resistance: "A",
-    deer_resistance_note: "Rarely damaged - aromatic herbs repel deer"
+    deer_resistance_note: "Rarely damaged - aromatic herbs repel deer",
+    native_status: "Introduced",
+    native_region: "Native to tropical regions of central Africa and Southeast Asia"
   },
 
   "maple": {
@@ -235,7 +247,6 @@ export const plantDatabase = {
     name: "Maple Tree",
     scientific_name: "Acer spp.",
     family: "Sapindaceae",
-    image: "",
     description: "Deciduous tree known for brilliant fall foliage. Many species available in various sizes.",
     type: "Tree",
     cycle: "Perennial",
@@ -247,17 +258,16 @@ export const plantDatabase = {
     attracts: "Birds, Squirrels",
     maintenance: "Low",
     deer_resistance: "B",
-    deer_resistance_note: "Seldom severely damaged"
+    deer_resistance_note: "Seldom severely damaged",
+    native_status: "Varies",
+    native_region: "Many species native to North America, some species from Asia"
   },
 
-  // New additions below
-
   "azaleas": {
-    id: "local_azaleas",
+    id: "local_azalea",
     name: "Azalea",
     scientific_name: "Rhododendron spp.",
     family: "Ericaceae",
-    image: "",
     description: "Flowering shrub that produces masses of colorful blooms in spring. Prefers acidic soil.",
     type: "Shrub",
     cycle: "Perennial",
@@ -268,8 +278,10 @@ export const plantDatabase = {
     flowering_season: "Spring",
     attracts: "Bees, Butterflies, Hummingbirds",
     maintenance: "Medium",
-    deer_resistance: "A",
-    deer_resistance_note: "Rarely damaged"
+    deer_resistance: "D",
+    deer_resistance_note: "Frequently severely damaged - deer candy!",
+    native_status: "Varies",
+    native_region: "Some species native to eastern US, many cultivars from Asia"
   },
 
   "rose of sharon": {
@@ -277,7 +289,6 @@ export const plantDatabase = {
     name: "Rose of Sharon",
     scientific_name: "Hibiscus syriacus",
     family: "Malvaceae",
-    image: "",
     description: "Deciduous flowering shrub with large hibiscus-like flowers that bloom in late summer. Very low maintenance.",
     type: "Shrub",
     cycle: "Perennial",
@@ -288,8 +299,10 @@ export const plantDatabase = {
     flowering_season: "Summer, Fall",
     attracts: "Butterflies, Hummingbirds",
     maintenance: "Low",
-    deer_resistance: "B",
-    deer_resistance_note: "Seldom severely damaged"
+    deer_resistance: "C",
+    deer_resistance_note: "Occasionally severely damaged",
+    native_status: "Introduced",
+    native_region: "Native to Asia (China, India)"
   },
 
   "boxwood": {
@@ -297,7 +310,6 @@ export const plantDatabase = {
     name: "Boxwood",
     scientific_name: "Buxus spp.",
     family: "Buxaceae",
-    image: "",
     description: "Classic evergreen shrub perfect for hedges and topiaries. Dense foliage and slow growth make it ideal for formal gardens.",
     type: "Shrub",
     cycle: "Perennial",
@@ -309,7 +321,9 @@ export const plantDatabase = {
     attracts: "Bees",
     maintenance: "Low",
     deer_resistance: "A",
-    deer_resistance_note: "Rarely damaged"
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Introduced",
+    native_region: "Most species native to Europe, North Africa, and Asia"
   },
 
   "viburnum": {
@@ -317,7 +331,6 @@ export const plantDatabase = {
     name: "Viburnum",
     scientific_name: "Viburnum spp.",
     family: "Adoxaceae",
-    image: "",
     description: "Versatile shrub with spring flowers, attractive foliage, and colorful berries that attract birds.",
     type: "Shrub",
     cycle: "Perennial",
@@ -329,7 +342,9 @@ export const plantDatabase = {
     attracts: "Birds, Butterflies",
     maintenance: "Low",
     deer_resistance: "B",
-    deer_resistance_note: "Seldom severely damaged"
+    deer_resistance_note: "Seldom severely damaged",
+    native_status: "Varies",
+    native_region: "Many species native to North America, some from Asia"
   },
 
   "japanese maple": {
@@ -337,7 +352,6 @@ export const plantDatabase = {
     name: "Japanese Maple",
     scientific_name: "Acer palmatum",
     family: "Sapindaceae",
-    image: "",
     description: "Elegant small tree with delicate, often colorful foliage. Many cultivars available with red, purple, or green leaves.",
     type: "Tree",
     cycle: "Perennial",
@@ -349,7 +363,9 @@ export const plantDatabase = {
     attracts: "Birds",
     maintenance: "Low",
     deer_resistance: "C",
-    deer_resistance_note: "Occasionally severely damaged"
+    deer_resistance_note: "Occasionally severely damaged",
+    native_status: "Introduced",
+    native_region: "Native to Japan, Korea, and China"
   },
 
   "spirea": {
@@ -357,7 +373,6 @@ export const plantDatabase = {
     name: "Spirea",
     scientific_name: "Spiraea spp.",
     family: "Rosaceae",
-    image: "",
     description: "Deciduous flowering shrub with clusters of small flowers. Very hardy and low maintenance.",
     type: "Shrub",
     cycle: "Perennial",
@@ -369,7 +384,9 @@ export const plantDatabase = {
     attracts: "Butterflies, Bees",
     maintenance: "Low",
     deer_resistance: "B",
-    deer_resistance_note: "Seldom severely damaged"
+    deer_resistance_note: "Seldom severely damaged",
+    native_status: "Varies",
+    native_region: "Some species native to North America, many from Asia"
   },
 
   "barberry": {
@@ -377,7 +394,6 @@ export const plantDatabase = {
     name: "Barberry",
     scientific_name: "Berberis spp.",
     family: "Berberidaceae",
-    image: "",
     description: "Thorny shrub with colorful foliage ranging from green to deep purple. Very deer resistant due to thorns.",
     type: "Shrub",
     cycle: "Perennial",
@@ -389,7 +405,9 @@ export const plantDatabase = {
     attracts: "Birds",
     maintenance: "Low",
     deer_resistance: "A",
-    deer_resistance_note: "Rarely damaged - thorny"
+    deer_resistance_note: "Rarely damaged - thorny",
+    native_status: "Varies",
+    native_region: "Some species native to North America, Japanese barberry (B. thunbergii) is invasive"
   },
 
   "holly": {
@@ -397,7 +415,6 @@ export const plantDatabase = {
     name: "Holly",
     scientific_name: "Ilex spp.",
     family: "Aquifoliaceae",
-    image: "",
     description: "Evergreen shrub or tree with glossy leaves and red berries. Many varieties from groundcovers to large trees.",
     type: "Shrub",
     cycle: "Perennial",
@@ -409,7 +426,9 @@ export const plantDatabase = {
     attracts: "Birds",
     maintenance: "Low",
     deer_resistance: "A",
-    deer_resistance_note: "Rarely damaged - spiny leaves"
+    deer_resistance_note: "Rarely damaged - spiny leaves",
+    native_status: "Varies",
+    native_region: "Many species native to eastern North America, some from Asia"
   },
 
   "dogwood": {
@@ -417,7 +436,6 @@ export const plantDatabase = {
     name: "Dogwood",
     scientific_name: "Cornus florida",
     family: "Cornaceae",
-    image: "",
     description: "Native flowering tree with beautiful spring blooms and attractive fall color. Red berries attract birds.",
     type: "Tree",
     cycle: "Perennial",
@@ -429,7 +447,9 @@ export const plantDatabase = {
     attracts: "Birds, Butterflies",
     maintenance: "Medium",
     deer_resistance: "C",
-    deer_resistance_note: "Occasionally severely damaged"
+    deer_resistance_note: "Occasionally severely damaged",
+    native_status: "Native",
+    native_region: "Eastern United States"
   },
 
   "magnolia": {
@@ -437,7 +457,6 @@ export const plantDatabase = {
     name: "Magnolia",
     scientific_name: "Magnolia spp.",
     family: "Magnoliaceae",
-    image: "",
     description: "Flowering tree with large, showy blooms in spring. Varieties range from small shrubs to large trees.",
     type: "Tree",
     cycle: "Perennial",
@@ -449,7 +468,9 @@ export const plantDatabase = {
     attracts: "Bees, Birds",
     maintenance: "Low",
     deer_resistance: "B",
-    deer_resistance_note: "Seldom severely damaged"
+    deer_resistance_note: "Seldom severely damaged",
+    native_status: "Varies",
+    native_region: "Some species native to southeastern US, many from Asia"
   },
 
   "redbud": {
@@ -457,7 +478,6 @@ export const plantDatabase = {
     name: "Redbud",
     scientific_name: "Cercis canadensis",
     family: "Fabaceae",
-    image: "",
     description: "Native small tree with pink-purple flowers covering bare branches in early spring. Heart-shaped leaves.",
     type: "Tree",
     cycle: "Perennial",
@@ -469,7 +489,9 @@ export const plantDatabase = {
     attracts: "Bees, Butterflies",
     maintenance: "Low",
     deer_resistance: "C",
-    deer_resistance_note: "Occasionally severely damaged"
+    deer_resistance_note: "Occasionally severely damaged",
+    native_status: "Native",
+    native_region: "Eastern and central United States"
   },
 
   "norway spruce": {
@@ -477,7 +499,6 @@ export const plantDatabase = {
     name: "Norway Spruce",
     scientific_name: "Picea abies",
     family: "Pinaceae",
-    image: "",
     description: "Large evergreen conifer with drooping branches. Fast-growing and makes excellent windbreak or privacy screen.",
     type: "Tree",
     cycle: "Perennial",
@@ -489,7 +510,9 @@ export const plantDatabase = {
     attracts: "Birds",
     maintenance: "Low",
     deer_resistance: "A",
-    deer_resistance_note: "Rarely damaged"
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Introduced",
+    native_region: "Native to northern and central Europe"
   },
 
   "green giants": {
@@ -497,7 +520,6 @@ export const plantDatabase = {
     name: "Green Giant Arborvitae",
     scientific_name: "Thuja standishii x plicata",
     family: "Cupressaceae",
-    image: "",
     description: "Fast-growing evergreen with pyramidal shape. Excellent for privacy screens and windbreaks. Very low maintenance.",
     type: "Tree",
     cycle: "Perennial",
@@ -509,7 +531,9 @@ export const plantDatabase = {
     attracts: "Birds",
     maintenance: "Low",
     deer_resistance: "A",
-    deer_resistance_note: "Rarely damaged"
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Hybrid",
+    native_region: "Hybrid of Asian (T. standishii) and North American (T. plicata) species"
   },
 
   "blue spruce": {
@@ -517,7 +541,6 @@ export const plantDatabase = {
     name: "Blue Spruce",
     scientific_name: "Picea pungens",
     family: "Pinaceae",
-    image: "",
     description: "Evergreen conifer with striking blue-gray needles. Stiff, horizontal branches give pyramidal form.",
     type: "Tree",
     cycle: "Perennial",
@@ -529,15 +552,16 @@ export const plantDatabase = {
     attracts: "Birds",
     maintenance: "Low",
     deer_resistance: "A",
-    deer_resistance_note: "Rarely damaged"
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Native",
+    native_region: "Rocky Mountains (Colorado, Utah, Wyoming)"
   },
 
   "juniper": {
-    id: "local_juniper",
+    id: "local_juniper_general",
     name: "Juniper",
     scientific_name: "Juniperus spp.",
     family: "Cupressaceae",
-    image: "",
     description: "Versatile evergreen available in many forms from groundcovers to upright trees. Very drought tolerant.",
     type: "Shrub",
     cycle: "Perennial",
@@ -549,7 +573,9 @@ export const plantDatabase = {
     attracts: "Birds",
     maintenance: "Low",
     deer_resistance: "A",
-    deer_resistance_note: "Rarely damaged"
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Varies",
+    native_region: "Many species native to North America, some from Asia and Europe"
   },
 
   "lirope": {
@@ -557,7 +583,6 @@ export const plantDatabase = {
     name: "Liriope",
     scientific_name: "Liriope muscari",
     family: "Asparagaceae",
-    image: "",
     description: "Evergreen grass-like perennial with purple flower spikes. Excellent groundcover for sun or shade.",
     type: "Perennial",
     cycle: "Perennial",
@@ -569,7 +594,9 @@ export const plantDatabase = {
     attracts: "Bees",
     maintenance: "Low",
     deer_resistance: "A",
-    deer_resistance_note: "Rarely damaged"
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Introduced",
+    native_region: "Native to East Asia (China, Japan)"
   },
 
   "daylily": {
@@ -577,7 +604,6 @@ export const plantDatabase = {
     name: "Daylily",
     scientific_name: "Hemerocallis spp.",
     family: "Asphodelaceae",
-    image: "",
     description: "Hardy perennial with trumpet-shaped flowers. Each flower lasts one day but plants produce many blooms.",
     type: "Perennial",
     cycle: "Perennial",
@@ -589,7 +615,9 @@ export const plantDatabase = {
     attracts: "Butterflies, Hummingbirds",
     maintenance: "Low",
     deer_resistance: "C",
-    deer_resistance_note: "Occasionally severely damaged"
+    deer_resistance_note: "Occasionally severely damaged",
+    native_status: "Introduced",
+    native_region: "Native to Asia; naturalized in North America"
   },
 
   "birch": {
@@ -597,7 +625,6 @@ export const plantDatabase = {
     name: "Birch",
     scientific_name: "Betula spp.",
     family: "Betulaceae",
-    image: "",
     description: "Deciduous tree with distinctive peeling bark. Fast-growing with yellow fall color.",
     type: "Tree",
     cycle: "Perennial",
@@ -609,7 +636,9 @@ export const plantDatabase = {
     attracts: "Birds",
     maintenance: "Medium",
     deer_resistance: "C",
-    deer_resistance_note: "Occasionally severely damaged"
+    deer_resistance_note: "Occasionally severely damaged",
+    native_status: "Varies",
+    native_region: "Many species native to North America, some from Europe and Asia"
   },
 
   "lilac": {
@@ -617,7 +646,6 @@ export const plantDatabase = {
     name: "Lilac",
     scientific_name: "Syringa vulgaris",
     family: "Oleaceae",
-    image: "",
     description: "Classic spring-flowering shrub with fragrant purple, pink, or white blooms. Very cold hardy.",
     type: "Shrub",
     cycle: "Perennial",
@@ -629,7 +657,9 @@ export const plantDatabase = {
     attracts: "Butterflies, Hummingbirds",
     maintenance: "Low",
     deer_resistance: "B",
-    deer_resistance_note: "Seldom severely damaged"
+    deer_resistance_note: "Seldom severely damaged",
+    native_status: "Introduced",
+    native_region: "Native to southeastern Europe"
   },
 
   "yucca": {
@@ -637,7 +667,6 @@ export const plantDatabase = {
     name: "Yucca",
     scientific_name: "Yucca filamentosa",
     family: "Asparagaceae",
-    image: "",
     description: "Architectural evergreen perennial with sword-like leaves and tall flower spikes. Very drought tolerant.",
     type: "Perennial",
     cycle: "Perennial",
@@ -649,7 +678,9 @@ export const plantDatabase = {
     attracts: "Hummingbirds",
     maintenance: "Low",
     deer_resistance: "A",
-    deer_resistance_note: "Rarely damaged - sharp leaves"
+    deer_resistance_note: "Rarely damaged - sharp leaves",
+    native_status: "Native",
+    native_region: "Southeastern United States"
   },
 
   "caryopteris": {
@@ -657,7 +688,6 @@ export const plantDatabase = {
     name: "Caryopteris",
     scientific_name: "Caryopteris x clandonensis",
     family: "Lamiaceae",
-    image: "",
     description: "Blue Mist Shrub with fragrant blue flowers in late summer. Attracts butterflies and bees. Deer resistant.",
     type: "Shrub",
     cycle: "Perennial",
@@ -669,7 +699,9 @@ export const plantDatabase = {
     attracts: "Butterflies, Bees",
     maintenance: "Low",
     deer_resistance: "A",
-    deer_resistance_note: "Rarely damaged - aromatic"
+    deer_resistance_note: "Rarely damaged - aromatic",
+    native_status: "Introduced",
+    native_region: "Native to East Asia; garden hybrid"
   },
 
   "itea": {
@@ -677,7 +709,6 @@ export const plantDatabase = {
     name: "Sweetspire",
     scientific_name: "Itea virginica",
     family: "Iteaceae",
-    image: "",
     description: "Native shrub with fragrant white flower spikes and brilliant red fall color. Tolerates wet soil.",
     type: "Shrub",
     cycle: "Perennial",
@@ -689,7 +720,30 @@ export const plantDatabase = {
     attracts: "Butterflies, Bees",
     maintenance: "Low",
     deer_resistance: "B",
-    deer_resistance_note: "Seldom severely damaged"
+    deer_resistance_note: "Seldom severely damaged",
+    native_status: "Native",
+    native_region: "Eastern and southeastern United States"
+  },
+
+  "sweetspire": {
+    id: "local_itea",
+    name: "Sweetspire",
+    scientific_name: "Itea virginica",
+    family: "Iteaceae",
+    description: "Native shrub with fragrant white flower spikes and brilliant red fall color. Tolerates wet soil.",
+    type: "Shrub",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Full sun, Part shade",
+    care_level: "Low",
+    growth_rate: "Medium",
+    flowering_season: "Summer",
+    attracts: "Butterflies, Bees",
+    maintenance: "Low",
+    deer_resistance: "B",
+    deer_resistance_note: "Seldom severely damaged",
+    native_status: "Native",
+    native_region: "Eastern and southeastern United States"
   },
 
   "fothergilla": {
@@ -697,7 +751,6 @@ export const plantDatabase = {
     name: "Fothergilla",
     scientific_name: "Fothergilla gardenii",
     family: "Hamamelidaceae",
-    image: "",
     description: "Native shrub with bottlebrush-like white flowers in spring and spectacular fall color. Low maintenance.",
     type: "Shrub",
     cycle: "Perennial",
@@ -708,8 +761,10 @@ export const plantDatabase = {
     flowering_season: "Spring",
     attracts: "Bees",
     maintenance: "Low",
-    deer_resistance: "A",
-    deer_resistance_note: "Rarely damaged"
+    deer_resistance: "B",
+    deer_resistance_note: "Seldom severely damaged",
+    native_status: "Native",
+    native_region: "Southeastern United States"
   },
 
   "winterberry": {
@@ -717,7 +772,6 @@ export const plantDatabase = {
     name: "Winterberry Holly",
     scientific_name: "Ilex verticillata",
     family: "Aquifoliaceae",
-    image: "",
     description: "Deciduous holly with brilliant red berries that persist into winter. Excellent for birds.",
     type: "Shrub",
     cycle: "Perennial",
@@ -729,7 +783,9 @@ export const plantDatabase = {
     attracts: "Birds",
     maintenance: "Low",
     deer_resistance: "B",
-    deer_resistance_note: "Seldom severely damaged"
+    deer_resistance_note: "Seldom severely damaged",
+    native_status: "Native",
+    native_region: "Eastern North America"
   },
 
   "abelia": {
@@ -737,7 +793,6 @@ export const plantDatabase = {
     name: "Abelia",
     scientific_name: "Abelia x grandiflora",
     family: "Caprifoliaceae",
-    image: "",
     description: "Semi-evergreen shrub with fragrant white-pink flowers from summer to fall. Very long blooming.",
     type: "Shrub",
     cycle: "Perennial",
@@ -749,7 +804,9 @@ export const plantDatabase = {
     attracts: "Butterflies, Bees, Hummingbirds",
     maintenance: "Low",
     deer_resistance: "B",
-    deer_resistance_note: "Seldom severely damaged"
+    deer_resistance_note: "Seldom severely damaged",
+    native_status: "Introduced",
+    native_region: "Hybrid of Asian species"
   },
 
   "burning bush": {
@@ -757,7 +814,6 @@ export const plantDatabase = {
     name: "Burning Bush",
     scientific_name: "Euonymus alatus",
     family: "Celastraceae",
-    image: "",
     description: "Deciduous shrub famous for brilliant red fall color. Dense branching structure.",
     type: "Shrub",
     cycle: "Perennial",
@@ -769,15 +825,19 @@ export const plantDatabase = {
     attracts: "Birds",
     maintenance: "Low",
     deer_resistance: "B",
-    deer_resistance_note: "Seldom severely damaged"
+    deer_resistance_note: "Seldom severely damaged",
+    native_status: "Introduced",
+    native_region: "Native to Asia; considered invasive in some states"
   },
+
+// END OF PART 1 - Continue with Part 2
+// PART 2 OF 3 - Continue from Part 1
 
   "leucothoe": {
     id: "local_leucothoe",
     name: "Leucothoe",
     scientific_name: "Leucothoe fontanesiana",
     family: "Ericaceae",
-    image: "",
     description: "Evergreen shrub with arching branches and drooping white flowers. Excellent for shade.",
     type: "Shrub",
     cycle: "Perennial",
@@ -789,7 +849,9 @@ export const plantDatabase = {
     attracts: "Bees",
     maintenance: "Low",
     deer_resistance: "A",
-    deer_resistance_note: "Rarely damaged"
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Native",
+    native_region: "Southeastern United States"
   },
 
   "deutzia": {
@@ -797,7 +859,6 @@ export const plantDatabase = {
     name: "Deutzia",
     scientific_name: "Deutzia gracilis",
     family: "Hydrangeaceae",
-    image: "",
     description: "Deciduous shrub with masses of white or pink flowers in spring. Easy to grow.",
     type: "Shrub",
     cycle: "Perennial",
@@ -809,7 +870,9 @@ export const plantDatabase = {
     attracts: "Butterflies, Bees",
     maintenance: "Low",
     deer_resistance: "B",
-    deer_resistance_note: "Seldom severely damaged"
+    deer_resistance_note: "Seldom severely damaged",
+    native_status: "Introduced",
+    native_region: "Native to Asia"
   },
 
   "andromeda": {
@@ -817,7 +880,6 @@ export const plantDatabase = {
     name: "Andromeda",
     scientific_name: "Pieris japonica",
     family: "Ericaceae",
-    image: "",
     description: "Evergreen shrub with drooping clusters of bell-shaped flowers. New growth is often colorful.",
     type: "Shrub",
     cycle: "Perennial",
@@ -829,16 +891,17 @@ export const plantDatabase = {
     attracts: "Bees",
     maintenance: "Medium",
     deer_resistance: "A",
-    deer_resistance_note: "Rarely damaged - toxic"
+    deer_resistance_note: "Rarely damaged - toxic",
+    native_status: "Introduced",
+    native_region: "Native to Japan and China"
   },
 
   "clethra": {
     id: "local_clethra",
-    name: "Summersweet",
+    name: "Clethra",
     scientific_name: "Clethra alnifolia",
     family: "Clethraceae",
-    image: "",
-    description: "Native shrub with fragrant white flower spikes in summer. Tolerates wet soil and shade.",
+    description: "Native shrub with fragrant white flower spikes in summer. Tolerates wet soil and shade. Also known as Summersweet.",
     type: "Shrub",
     cycle: "Perennial",
     watering: "Average",
@@ -849,7 +912,30 @@ export const plantDatabase = {
     attracts: "Butterflies, Bees, Hummingbirds",
     maintenance: "Low",
     deer_resistance: "B",
-    deer_resistance_note: "Seldom severely damaged"
+    deer_resistance_note: "Seldom severely damaged",
+    native_status: "Native",
+    native_region: "Eastern North America"
+  },
+
+  "summersweet": {
+    id: "local_clethra",
+    name: "Summersweet",
+    scientific_name: "Clethra alnifolia",
+    family: "Clethraceae",
+    description: "Native shrub with fragrant white flower spikes in summer. Tolerates wet soil and shade. Also known as Clethra.",
+    type: "Shrub",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Full sun, Part shade",
+    care_level: "Low",
+    growth_rate: "Medium",
+    flowering_season: "Summer",
+    attracts: "Butterflies, Bees, Hummingbirds",
+    maintenance: "Low",
+    deer_resistance: "B",
+    deer_resistance_note: "Seldom severely damaged",
+    native_status: "Native",
+    native_region: "Eastern North America"
   },
 
   "aronia": {
@@ -857,7 +943,6 @@ export const plantDatabase = {
     name: "Chokeberry",
     scientific_name: "Aronia melanocarpa",
     family: "Rosaceae",
-    image: "",
     description: "Native shrub with white spring flowers, edible berries, and brilliant fall color. Very adaptable.",
     type: "Shrub",
     cycle: "Perennial",
@@ -869,7 +954,9 @@ export const plantDatabase = {
     attracts: "Birds, Butterflies",
     maintenance: "Low",
     deer_resistance: "B",
-    deer_resistance_note: "Seldom severely damaged"
+    deer_resistance_note: "Seldom severely damaged",
+    native_status: "Native",
+    native_region: "Eastern North America"
   },
 
   "calycanthus": {
@@ -877,7 +964,6 @@ export const plantDatabase = {
     name: "Sweetshrub",
     scientific_name: "Calycanthus floridus",
     family: "Calycanthaceae",
-    image: "",
     description: "Native shrub with uniquely fragrant reddish-brown flowers. Aromatic foliage when crushed.",
     type: "Shrub",
     cycle: "Perennial",
@@ -889,7 +975,30 @@ export const plantDatabase = {
     attracts: "Butterflies",
     maintenance: "Low",
     deer_resistance: "A",
-    deer_resistance_note: "Rarely damaged"
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Native",
+    native_region: "Southeastern United States"
+  },
+
+  "sweetshrub": {
+    id: "local_calycanthus",
+    name: "Sweetshrub",
+    scientific_name: "Calycanthus floridus",
+    family: "Calycanthaceae",
+    description: "Native shrub with uniquely fragrant reddish-brown flowers. Aromatic foliage when crushed.",
+    type: "Shrub",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Full sun, Part shade",
+    care_level: "Low",
+    growth_rate: "Medium",
+    flowering_season: "Spring, Summer",
+    attracts: "Butterflies",
+    maintenance: "Low",
+    deer_resistance: "A",
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Native",
+    native_region: "Southeastern United States"
   },
 
   "camellia": {
@@ -897,7 +1006,6 @@ export const plantDatabase = {
     name: "Camellia",
     scientific_name: "Camellia japonica",
     family: "Theaceae",
-    image: "",
     description: "Evergreen shrub with showy flowers in late winter/early spring. Glossy dark green foliage.",
     type: "Shrub",
     cycle: "Perennial",
@@ -909,7 +1017,9 @@ export const plantDatabase = {
     attracts: "Bees",
     maintenance: "Medium",
     deer_resistance: "B",
-    deer_resistance_note: "Seldom severely damaged"
+    deer_resistance_note: "Seldom severely damaged",
+    native_status: "Introduced",
+    native_region: "Native to East Asia"
   },
 
   "osmanthus": {
@@ -917,7 +1027,6 @@ export const plantDatabase = {
     name: "Osmanthus",
     scientific_name: "Osmanthus heterophyllus",
     family: "Oleaceae",
-    image: "",
     description: "Evergreen shrub with holly-like leaves and small but intensely fragrant white flowers in fall.",
     type: "Shrub",
     cycle: "Perennial",
@@ -929,7 +1038,9 @@ export const plantDatabase = {
     attracts: "Bees",
     maintenance: "Low",
     deer_resistance: "A",
-    deer_resistance_note: "Rarely damaged - spiny leaves"
+    deer_resistance_note: "Rarely damaged - spiny leaves",
+    native_status: "Introduced",
+    native_region: "Native to Japan and Taiwan"
   },
 
   "spicebush": {
@@ -937,7 +1048,6 @@ export const plantDatabase = {
     name: "Spicebush",
     scientific_name: "Lindera benzoin",
     family: "Lauraceae",
-    image: "",
     description: "Native shrub with aromatic foliage, small yellow spring flowers, and red berries. Important for butterflies.",
     type: "Shrub",
     cycle: "Perennial",
@@ -949,7 +1059,9 @@ export const plantDatabase = {
     attracts: "Birds, Butterflies",
     maintenance: "Low",
     deer_resistance: "A",
-    deer_resistance_note: "Rarely damaged - aromatic"
+    deer_resistance_note: "Rarely damaged - aromatic",
+    native_status: "Native",
+    native_region: "Eastern North America"
   },
 
   "witch hazel": {
@@ -957,7 +1069,6 @@ export const plantDatabase = {
     name: "Witch Hazel",
     scientific_name: "Hamamelis virginiana",
     family: "Hamamelidaceae",
-    image: "",
     description: "Native large shrub with unique ribbon-like yellow flowers in late fall. Excellent fall color.",
     type: "Shrub",
     cycle: "Perennial",
@@ -969,7 +1080,9 @@ export const plantDatabase = {
     attracts: "Bees",
     maintenance: "Low",
     deer_resistance: "B",
-    deer_resistance_note: "Seldom severely damaged"
+    deer_resistance_note: "Seldom severely damaged",
+    native_status: "Native",
+    native_region: "Eastern North America"
   },
 
   "carex": {
@@ -977,7 +1090,6 @@ export const plantDatabase = {
     name: "Sedge",
     scientific_name: "Carex spp.",
     family: "Cyperaceae",
-    image: "",
     description: "Grass-like perennial excellent for shady areas. Many varieties with different colors and textures.",
     type: "Perennial",
     cycle: "Perennial",
@@ -989,7 +1101,30 @@ export const plantDatabase = {
     attracts: "Birds",
     maintenance: "Low",
     deer_resistance: "A",
-    deer_resistance_note: "Rarely damaged"
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Varies",
+    native_region: "Many species native to North America"
+  },
+
+  "hameln grass": {
+    id: "local_hameln_grass",
+    name: "Hameln Grass",
+    scientific_name: "Pennisetum alopecuroides 'Hameln'",
+    family: "Poaceae",
+    description: "Compact fountain grass with narrow green foliage and bottlebrush-like flower plumes in late summer. Excellent for borders and mass plantings.",
+    type: "Perennial",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Full sun, Part shade",
+    care_level: "Low",
+    growth_rate: "Medium",
+    flowering_season: "Summer, Fall",
+    attracts: "Birds",
+    maintenance: "Low",
+    deer_resistance: "A",
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Introduced",
+    native_region: "Species native to Asia; 'Hameln' is a cultivar"
   },
 
   "vinca": {
@@ -997,7 +1132,6 @@ export const plantDatabase = {
     name: "Vinca",
     scientific_name: "Vinca minor",
     family: "Apocynaceae",
-    image: "",
     description: "Evergreen groundcover with blue or white flowers. Excellent for slopes and under trees.",
     type: "Perennial",
     cycle: "Perennial",
@@ -1009,7 +1143,9 @@ export const plantDatabase = {
     attracts: "Bees",
     maintenance: "Low",
     deer_resistance: "A",
-    deer_resistance_note: "Rarely damaged - toxic"
+    deer_resistance_note: "Rarely damaged - toxic",
+    native_status: "Introduced",
+    native_region: "Native to Europe; can be invasive"
   },
 
   "beech": {
@@ -1017,7 +1153,6 @@ export const plantDatabase = {
     name: "Beech",
     scientific_name: "Fagus spp.",
     family: "Fagaceae",
-    image: "",
     description: "Majestic deciduous tree with smooth gray bark and golden fall color. Long-lived specimen tree.",
     type: "Tree",
     cycle: "Perennial",
@@ -1029,7 +1164,9 @@ export const plantDatabase = {
     attracts: "Birds, Squirrels",
     maintenance: "Low",
     deer_resistance: "C",
-    deer_resistance_note: "Occasionally severely damaged"
+    deer_resistance_note: "Occasionally severely damaged",
+    native_status: "Varies",
+    native_region: "American beech (F. grandifolia) native to eastern North America; European beech (F. sylvatica) introduced"
   },
 
   "cherry": {
@@ -1037,7 +1174,6 @@ export const plantDatabase = {
     name: "Flowering Cherry",
     scientific_name: "Prunus spp.",
     family: "Rosaceae",
-    image: "",
     description: "Ornamental tree with spectacular spring flower display. Pink or white blossoms cover branches.",
     type: "Tree",
     cycle: "Perennial",
@@ -1049,7 +1185,9 @@ export const plantDatabase = {
     attracts: "Bees, Birds",
     maintenance: "Medium",
     deer_resistance: "C",
-    deer_resistance_note: "Occasionally severely damaged"
+    deer_resistance_note: "Occasionally severely damaged",
+    native_status: "Varies",
+    native_region: "Some species native to North America, many ornamental varieties from Japan"
   },
 
   "pear": {
@@ -1057,7 +1195,6 @@ export const plantDatabase = {
     name: "Ornamental Pear",
     scientific_name: "Pyrus calleryana",
     family: "Rosaceae",
-    image: "",
     description: "Flowering tree with white spring blooms and excellent fall color. Fast-growing.",
     type: "Tree",
     cycle: "Perennial",
@@ -1069,7 +1206,9 @@ export const plantDatabase = {
     attracts: "Bees, Birds",
     maintenance: "Low",
     deer_resistance: "C",
-    deer_resistance_note: "Occasionally severely damaged"
+    deer_resistance_note: "Occasionally severely damaged",
+    native_status: "Introduced",
+    native_region: "Native to China; 'Bradford' pear considered invasive"
   },
 
   "euonymus": {
@@ -1077,7 +1216,6 @@ export const plantDatabase = {
     name: "Euonymus",
     scientific_name: "Euonymus spp.",
     family: "Celastraceae",
-    image: "",
     description: "Versatile evergreen shrub available in many forms. Often has variegated foliage.",
     type: "Shrub",
     cycle: "Perennial",
@@ -1089,67 +1227,9 @@ export const plantDatabase = {
     attracts: "Birds",
     maintenance: "Low",
     deer_resistance: "B",
-    deer_resistance_note: "Seldom severely damaged"
-  },
-
-  "schip laurel": {
-    id: "local_schip_laurel",
-    name: "Schip Laurel",
-    scientific_name: "Prunus laurocerasus 'Schipkaensis'",
-    family: "Rosaceae",
-    image: "",
-    description: "Evergreen shrub with glossy dark green leaves. Excellent for hedges and privacy screens. Cold hardy variety of Cherry Laurel.",
-    type: "Shrub",
-    cycle: "Perennial",
-    watering: "Average",
-    sunlight: "Full sun, Part shade",
-    care_level: "Low",
-    growth_rate: "Fast",
-    flowering_season: "Spring",
-    attracts: "Bees, Birds",
-    maintenance: "Low",
-    deer_resistance: "B",
-    deer_resistance_note: "Seldom severely damaged"
-  },
-
-  "skip laurel": {
-    id: "local_skip_laurel",
-    name: "Skip Laurel",
-    scientific_name: "Prunus laurocerasus 'Schipkaensis'",
-    family: "Rosaceae",
-    image: "",
-    description: "Evergreen shrub with glossy dark green leaves. Excellent for hedges and privacy screens. Cold hardy variety of Cherry Laurel.",
-    type: "Shrub",
-    cycle: "Perennial",
-    watering: "Average",
-    sunlight: "Full sun, Part shade",
-    care_level: "Low",
-    growth_rate: "Fast",
-    flowering_season: "Spring",
-    attracts: "Bees, Birds",
-    maintenance: "Low",
-    deer_resistance: "B",
-    deer_resistance_note: "Seldom severely damaged"
-  },
-
-  "otto luyken": {
-    id: "local_otto_luyken",
-    name: "Otto Luyken Laurel",
-    scientific_name: "Prunus laurocerasus 'Otto Luyken'",
-    family: "Rosaceae",
-    image: "",
-    description: "Compact evergreen shrub with narrow dark green leaves and white flower spikes. Excellent low-growing hedge plant.",
-    type: "Shrub",
-    cycle: "Perennial",
-    watering: "Average",
-    sunlight: "Full sun, Part shade, Full shade",
-    care_level: "Low",
-    growth_rate: "Slow",
-    flowering_season: "Spring",
-    attracts: "Bees, Butterflies",
-    maintenance: "Low",
-    deer_resistance: "B",
-    deer_resistance_note: "Seldom severely damaged"
+    deer_resistance_note: "Seldom severely damaged",
+    native_status: "Varies",
+    native_region: "Some species native to North America, many from Asia"
   },
 
   "gold mop": {
@@ -1157,8 +1237,7 @@ export const plantDatabase = {
     name: "Gold Mop Cypress",
     scientific_name: "Chamaecyparis pisifera 'Gold Mop'",
     family: "Cupressaceae",
-    image: "",
-    description: "Dwarf evergreen with bright golden thread-like foliage. Compact mounding form perfect for accents.",
+    description: "Compact, mounding false cypress with bright golden-yellow thread-like foliage. Excellent for rock gardens and containers.",
     type: "Shrub",
     cycle: "Perennial",
     watering: "Average",
@@ -1169,16 +1248,1070 @@ export const plantDatabase = {
     attracts: "Birds",
     maintenance: "Low",
     deer_resistance: "A",
-    deer_resistance_note: "Rarely damaged"
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Introduced",
+    native_region: "Cultivar of species native to Japan"
   },
 
-  "red bud": {
-    id: "local_red_bud",
+  "st. john's wort": {
+    id: "local_st_johns_wort",
+    name: "St. John's Wort",
+    scientific_name: "Hypericum spp.",
+    family: "Hypericaceae",
+    description: "Low-growing shrub with bright yellow flowers in summer. Tolerates poor soil and deer browsing.",
+    type: "Shrub",
+    cycle: "Perennial",
+    watering: "Minimum",
+    sunlight: "Full sun, Part shade",
+    care_level: "Low",
+    growth_rate: "Medium",
+    flowering_season: "Summer",
+    attracts: "Bees, Butterflies",
+    maintenance: "Low",
+    deer_resistance: "B",
+    deer_resistance_note: "Seldom severely damaged",
+    native_status: "Varies",
+    native_region: "Some species native to North America, H. perforatum introduced from Europe"
+  },
+
+  "sageleaf willow": {
+    id: "local_sageleaf_willow",
+    name: "Sageleaf Willow",
+    scientific_name: "Salix candida",
+    family: "Salicaceae",
+    description: "Native willow with silvery-gray foliage. Tolerates wet soils and provides wildlife habitat.",
+    type: "Shrub",
+    cycle: "Perennial",
+    watering: "Frequent",
+    sunlight: "Full sun",
+    care_level: "Low",
+    growth_rate: "Fast",
+    flowering_season: "Spring",
+    attracts: "Birds, Butterflies",
+    maintenance: "Low",
+    deer_resistance: "C",
+    deer_resistance_note: "Occasionally severely damaged",
+    native_status: "Native",
+    native_region: "Northern North America"
+  },
+
+  "bush honeysuckle": {
+    id: "local_bush_honeysuckle",
+    name: "Bush Honeysuckle",
+    scientific_name: "Diervilla lonicera",
+    family: "Caprifoliaceae",
+    description: "Native deciduous shrub with small yellow flowers. Very tough and adaptable to various conditions.",
+    type: "Shrub",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Full sun, Part shade",
+    care_level: "Low",
+    growth_rate: "Medium",
+    flowering_season: "Summer",
+    attracts: "Hummingbirds, Butterflies",
+    maintenance: "Low",
+    deer_resistance: "B",
+    deer_resistance_note: "Seldom severely damaged",
+    native_status: "Native",
+    native_region: "Eastern North America"
+  },
+
+  "leatherleaf mahonia": {
+    id: "local_leatherleaf_mahonia",
+    name: "Leatherleaf Mahonia",
+    scientific_name: "Mahonia bealei",
+    family: "Berberidaceae",
+    description: "Evergreen shrub with compound leaves and fragrant yellow flowers in late winter. Blue berries attract birds.",
+    type: "Shrub",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Part shade, Full shade",
+    care_level: "Low",
+    growth_rate: "Slow",
+    flowering_season: "Winter, Spring",
+    attracts: "Birds, Bees",
+    maintenance: "Low",
+    deer_resistance: "A",
+    deer_resistance_note: "Rarely damaged - spiny leaves",
+    native_status: "Introduced",
+    native_region: "Native to China"
+  },
+
+  "vitex agnis castus": {
+    id: "local_vitex",
+    name: "Vitex",
+    scientific_name: "Vitex agnus-castus",
+    family: "Lamiaceae",
+    description: "Large deciduous shrub with fragrant purple flower spikes in summer. Also called Chaste Tree. Very heat and drought tolerant.",
+    type: "Shrub",
+    cycle: "Perennial",
+    watering: "Minimum",
+    sunlight: "Full sun",
+    care_level: "Low",
+    growth_rate: "Fast",
+    flowering_season: "Summer, Fall",
+    attracts: "Butterflies, Bees, Hummingbirds",
+    maintenance: "Low",
+    deer_resistance: "A",
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Introduced",
+    native_region: "Native to Mediterranean region"
+  },
+
+  "nishiki willow": {
+    id: "local_nishiki_willow",
+    name: "Nishiki Willow",
+    scientific_name: "Salix integra 'Hakuro Nishiki'",
+    family: "Salicaceae",
+    description: "Variegated willow with pink, white, and green foliage. Fast-growing and eye-catching.",
+    type: "Shrub",
+    cycle: "Perennial",
+    watering: "Frequent",
+    sunlight: "Full sun, Part shade",
+    care_level: "Low",
+    growth_rate: "Fast",
+    flowering_season: "Spring",
+    attracts: "Butterflies",
+    maintenance: "Low",
+    deer_resistance: "C",
+    deer_resistance_note: "Occasionally severely damaged",
+    native_status: "Introduced",
+    native_region: "Cultivar of species native to Asia"
+  },
+
+  "diervilla": {
+    id: "local_diervilla",
+    name: "Diervilla",
+    scientific_name: "Diervilla sessilifolia",
+    family: "Caprifoliaceae",
+    description: "Native deciduous shrub with yellow tubular flowers. Extremely tough and low maintenance.",
+    type: "Shrub",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Full sun, Part shade",
+    care_level: "Low",
+    growth_rate: "Medium",
+    flowering_season: "Summer",
+    attracts: "Hummingbirds, Butterflies",
+    maintenance: "Low",
+    deer_resistance: "B",
+    deer_resistance_note: "Seldom severely damaged",
+    native_status: "Native",
+    native_region: "Eastern North America"
+  },
+
+  "american witch-hazel": {
+    id: "local_witch_hazel",
+    name: "American Witch Hazel",
+    scientific_name: "Hamamelis virginiana",
+    family: "Hamamelidaceae",
+    description: "Native large shrub with fragrant yellow fall flowers. Excellent wildlife value and fall color.",
+    type: "Shrub",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Part shade, Full sun",
+    care_level: "Low",
+    growth_rate: "Slow",
+    flowering_season: "Fall",
+    attracts: "Bees, Birds",
+    maintenance: "Low",
+    deer_resistance: "B",
+    deer_resistance_note: "Seldom severely damaged",
+    native_status: "Native",
+    native_region: "Eastern North America"
+  },
+
+  "alberta spruce": {
+    id: "local_alberta_spruce",
+    name: "Alberta Spruce",
+    scientific_name: "Picea glauca 'Conica'",
+    family: "Pinaceae",
+    description: "Dwarf conical evergreen with dense, soft needles. Perfect for small spaces and containers.",
+    type: "Tree",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Full sun",
+    care_level: "Low",
+    growth_rate: "Slow",
+    flowering_season: "None",
+    attracts: "Birds",
+    maintenance: "Low",
+    deer_resistance: "A",
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Native",
+    native_region: "Cultivar of white spruce native to northern North America"
+  },
+
+  "blue point juniper": {
+    id: "local_blue_point_juniper",
+    name: "Blue Point Juniper",
+    scientific_name: "Juniperus chinensis 'Blue Point'",
+    family: "Cupressaceae",
+    description: "Upright pyramidal evergreen with dense blue-gray foliage. Excellent for screens and formal landscapes.",
+    type: "Shrub",
+    cycle: "Perennial",
+    watering: "Minimum",
+    sunlight: "Full sun",
+    care_level: "Low",
+    growth_rate: "Slow",
+    flowering_season: "None",
+    attracts: "Birds",
+    maintenance: "Low",
+    deer_resistance: "A",
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Introduced",
+    native_region: "Cultivar of species native to China"
+  },
+
+  "columnar juniper": {
+    id: "local_columnar_juniper",
+    name: "Columnar Juniper",
+    scientific_name: "Juniperus scopulorum",
+    family: "Cupressaceae",
+    description: "Narrow, upright evergreen perfect for tight spaces. Silver-blue foliage year-round.",
+    type: "Tree",
+    cycle: "Perennial",
+    watering: "Minimum",
+    sunlight: "Full sun",
+    care_level: "Low",
+    growth_rate: "Slow",
+    flowering_season: "None",
+    attracts: "Birds",
+    maintenance: "Low",
+    deer_resistance: "A",
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Native",
+    native_region: "Rocky Mountains"
+  },
+
+  "spartan juniper": {
+    id: "local_spartan_juniper",
+    name: "Spartan Juniper",
+    scientific_name: "Juniperus chinensis 'Spartan'",
+    family: "Cupressaceae",
+    description: "Dense columnar evergreen with rich green foliage. Excellent for formal hedges and screens.",
+    type: "Tree",
+    cycle: "Perennial",
+    watering: "Minimum",
+    sunlight: "Full sun",
+    care_level: "Low",
+    growth_rate: "Medium",
+    flowering_season: "None",
+    attracts: "Birds",
+    maintenance: "Low",
+    deer_resistance: "A",
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Introduced",
+    native_region: "Cultivar of species native to China"
+  },
+
+  "container green giants": {
+    id: "local_green_giants",
+    name: "Green Giant Arborvitae",
+    scientific_name: "Thuja standishii x plicata",
+    family: "Cupressaceae",
+    description: "Fast-growing evergreen with pyramidal shape. Excellent for privacy screens and windbreaks. Container-grown for easy transplanting.",
+    type: "Tree",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Full sun, Part shade",
+    care_level: "Low",
+    growth_rate: "Fast",
+    flowering_season: "None",
+    attracts: "Birds",
+    maintenance: "Low",
+    deer_resistance: "A",
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Hybrid",
+    native_region: "Hybrid of Asian and North American species"
+  },
+
+  "dwarf japanese white pine": {
+    id: "local_dwarf_japanese_white_pine",
+    name: "Dwarf Japanese White Pine",
+    scientific_name: "Pinus parviflora",
+    family: "Pinaceae",
+    description: "Compact pine with soft blue-green needles. Excellent for rock gardens and Asian-themed landscapes.",
+    type: "Tree",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Full sun",
+    care_level: "Low",
+    growth_rate: "Slow",
+    flowering_season: "None",
+    attracts: "Birds",
+    maintenance: "Low",
+    deer_resistance: "A",
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Introduced",
+    native_region: "Native to Japan"
+  },
+
+  "oriental spruce": {
+    id: "local_oriental_spruce",
+    name: "Oriental Spruce",
+    scientific_name: "Picea orientalis",
+    family: "Pinaceae",
+    description: "Elegant evergreen with short, glossy dark green needles. Graceful pyramidal form.",
+    type: "Tree",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Full sun",
+    care_level: "Low",
+    growth_rate: "Slow",
+    flowering_season: "None",
+    attracts: "Birds",
+    maintenance: "Low",
+    deer_resistance: "A",
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Introduced",
+    native_region: "Native to Caucasus Mountains and Turkey"
+  },
+
+  "golden spruce": {
+    id: "local_golden_spruce",
+    name: "Golden Spruce",
+    scientific_name: "Picea orientalis 'Aurea'",
+    family: "Pinaceae",
+    description: "Ornamental spruce with golden-yellow new growth. Striking color contrast in the landscape.",
+    type: "Tree",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Full sun",
+    care_level: "Low",
+    growth_rate: "Slow",
+    flowering_season: "None",
+    attracts: "Birds",
+    maintenance: "Low",
+    deer_resistance: "A",
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Introduced",
+    native_region: "Cultivar of species native to Caucasus Mountains"
+  },
+
+  "nest spruce": {
+    id: "local_nest_spruce",
+    name: "Nest Spruce",
+    scientific_name: "Picea abies 'Nidiformis'",
+    family: "Pinaceae",
+    description: "Dwarf Norway spruce with dense, nest-like growth habit. Perfect for foundation plantings.",
+    type: "Shrub",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Full sun, Part shade",
+    care_level: "Low",
+    growth_rate: "Slow",
+    flowering_season: "None",
+    attracts: "Birds",
+    maintenance: "Low",
+    deer_resistance: "A",
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Introduced",
+    native_region: "Cultivar of species native to Europe"
+  },
+
+  "whipcord western red cedar": {
+    id: "local_whipcord_cedar",
+    name: "Whipcord Western Red Cedar",
+    scientific_name: "Thuja plicata 'Whipcord'",
+    family: "Cupressaceae",
+    description: "Unique evergreen with drooping, cord-like foliage. Slow-growing conversation piece.",
+    type: "Shrub",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Full sun, Part shade",
+    care_level: "Low",
+    growth_rate: "Slow",
+    flowering_season: "None",
+    attracts: "Birds",
+    maintenance: "Low",
+    deer_resistance: "A",
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Native",
+    native_region: "Cultivar of western red cedar native to Pacific Northwest"
+  },
+
+  "globe thuja rhein gold": {
+    id: "local_globe_thuja",
+    name: "Globe Thuja Rhein Gold",
+    scientific_name: "Thuja occidentalis 'Rheingold'",
+    family: "Cupressaceae",
+    description: "Compact globe-shaped evergreen with golden foliage that turns copper in winter.",
+    type: "Shrub",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Full sun",
+    care_level: "Low",
+    growth_rate: "Slow",
+    flowering_season: "None",
+    attracts: "Birds",
+    maintenance: "Low",
+    deer_resistance: "A",
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Native",
+    native_region: "Cultivar of eastern white cedar native to eastern North America"
+  },
+
+  "deodar cedar": {
+    id: "local_deodar_cedar",
+    name: "Deodar Cedar",
+    scientific_name: "Cedrus deodara",
+    family: "Pinaceae",
+    description: "Majestic evergreen with graceful, drooping branches and blue-green needles. Excellent specimen tree.",
+    type: "Tree",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Full sun",
+    care_level: "Low",
+    growth_rate: "Medium",
+    flowering_season: "None",
+    attracts: "Birds",
+    maintenance: "Low",
+    deer_resistance: "A",
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Introduced",
+    native_region: "Native to Himalayan Mountains"
+  },
+
+  "small plum yew": {
+    id: "local_small_plum_yew",
+    name: "Plum Yew",
+    scientific_name: "Cephalotaxus harringtonia",
+    family: "Taxaceae",
+    description: "Evergreen shrub with soft, dark green needles. Excellent for shade and deer-resistant landscapes.",
+    type: "Shrub",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Part shade, Full shade",
+    care_level: "Low",
+    growth_rate: "Slow",
+    flowering_season: "None",
+    attracts: "Birds",
+    maintenance: "Low",
+    deer_resistance: "A",
+    deer_resistance_note: "Rarely damaged - toxic",
+    native_status: "Introduced",
+    native_region: "Native to Japan and Korea"
+  },
+
+  "cryptomeria globe": {
+    id: "local_cryptomeria_globe",
+    name: "Cryptomeria Globe",
+    scientific_name: "Cryptomeria japonica 'Globosa Nana'",
+    family: "Cupressaceae",
+    description: "Compact, globe-shaped Japanese cedar. Dense foliage turns bronze in winter.",
+    type: "Shrub",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Full sun, Part shade",
+    care_level: "Low",
+    growth_rate: "Slow",
+    flowering_season: "None",
+    attracts: "Birds",
+    maintenance: "Low",
+    deer_resistance: "A",
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Introduced",
+    native_region: "Cultivar of species native to Japan"
+  },
+
+  "dwarf mugo pine": {
+    id: "local_dwarf_mugo_pine",
+    name: "Dwarf Mugo Pine",
+    scientific_name: "Pinus mugo var. pumilio",
+    family: "Pinaceae",
+    description: "Compact, mounding pine perfect for foundations and rock gardens. Very hardy and low maintenance.",
+    type: "Shrub",
+    cycle: "Perennial",
+    watering: "Minimum",
+    sunlight: "Full sun",
+    care_level: "Low",
+    growth_rate: "Slow",
+    flowering_season: "None",
+    attracts: "Birds",
+    maintenance: "Low",
+    deer_resistance: "A",
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Introduced",
+    native_region: "Native to mountains of central and southern Europe"
+  },
+
+  "dwarf norway spruce": {
+    id: "local_dwarf_norway_spruce",
+    name: "Dwarf Norway Spruce",
+    scientific_name: "Picea abies 'Pumila'",
+    family: "Pinaceae",
+    description: "Compact evergreen with dense branching. Excellent for small gardens and containers.",
+    type: "Shrub",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Full sun",
+    care_level: "Low",
+    growth_rate: "Slow",
+    flowering_season: "None",
+    attracts: "Birds",
+    maintenance: "Low",
+    deer_resistance: "A",
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Introduced",
+    native_region: "Cultivar of species native to Europe"
+  },
+
+// END OF PART 2 - Continue with Part 3
+// PART 3 OF 3 - Final part - Continue from Part 2
+
+  "franky boy oriental arborvitae": {
+    id: "local_franky_boy_arborvitae",
+    name: "Franky Boy Oriental Arborvitae",
+    scientific_name: "Platycladus orientalis 'Franky Boy'",
+    family: "Cupressaceae",
+    description: "Narrow, columnar evergreen with bright green foliage. Perfect for tight spaces.",
+    type: "Tree",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Full sun",
+    care_level: "Low",
+    growth_rate: "Slow",
+    flowering_season: "None",
+    attracts: "Birds",
+    maintenance: "Low",
+    deer_resistance: "A",
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Introduced",
+    native_region: "Cultivar of species native to Asia"
+  },
+
+  "soft touch holly": {
+    id: "local_soft_touch_holly",
+    name: "Soft Touch Holly",
+    scientific_name: "Ilex crenata 'Soft Touch'",
+    family: "Aquifoliaceae",
+    description: "Compact evergreen holly with soft, non-spiny foliage. Excellent boxwood alternative.",
+    type: "Shrub",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Full sun, Part shade",
+    care_level: "Low",
+    growth_rate: "Slow",
+    flowering_season: "Spring",
+    attracts: "Birds, Bees",
+    maintenance: "Low",
+    deer_resistance: "A",
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Introduced",
+    native_region: "Cultivar of Japanese holly"
+  },
+
+  "ilex crenshaw helleri": {
+    id: "local_ilex_helleri",
+    name: "Helleri Holly",
+    scientific_name: "Ilex crenata 'Helleri'",
+    family: "Aquifoliaceae",
+    description: "Dwarf Japanese holly with tiny leaves. Excellent for low hedges and foundations.",
+    type: "Shrub",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Full sun, Part shade",
+    care_level: "Low",
+    growth_rate: "Slow",
+    flowering_season: "Spring",
+    attracts: "Birds, Bees",
+    maintenance: "Low",
+    deer_resistance: "A",
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Introduced",
+    native_region: "Cultivar of species native to Japan"
+  },
+
+  "shamrock holly": {
+    id: "local_shamrock_holly",
+    name: "Shamrock Holly",
+    scientific_name: "Ilex glabra 'Shamrock'",
+    family: "Aquifoliaceae",
+    description: "Compact inkberry holly with glossy green foliage. Native and very hardy.",
+    type: "Shrub",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Full sun, Part shade",
+    care_level: "Low",
+    growth_rate: "Slow",
+    flowering_season: "Spring",
+    attracts: "Birds, Bees",
+    maintenance: "Low",
+    deer_resistance: "A",
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Native",
+    native_region: "Cultivar of inkberry holly native to eastern North America"
+  },
+
+  "sky pencil holly": {
+    id: "local_sky_pencil_holly",
+    name: "Sky Pencil Holly",
+    scientific_name: "Ilex crenata 'Sky Pencil'",
+    family: "Aquifoliaceae",
+    description: "Extremely narrow, columnar evergreen holly. Perfect for tight spaces and formal gardens.",
+    type: "Shrub",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Full sun, Part shade",
+    care_level: "Low",
+    growth_rate: "Slow",
+    flowering_season: "Spring",
+    attracts: "Birds, Bees",
+    maintenance: "Low",
+    deer_resistance: "A",
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Introduced",
+    native_region: "Cultivar of Japanese holly"
+  },
+
+  "globe blue spruce": {
+    id: "local_globe_blue_spruce",
+    name: "Globe Blue Spruce",
+    scientific_name: "Picea pungens 'Globosa'",
+    family: "Pinaceae",
+    description: "Compact, rounded form of Colorado blue spruce. Striking blue needles year-round.",
+    type: "Shrub",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Full sun",
+    care_level: "Low",
+    growth_rate: "Slow",
+    flowering_season: "None",
+    attracts: "Birds",
+    maintenance: "Low",
+    deer_resistance: "A",
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Native",
+    native_region: "Cultivar of Colorado blue spruce native to Rocky Mountains"
+  },
+
+  "globosa": {
+    id: "local_globe_blue_spruce",
+    name: "Globosa Blue Spruce",
+    scientific_name: "Picea pungens 'Globosa'",
+    family: "Pinaceae",
+    description: "Dwarf globe-shaped blue spruce. Excellent specimen or foundation plant.",
+    type: "Shrub",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Full sun",
+    care_level: "Low",
+    growth_rate: "Slow",
+    flowering_season: "None",
+    attracts: "Birds",
+    maintenance: "Low",
+    deer_resistance: "A",
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Native",
+    native_region: "Cultivar of Colorado blue spruce native to Rocky Mountains"
+  },
+
+  "steeds holly": {
+    id: "local_steeds_holly",
+    name: "Steeds Holly",
+    scientific_name: "Ilex x 'Steeds'",
+    family: "Aquifoliaceae",
+    description: "Compact hybrid holly with dark green foliage. Excellent for hedges.",
+    type: "Shrub",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Full sun, Part shade",
+    care_level: "Low",
+    growth_rate: "Slow",
+    flowering_season: "Spring",
+    attracts: "Birds, Bees",
+    maintenance: "Low",
+    deer_resistance: "A",
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Hybrid",
+    native_region: "Hybrid cultivar"
+  },
+
+  "weeping japanese maple": {
+    id: "local_weeping_japanese_maple",
+    name: "Weeping Japanese Maple",
+    scientific_name: "Acer palmatum var. dissectum",
+    family: "Sapindaceae",
+    description: "Graceful cascading form with delicate, lacy foliage. Stunning specimen tree.",
+    type: "Tree",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Part shade",
+    care_level: "Medium",
+    growth_rate: "Slow",
+    flowering_season: "Spring",
+    attracts: "Birds",
+    maintenance: "Low",
+    deer_resistance: "C",
+    deer_resistance_note: "Occasionally severely damaged",
+    native_status: "Introduced",
+    native_region: "Native to Japan, Korea, and China"
+  },
+
+  "twombly maple": {
+    id: "local_twombly_maple",
+    name: "Twombly Maple",
+    scientific_name: "Acer palmatum 'Twombly's Red Sentinel'",
+    family: "Sapindaceae",
+    description: "Upright Japanese maple with red foliage. Narrow form perfect for small spaces.",
+    type: "Tree",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Part shade, Full sun",
+    care_level: "Medium",
+    growth_rate: "Slow",
+    flowering_season: "Spring",
+    attracts: "Birds",
+    maintenance: "Low",
+    deer_resistance: "C",
+    deer_resistance_note: "Occasionally severely damaged",
+    native_status: "Introduced",
+    native_region: "Cultivar of species native to Asia"
+  },
+
+  "dwarf redbud": {
+    id: "local_dwarf_redbud",
+    name: "Dwarf Redbud",
+    scientific_name: "Cercis canadensis var. texensis",
+    family: "Fabaceae",
+    description: "Compact native tree with pink-purple spring flowers. Perfect for small gardens.",
+    type: "Tree",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Full sun, Part shade",
+    care_level: "Low",
+    growth_rate: "Slow",
+    flowering_season: "Spring",
+    attracts: "Bees, Butterflies",
+    maintenance: "Low",
+    deer_resistance: "C",
+    deer_resistance_note: "Occasionally severely damaged",
+    native_status: "Native",
+    native_region: "Texas and Oklahoma variety of native redbud"
+  },
+
+  "bloodgood maple": {
+    id: "local_bloodgood_maple",
+    name: "Bloodgood Japanese Maple",
+    scientific_name: "Acer palmatum 'Bloodgood'",
+    family: "Sapindaceae",
+    description: "Popular Japanese maple with deep red-purple foliage all season. Excellent specimen tree.",
+    type: "Tree",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Part shade, Full sun",
+    care_level: "Medium",
+    growth_rate: "Slow",
+    flowering_season: "Spring",
+    attracts: "Birds",
+    maintenance: "Low",
+    deer_resistance: "C",
+    deer_resistance_note: "Occasionally severely damaged",
+    native_status: "Introduced",
+    native_region: "Cultivar of species native to Asia"
+  },
+
+  "lace leaf maple": {
+    id: "local_weeping_japanese_maple",
+    name: "Lace Leaf Japanese Maple",
+    scientific_name: "Acer palmatum var. dissectum",
+    family: "Sapindaceae",
+    description: "Delicate, finely dissected foliage creates a lacy appearance. Cascading growth habit.",
+    type: "Tree",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Part shade",
+    care_level: "Medium",
+    growth_rate: "Slow",
+    flowering_season: "Spring",
+    attracts: "Birds",
+    maintenance: "Low",
+    deer_resistance: "C",
+    deer_resistance_note: "Occasionally severely damaged",
+    native_status: "Introduced",
+    native_region: "Native to Japan, Korea, and China"
+  },
+
+  "standing ovation blue stem": {
+    id: "local_standing_ovation",
+    name: "Standing Ovation Little Bluestem",
+    scientific_name: "Schizachyrium scoparium 'Standing Ovation'",
+    family: "Poaceae",
+    description: "Upright native grass with blue-green summer foliage turning burgundy-red in fall.",
+    type: "Perennial",
+    cycle: "Perennial",
+    watering: "Minimum",
+    sunlight: "Full sun",
+    care_level: "Low",
+    growth_rate: "Medium",
+    flowering_season: "Summer, Fall",
+    attracts: "Birds",
+    maintenance: "Low",
+    deer_resistance: "A",
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Native",
+    native_region: "Cultivar of little bluestem native to prairies of North America"
+  },
+
+  "mexican feather grass": {
+    id: "local_mexican_feather_grass",
+    name: "Mexican Feather Grass",
+    scientific_name: "Nassella tenuissima",
+    family: "Poaceae",
+    description: "Fine-textured ornamental grass with graceful, flowing movement. Soft green turning golden.",
+    type: "Perennial",
+    cycle: "Perennial",
+    watering: "Minimum",
+    sunlight: "Full sun",
+    care_level: "Low",
+    growth_rate: "Fast",
+    flowering_season: "Summer",
+    attracts: "Birds",
+    maintenance: "Low",
+    deer_resistance: "A",
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Introduced",
+    native_region: "Native to southwestern US, Mexico, and South America"
+  },
+
+  "karl forester grass": {
+    id: "local_karl_forester",
+    name: "Karl Foerster Grass",
+    scientific_name: "Calamagrostis x acutiflora 'Karl Foerster'",
+    family: "Poaceae",
+    description: "Upright feather reed grass with pink-wheat flower plumes. Excellent vertical accent.",
+    type: "Perennial",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Full sun, Part shade",
+    care_level: "Low",
+    growth_rate: "Fast",
+    flowering_season: "Summer",
+    attracts: "Birds",
+    maintenance: "Low",
+    deer_resistance: "A",
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Hybrid",
+    native_region: "Hybrid cultivar of European species"
+  },
+
+  "miscanthus morning light": {
+    id: "local_miscanthus_morning_light",
+    name: "Morning Light Miscanthus",
+    scientific_name: "Miscanthus sinensis 'Morning Light'",
+    family: "Poaceae",
+    description: "Graceful maiden grass with fine white-edged leaves. Pink-copper fall plumes.",
+    type: "Perennial",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Full sun",
+    care_level: "Low",
+    growth_rate: "Fast",
+    flowering_season: "Fall",
+    attracts: "Birds",
+    maintenance: "Low",
+    deer_resistance: "A",
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Introduced",
+    native_region: "Cultivar of species native to Asia"
+  },
+
+  "panicum virgatum": {
+    id: "local_panicum",
+    name: "Switchgrass",
+    scientific_name: "Panicum virgatum",
+    family: "Poaceae",
+    description: "Native prairie grass with airy flower panicles. Excellent for naturalizing and wildlife.",
+    type: "Perennial",
+    cycle: "Perennial",
+    watering: "Minimum",
+    sunlight: "Full sun",
+    care_level: "Low",
+    growth_rate: "Fast",
+    flowering_season: "Summer, Fall",
+    attracts: "Birds",
+    maintenance: "Low",
+    deer_resistance: "A",
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Native",
+    native_region: "North American prairies"
+  },
+
+  "switchgrass": {
+    id: "local_panicum",
+    name: "Switchgrass",
+    scientific_name: "Panicum virgatum",
+    family: "Poaceae",
+    description: "Native prairie grass with airy flower panicles. Excellent for naturalizing and wildlife.",
+    type: "Perennial",
+    cycle: "Perennial",
+    watering: "Minimum",
+    sunlight: "Full sun",
+    care_level: "Low",
+    growth_rate: "Fast",
+    flowering_season: "Summer, Fall",
+    attracts: "Birds",
+    maintenance: "Low",
+    deer_resistance: "A",
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Native",
+    native_region: "North American prairies"
+  },
+
+  "maiden grass": {
+    id: "local_maiden_grass",
+    name: "Maiden Grass",
+    scientific_name: "Miscanthus sinensis",
+    family: "Poaceae",
+    description: "Tall ornamental grass with silvery plumes in fall. Excellent for screening and movement.",
+    type: "Perennial",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Full sun",
+    care_level: "Low",
+    growth_rate: "Fast",
+    flowering_season: "Fall",
+    attracts: "Birds",
+    maintenance: "Low",
+    deer_resistance: "A",
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Introduced",
+    native_region: "Native to Asia; can be invasive in some areas"
+  },
+
+  "daylilly": {
+    id: "local_daylily",
+    name: "Daylily",
+    scientific_name: "Hemerocallis spp.",
+    family: "Asphodelaceae",
+    description: "Hardy perennial with trumpet-shaped flowers. Each flower lasts one day but plants produce many blooms.",
+    type: "Perennial",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Full sun, Part shade",
+    care_level: "Low",
+    growth_rate: "Fast",
+    flowering_season: "Summer",
+    attracts: "Butterflies, Hummingbirds",
+    maintenance: "Low",
+    deer_resistance: "C",
+    deer_resistance_note: "Occasionally severely damaged",
+    native_status: "Introduced",
+    native_region: "Native to Asia; naturalized in North America"
+  },
+
+  "vinca bowles": {
+    id: "local_vinca_bowles",
+    name: "Vinca Bowles",
+    scientific_name: "Vinca minor 'Bowles'",
+    family: "Apocynaceae",
+    description: "Vigorous vinca with larger blue flowers. Excellent evergreen groundcover for shade.",
+    type: "Perennial",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Part shade, Full shade",
+    care_level: "Low",
+    growth_rate: "Fast",
+    flowering_season: "Spring",
+    attracts: "Bees",
+    maintenance: "Low",
+    deer_resistance: "A",
+    deer_resistance_note: "Rarely damaged - toxic",
+    native_status: "Introduced",
+    native_region: "Cultivar of species native to Europe; can be invasive"
+  },
+
+  "japanese lace leaf maples": {
+    id: "local_weeping_japanese_maple",
+    name: "Japanese Lace Leaf Maple",
+    scientific_name: "Acer palmatum var. dissectum",
+    family: "Sapindaceae",
+    description: "Elegant maple with finely divided foliage creating a lacy effect. Cascading form.",
+    type: "Tree",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Part shade",
+    care_level: "Medium",
+    growth_rate: "Slow",
+    flowering_season: "Spring",
+    attracts: "Birds",
+    maintenance: "Low",
+    deer_resistance: "C",
+    deer_resistance_note: "Occasionally severely damaged",
+    native_status: "Introduced",
+    native_region: "Native to Japan, Korea, and China"
+  },
+
+  "japanese maples": {
+    id: "local_japanese_maple",
+    name: "Japanese Maple",
+    scientific_name: "Acer palmatum",
+    family: "Sapindaceae",
+    description: "Elegant small tree with delicate foliage. Many cultivars available with various colors and forms.",
+    type: "Tree",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Part shade, Full sun",
+    care_level: "Medium",
+    growth_rate: "Slow",
+    flowering_season: "Spring",
+    attracts: "Birds",
+    maintenance: "Low",
+    deer_resistance: "C",
+    deer_resistance_note: "Occasionally severely damaged",
+    native_status: "Introduced",
+    native_region: "Native to Japan, Korea, and China"
+  },
+
+  "dogwoods": {
+    id: "local_dogwood",
+    name: "Dogwood",
+    scientific_name: "Cornus florida",
+    family: "Cornaceae",
+    description: "Native flowering tree with beautiful spring blooms and attractive fall color.",
+    type: "Tree",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Part shade, Full sun",
+    care_level: "Medium",
+    growth_rate: "Slow",
+    flowering_season: "Spring",
+    attracts: "Birds, Butterflies",
+    maintenance: "Medium",
+    deer_resistance: "C",
+    deer_resistance_note: "Occasionally severely damaged",
+    native_status: "Native",
+    native_region: "Eastern United States"
+  },
+
+  "magnolias": {
+    id: "local_magnolia",
+    name: "Magnolia",
+    scientific_name: "Magnolia spp.",
+    family: "Magnoliaceae",
+    description: "Flowering tree with large, showy blooms in spring. Various sizes available.",
+    type: "Tree",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Full sun, Part shade",
+    care_level: "Medium",
+    growth_rate: "Medium",
+    flowering_season: "Spring",
+    attracts: "Bees, Birds",
+    maintenance: "Low",
+    deer_resistance: "B",
+    deer_resistance_note: "Seldom severely damaged",
+    native_status: "Varies",
+    native_region: "Some species native to southeastern US, many from Asia"
+  },
+
+  "red buds": {
+    id: "local_redbud",
     name: "Redbud",
     scientific_name: "Cercis canadensis",
     family: "Fabaceae",
-    image: "",
-    description: "Native small tree with pink-purple flowers covering bare branches in early spring. Heart-shaped leaves.",
+    description: "Native small tree with pink-purple spring flowers covering bare branches.",
     type: "Tree",
     cycle: "Perennial",
     watering: "Average",
@@ -1189,458 +2322,382 @@ export const plantDatabase = {
     attracts: "Bees, Butterflies",
     maintenance: "Low",
     deer_resistance: "C",
-    deer_resistance_note: "Occasionally severely damaged"
+    deer_resistance_note: "Occasionally severely damaged",
+    native_status: "Native",
+    native_region: "Eastern and central United States"
   },
 
-  "nishiki willow": {
-    id: "local_nishiki_willow",
-    name: "Nishiki Dappled Willow",
-    scientific_name: "Salix integra 'Hakuro-nishiki'",
-    family: "Salicaceae",
-    image: "",
-    description: "Deciduous shrub with striking pink, white, and green variegated foliage. New growth is especially colorful.",
+  "cherries": {
+    id: "local_cherry",
+    name: "Flowering Cherry",
+    scientific_name: "Prunus spp.",
+    family: "Rosaceae",
+    description: "Ornamental tree with spectacular spring flower display.",
+    type: "Tree",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Full sun",
+    care_level: "Medium",
+    growth_rate: "Medium",
+    flowering_season: "Spring",
+    attracts: "Bees, Birds",
+    maintenance: "Medium",
+    deer_resistance: "C",
+    deer_resistance_note: "Occasionally severely damaged",
+    native_status: "Varies",
+    native_region: "Some species native to North America, many ornamental varieties from Japan"
+  },
+
+  "pears": {
+    id: "local_pear",
+    name: "Ornamental Pear",
+    scientific_name: "Pyrus calleryana",
+    family: "Rosaceae",
+    description: "Flowering tree with white spring blooms and excellent fall color.",
+    type: "Tree",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Full sun",
+    care_level: "Low",
+    growth_rate: "Fast",
+    flowering_season: "Spring",
+    attracts: "Bees, Birds",
+    maintenance: "Low",
+    deer_resistance: "C",
+    deer_resistance_note: "Occasionally severely damaged",
+    native_status: "Introduced",
+    native_region: "Native to China; 'Bradford' pear considered invasive"
+  },
+
+  "schip laurels": {
+    id: "local_schip_laurels",
+    name: "Skip Laurel",
+    scientific_name: "Prunus laurocerasus 'Schipkaensis'",
+    family: "Rosaceae",
+    description: "Evergreen shrub with glossy leaves. Excellent for hedges and screens. Very hardy.",
+    type: "Shrub",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Full sun, Part shade",
+    care_level: "Low",
+    growth_rate: "Fast",
+    flowering_season: "Spring",
+    attracts: "Birds, Bees",
+    maintenance: "Low",
+    deer_resistance: "A",
+    deer_resistance_note: "Rarely damaged - toxic",
+    native_status: "Introduced",
+    native_region: "Cultivar of species native to southeastern Europe and Asia Minor"
+  },
+
+  "otto luyken": {
+    id: "local_otto_luyken",
+    name: "Otto Luyken Laurel",
+    scientific_name: "Prunus laurocerasus 'Otto Luyken'",
+    family: "Rosaceae",
+    description: "Compact cherry laurel with glossy evergreen leaves and white spring flowers.",
+    type: "Shrub",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Part shade, Full sun",
+    care_level: "Low",
+    growth_rate: "Medium",
+    flowering_season: "Spring",
+    attracts: "Birds, Bees",
+    maintenance: "Low",
+    deer_resistance: "A",
+    deer_resistance_note: "Rarely damaged - toxic",
+    native_status: "Introduced",
+    native_region: "Cultivar of species native to southeastern Europe and Asia Minor"
+  },
+
+  "viburnum b&b": {
+    id: "local_viburnum",
+    name: "Viburnum",
+    scientific_name: "Viburnum spp.",
+    family: "Adoxaceae",
+    description: "Versatile shrub with spring flowers and colorful berries. Balled and burlapped for larger specimens.",
+    type: "Shrub",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Full sun, Part shade",
+    care_level: "Low",
+    growth_rate: "Medium",
+    flowering_season: "Spring",
+    attracts: "Birds, Butterflies",
+    maintenance: "Low",
+    deer_resistance: "B",
+    deer_resistance_note: "Seldom severely damaged",
+    native_status: "Varies",
+    native_region: "Many species native to North America, some from Asia"
+  },
+
+  "shade maples": {
+    id: "local_maple",
+    name: "Shade Maple",
+    scientific_name: "Acer spp.",
+    family: "Sapindaceae",
+    description: "Large deciduous shade trees with brilliant fall color. Various species available.",
+    type: "Tree",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Full sun, Part shade",
+    care_level: "Low",
+    growth_rate: "Medium",
+    flowering_season: "Spring",
+    attracts: "Birds, Squirrels",
+    maintenance: "Low",
+    deer_resistance: "B",
+    deer_resistance_note: "Seldom severely damaged",
+    native_status: "Varies",
+    native_region: "Many species native to North America, some species from Asia"
+  },
+
+  "manhattan euonymus": {
+    id: "local_manhattan_euonymus",
+    name: "Manhattan Euonymus",
+    scientific_name: "Euonymus kiautschovicus 'Manhattan'",
+    family: "Celastraceae",
+    description: "Upright evergreen shrub with glossy foliage. Excellent for hedges and screens.",
+    type: "Shrub",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Full sun, Part shade",
+    care_level: "Low",
+    growth_rate: "Medium",
+    flowering_season: "Summer",
+    attracts: "Birds",
+    maintenance: "Low",
+    deer_resistance: "B",
+    deer_resistance_note: "Seldom severely damaged",
+    native_status: "Introduced",
+    native_region: "Cultivar of species native to Asia"
+  },
+
+  "annabelle hydrangea": {
+    id: "local_annabelle_hydrangea",
+    name: "Annabelle Hydrangea",
+    scientific_name: "Hydrangea arborescens 'Annabelle'",
+    family: "Hydrangeaceae",
+    description: "Native hydrangea with huge white flower clusters. Very hardy and easy to grow.",
     type: "Shrub",
     cycle: "Perennial",
     watering: "Frequent",
-    sunlight: "Full sun, Part shade",
+    sunlight: "Part shade, Full sun",
     care_level: "Low",
     growth_rate: "Fast",
+    flowering_season: "Summer",
+    attracts: "Butterflies",
+    maintenance: "Low",
+    deer_resistance: "B",
+    deer_resistance_note: "Seldom severely damaged",
+    native_status: "Native",
+    native_region: "Cultivar of smooth hydrangea native to eastern North America"
+  },
+
+  "oakleaf hydrangea": {
+    id: "local_oakleaf_hydrangea",
+    name: "Oakleaf Hydrangea",
+    scientific_name: "Hydrangea quercifolia",
+    family: "Hydrangeaceae",
+    description: "Native hydrangea with oak-shaped leaves, white flower cones, and exfoliating bark. Excellent fall color.",
+    type: "Shrub",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Part shade, Full sun",
+    care_level: "Low",
+    growth_rate: "Medium",
+    flowering_season: "Summer",
+    attracts: "Butterflies",
+    maintenance: "Low",
+    deer_resistance: "B",
+    deer_resistance_note: "Seldom severely damaged",
+    native_status: "Native",
+    native_region: "Southeastern United States"
+  },
+
+  "ground cover juniper": {
+    id: "local_juniper",
+    name: "Groundcover Juniper",
+    scientific_name: "Juniperus horizontalis",
+    family: "Cupressaceae",
+    description: "Low-growing evergreen shrub perfect for groundcover. Drought-tolerant and requires minimal maintenance.",
+    type: "Shrub",
+    cycle: "Perennial",
+    watering: "Minimum",
+    sunlight: "Full sun, Part shade",
+    care_level: "Low",
+    growth_rate: "Slow",
+    flowering_season: "None",
+    attracts: "Birds",
+    maintenance: "Low",
+    deer_resistance: "A",
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Native",
+    native_region: "Northern and central United States and Canada"
+  },
+
+  "asstd. specimens": {
+    id: "local_specimens",
+    name: "Assorted Specimen Plants",
+    scientific_name: "Various",
+    family: "Various",
+    description: "A collection of unique and special ornamental plants selected for their exceptional form, color, or interest.",
+    type: "Various",
+    cycle: "Perennial",
+    watering: "Varies",
+    sunlight: "Varies",
+    care_level: "Varies",
+    growth_rate: "Varies",
+    flowering_season: "Varies",
+    attracts: "Various",
+    maintenance: "Varies",
+    deer_resistance: "Varies",
+    deer_resistance_note: "Varies by species",
+    native_status: "Varies",
+    native_region: "Varies by species"
+  },
+
+  "flowering trees (container)": {
+    id: "local_flowering_trees",
+    name: "Flowering Trees",
+    scientific_name: "Various",
+    family: "Various",
+    description: "Assorted flowering trees grown in containers for easy transplanting. Includes cherries, crabapples, magnolias, and more.",
+    type: "Tree",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Full sun, Part shade",
+    care_level: "Medium",
+    growth_rate: "Varies",
     flowering_season: "Spring",
-    attracts: "Bees",
+    attracts: "Bees, Birds, Butterflies",
     maintenance: "Medium",
-    deer_resistance: "C",
-    deer_resistance_note: "Occasionally severely damaged"
+    deer_resistance: "Varies",
+    deer_resistance_note: "Varies by species",
+    native_status: "Varies",
+    native_region: "Varies by species"
   },
 
-  "alberta spruce": {
-    id: "local_alberta_spruce",
-    name: "Dwarf Alberta Spruce",
-    scientific_name: "Picea glauca 'Conica'",
-    family: "Pinaceae",
-    image: "",
-    description: "Compact evergreen conifer with perfect pyramidal form. Slow-growing with dense bright green needles.",
+  "flowering trees": {
+    id: "local_flowering_trees",
+    name: "Flowering Trees",
+    scientific_name: "Various",
+    family: "Various",
+    description: "Collection of ornamental trees valued for their spring flower displays. Includes cherries, crabapples, dogwoods, and magnolias.",
     type: "Tree",
     cycle: "Perennial",
     watering: "Average",
-    sunlight: "Full sun",
-    care_level: "Low",
-    growth_rate: "Slow",
-    flowering_season: "None",
-    attracts: "Birds",
-    maintenance: "Low",
-    deer_resistance: "A",
-    deer_resistance_note: "Rarely damaged"
-  },
-
-  "globosa": {
-    id: "local_globosa",
-    name: "Globe Blue Spruce",
-    scientific_name: "Picea pungens 'Globosa'",
-    family: "Pinaceae",
-    image: "",
-    description: "Dwarf blue spruce with rounded form. Silvery-blue needles create striking accent plant.",
-    type: "Shrub",
-    cycle: "Perennial",
-    watering: "Average",
-    sunlight: "Full sun",
-    care_level: "Low",
-    growth_rate: "Slow",
-    flowering_season: "None",
-    attracts: "Birds",
-    maintenance: "Low",
-    deer_resistance: "A",
-    deer_resistance_note: "Rarely damaged"
-  },
-
-  "standing ovation blue stem": {
-    id: "local_standing_ovation",
-    name: "Standing Ovation Little Bluestem",
-    scientific_name: "Schizachyrium scoparium 'Standing Ovation'",
-    family: "Poaceae",
-    image: "",
-    description: "Ornamental grass with upright blue-green foliage that turns burgundy in fall. Native prairie grass.",
-    type: "Perennial",
-    cycle: "Perennial",
-    watering: "Minimum",
-    sunlight: "Full sun",
-    care_level: "Low",
-    growth_rate: "Medium",
-    flowering_season: "Summer, Fall",
-    attracts: "Birds",
-    maintenance: "Low",
-    deer_resistance: "A",
-    deer_resistance_note: "Rarely damaged"
-  },
-
-  "mexican feather grass": {
-    id: "local_mexican_feather_grass",
-    name: "Mexican Feather Grass",
-    scientific_name: "Nassella tenuissima",
-    family: "Poaceae",
-    image: "",
-    description: "Soft, fine-textured ornamental grass with hair-like foliage that moves gracefully in the breeze.",
-    type: "Perennial",
-    cycle: "Perennial",
-    watering: "Minimum",
-    sunlight: "Full sun",
-    care_level: "Low",
-    growth_rate: "Fast",
-    flowering_season: "Summer",
-    attracts: "Birds",
-    maintenance: "Low",
-    deer_resistance: "A",
-    deer_resistance_note: "Rarely damaged"
-  },
-
-  "karl foerster grass": {
-    id: "local_karl_foerster",
-    name: "Karl Foerster Grass",
-    scientific_name: "Calamagrostis x acutiflora 'Karl Foerster'",
-    family: "Poaceae",
-    image: "",
-    description: "Upright ornamental grass with wheat-colored plumes. Very reliable and low maintenance.",
-    type: "Perennial",
-    cycle: "Perennial",
-    watering: "Average",
     sunlight: "Full sun, Part shade",
-    care_level: "Low",
-    growth_rate: "Medium",
-    flowering_season: "Summer",
-    attracts: "Birds",
-    maintenance: "Low",
-    deer_resistance: "A",
-    deer_resistance_note: "Rarely damaged"
-  },
-
-  "miscanthus morning light": {
-    id: "local_miscanthus_morning_light",
-    name: "Morning Light Maiden Grass",
-    scientific_name: "Miscanthus sinensis 'Morning Light'",
-    family: "Poaceae",
-    image: "",
-    description: "Elegant ornamental grass with fine white-edged foliage. Coppery plumes in fall.",
-    type: "Perennial",
-    cycle: "Perennial",
-    watering: "Average",
-    sunlight: "Full sun",
-    care_level: "Low",
-    growth_rate: "Medium",
-    flowering_season: "Fall",
-    attracts: "Birds",
-    maintenance: "Low",
-    deer_resistance: "A",
-    deer_resistance_note: "Rarely damaged"
-  },
-
-  "panicum virgatum": {
-    id: "local_panicum_virgatum",
-    name: "Switchgrass",
-    scientific_name: "Panicum virgatum",
-    family: "Poaceae",
-    image: "",
-    description: "Native prairie grass with upright form. Blue-green foliage turns golden in fall with airy seed heads.",
-    type: "Perennial",
-    cycle: "Perennial",
-    watering: "Average",
-    sunlight: "Full sun",
-    care_level: "Low",
-    growth_rate: "Fast",
-    flowering_season: "Summer, Fall",
-    attracts: "Birds",
-    maintenance: "Low",
-    deer_resistance: "A",
-    deer_resistance_note: "Rarely damaged"
-  },
-
-  "hameln grass": {
-    id: "local_hameln_grass",
-    name: "Hameln Fountain Grass",
-    scientific_name: "Pennisetum alopecuroides 'Hameln'",
-    family: "Poaceae",
-    image: "",
-    description: "Compact ornamental grass with bottlebrush-like plumes. Dark green foliage turns golden in fall.",
-    type: "Perennial",
-    cycle: "Perennial",
-    watering: "Average",
-    sunlight: "Full sun",
-    care_level: "Low",
-    growth_rate: "Medium",
-    flowering_season: "Summer, Fall",
-    attracts: "Birds",
-    maintenance: "Low",
-    deer_resistance: "A",
-    deer_resistance_note: "Rarely damaged"
-  },
-
-  "vinca bowles": {
-    id: "local_vinca_bowles",
-    name: "Vinca Bowles",
-    scientific_name: "Vinca minor 'Bowles'",
-    family: "Apocynaceae",
-    image: "",
-    description: "Evergreen groundcover with large blue-purple flowers. Excellent for slopes and shady areas.",
-    type: "Perennial",
-    cycle: "Perennial",
-    watering: "Average",
-    sunlight: "Part shade, Full shade",
-    care_level: "Low",
-    growth_rate: "Fast",
+    care_level: "Medium",
+    growth_rate: "Varies",
     flowering_season: "Spring",
-    attracts: "Bees",
-    maintenance: "Low",
-    deer_resistance: "A",
-    deer_resistance_note: "Rarely damaged - toxic"
+    attracts: "Bees, Birds, Butterflies",
+    maintenance: "Medium",
+    deer_resistance: "Varies",
+    deer_resistance_note: "Varies by species",
+    native_status: "Varies",
+    native_region: "Varies by species"
   },
 
-  "dwarf japanese white pine": {
-    id: "local_dwarf_japanese_white_pine",
-    name: "Dwarf Japanese White Pine",
-    scientific_name: "Pinus parviflora",
-    family: "Pinaceae",
-    image: "",
-    description: "Compact evergreen with soft blue-green needles. Slow-growing with graceful irregular form.",
+  "asstd. flowering trees": {
+    id: "local_flowering_trees",
+    name: "Assorted Flowering Trees",
+    scientific_name: "Various",
+    family: "Various",
+    description: "Mixed selection of flowering trees including cherries, crabapples, dogwoods, magnolias, and redbuds.",
     type: "Tree",
-    cycle: "Perennial",
-    watering: "Average",
-    sunlight: "Full sun",
-    care_level: "Low",
-    growth_rate: "Slow",
-    flowering_season: "None",
-    attracts: "Birds",
-    maintenance: "Low",
-    deer_resistance: "A",
-    deer_resistance_note: "Rarely damaged"
-  },
-
-  "oriental spruce": {
-    id: "local_oriental_spruce",
-    name: "Oriental Spruce",
-    scientific_name: "Picea orientalis",
-    family: "Pinaceae",
-    image: "",
-    description: "Graceful evergreen conifer with short dark green needles. Pyramidal form with pendulous branches.",
-    type: "Tree",
-    cycle: "Perennial",
-    watering: "Average",
-    sunlight: "Full sun",
-    care_level: "Low",
-    growth_rate: "Slow",
-    flowering_season: "None",
-    attracts: "Birds",
-    maintenance: "Low",
-    deer_resistance: "A",
-    deer_resistance_note: "Rarely damaged"
-  },
-
-  "golden spruce": {
-    id: "local_golden_spruce",
-    name: "Golden Norway Spruce",
-    scientific_name: "Picea abies 'Aurea'",
-    family: "Pinaceae",
-    image: "",
-    description: "Evergreen conifer with golden-yellow new growth. Color fades to green by summer.",
-    type: "Tree",
-    cycle: "Perennial",
-    watering: "Average",
-    sunlight: "Full sun",
-    care_level: "Low",
-    growth_rate: "Medium",
-    flowering_season: "None",
-    attracts: "Birds",
-    maintenance: "Low",
-    deer_resistance: "A",
-    deer_resistance_note: "Rarely damaged"
-  },
-
-  "nest spruce": {
-    id: "local_nest_spruce",
-    name: "Bird's Nest Spruce",
-    scientific_name: "Picea abies 'Nidiformis'",
-    family: "Pinaceae",
-    image: "",
-    description: "Dwarf evergreen spruce with nest-like depression in center. Compact, flat-topped form.",
-    type: "Shrub",
     cycle: "Perennial",
     watering: "Average",
     sunlight: "Full sun, Part shade",
-    care_level: "Low",
-    growth_rate: "Slow",
-    flowering_season: "None",
-    attracts: "Birds",
-    maintenance: "Low",
-    deer_resistance: "A",
-    deer_resistance_note: "Rarely damaged"
+    care_level: "Medium",
+    growth_rate: "Varies",
+    flowering_season: "Spring",
+    attracts: "Bees, Birds, Butterflies",
+    maintenance: "Medium",
+    deer_resistance: "Varies",
+    deer_resistance_note: "Varies by species",
+    native_status: "Varies",
+    native_region: "Varies by species"
   },
 
-  "whipcord western red cedar": {
-    id: "local_whipcord_cedar",
-    name: "Whipcord Western Red Cedar",
-    scientific_name: "Thuja plicata 'Whipcord'",
-    family: "Cupressaceae",
-    image: "",
-    description: "Unusual dwarf evergreen with drooping cord-like foliage. Slow-growing mounded form.",
-    type: "Shrub",
-    cycle: "Perennial",
-    watering: "Average",
-    sunlight: "Full sun, Part shade",
-    care_level: "Low",
-    growth_rate: "Slow",
-    flowering_season: "None",
-    attracts: "Birds",
-    maintenance: "Low",
-    deer_resistance: "A",
-    deer_resistance_note: "Rarely damaged"
-  },
-
-  "globe thuja rhein gold": {
-    id: "local_globe_thuja",
-    name: "Rheingold Arborvitae",
-    scientific_name: "Thuja occidentalis 'Rheingold'",
-    family: "Cupressaceae",
-    image: "",
-    description: "Dwarf evergreen with golden-amber foliage that deepens to copper-orange in winter.",
-    type: "Shrub",
-    cycle: "Perennial",
-    watering: "Average",
-    sunlight: "Full sun",
-    care_level: "Low",
-    growth_rate: "Slow",
-    flowering_season: "None",
-    attracts: "Birds",
-    maintenance: "Low",
-    deer_resistance: "B",
-    deer_resistance_note: "Seldom severely damaged"
-  },
-
-  "deodar cedar": {
-    id: "local_deodar_cedar",
-    name: "Deodar Cedar",
-    scientific_name: "Cedrus deodara",
-    family: "Pinaceae",
-    image: "",
-    description: "Graceful evergreen conifer with soft blue-green needles and drooping branch tips. Pyramidal form.",
-    type: "Tree",
-    cycle: "Perennial",
-    watering: "Average",
-    sunlight: "Full sun",
-    care_level: "Low",
-    growth_rate: "Medium",
-    flowering_season: "None",
-    attracts: "Birds",
-    maintenance: "Low",
-    deer_resistance: "A",
-    deer_resistance_note: "Rarely damaged"
-  },
-
-  "plum yew": {
-    id: "local_plum_yew",
-    name: "Plum Yew",
-    scientific_name: "Cephalotaxus harringtonia",
-    family: "Taxaceae",
-    image: "",
-    description: "Evergreen shrub with dark green needle-like foliage. Excellent for shade, very deer resistant.",
-    type: "Shrub",
+  "asstd. shade perennials": {
+    id: "local_shade_perennials",
+    name: "Assorted Shade Perennials",
+    scientific_name: "Various",
+    family: "Various",
+    description: "Collection of perennial flowers and foliage plants suited for shady locations. May include hostas, ferns, astilbes, and more.",
+    type: "Perennial",
     cycle: "Perennial",
     watering: "Average",
     sunlight: "Part shade, Full shade",
     care_level: "Low",
-    growth_rate: "Slow",
-    flowering_season: "None",
-    attracts: "Birds",
+    growth_rate: "Varies",
+    flowering_season: "Spring, Summer",
+    attracts: "Butterflies, Hummingbirds",
     maintenance: "Low",
-    deer_resistance: "A",
-    deer_resistance_note: "Rarely damaged - toxic"
-  },
-
-  "cryptomeria globe": {
-    id: "local_cryptomeria_globe",
-    name: "Globe Cryptomeria",
-    scientific_name: "Cryptomeria japonica 'Globosa Nana'",
-    family: "Cupressaceae",
-    image: "",
-    description: "Dwarf evergreen with dense rounded form. Green foliage turns bronze-purple in winter.",
-    type: "Shrub",
-    cycle: "Perennial",
-    watering: "Average",
-    sunlight: "Full sun, Part shade",
-    care_level: "Low",
-    growth_rate: "Slow",
-    flowering_season: "None",
-    attracts: "Birds",
-    maintenance: "Low",
-    deer_resistance: "A",
-    deer_resistance_note: "Rarely damaged"
-  },
-
-  "dwarf mugo pine": {
-    id: "local_dwarf_mugo_pine",
-    name: "Dwarf Mugo Pine",
-    scientific_name: "Pinus mugo var. pumilio",
-    family: "Pinaceae",
-    image: "",
-    description: "Compact evergreen with dark green needles. Dense rounded form, excellent for foundation plantings.",
-    type: "Shrub",
-    cycle: "Perennial",
-    watering: "Minimum",
-    sunlight: "Full sun",
-    care_level: "Low",
-    growth_rate: "Slow",
-    flowering_season: "None",
-    attracts: "Birds",
-    maintenance: "Low",
-    deer_resistance: "A",
-    deer_resistance_note: "Rarely damaged"
-  },
-
-  "franky boy oriental arborvitae": {
-    id: "local_franky_boy",
-    name: "Franky Boy Arborvitae",
-    scientific_name: "Platycladus orientalis 'Franky Boy'",
-    family: "Cupressaceae",
-    image: "",
-    description: "Dwarf evergreen with vertical fan-like foliage sprays. Compact rounded form with bright green color.",
-    type: "Shrub",
-    cycle: "Perennial",
-    watering: "Average",
-    sunlight: "Full sun",
-    care_level: "Low",
-    growth_rate: "Slow",
-    flowering_season: "None",
-    attracts: "Birds",
-    maintenance: "Low",
-    deer_resistance: "B",
-    deer_resistance_note: "Seldom severely damaged"
+    deer_resistance: "Varies",
+    deer_resistance_note: "Varies by species",
+    native_status: "Varies",
+    native_region: "Varies by species"
   }
+
 };
 
 // Function to search the local database
 export function searchLocalPlants(query) {
   const searchTerm = query.toLowerCase().trim();
   const results = [];
+  const seenIds = new Set();
 
   for (const [key, plant] of Object.entries(plantDatabase)) {
-    if (
-      key.includes(searchTerm) ||
-      plant.name.toLowerCase().includes(searchTerm) ||
-      plant.scientific_name.toLowerCase().includes(searchTerm)
-    ) {
-      results.push(plant);
+    if (seenIds.has(plant.id)) {
+      continue;
+    }
+    
+    let relevance = 0;
+    
+    if (!searchTerm) {
+      relevance = 100;
+    } else {
+      const plantNameLower = plant.name.toLowerCase();
+      const scientificNameLower = plant.scientific_name.toLowerCase();
+      
+      if (key === searchTerm) {
+        relevance = 1000;
+      } else if (plantNameLower === searchTerm) {
+        relevance = 900;
+      } else if (key.startsWith(searchTerm)) {
+        relevance = 800;
+      } else if (plantNameLower.startsWith(searchTerm)) {
+        relevance = 700;
+      } else if (key.includes(searchTerm)) {
+        relevance = 600;
+      } else if (plantNameLower.includes(searchTerm)) {
+        relevance = 500;
+      } else if (scientificNameLower.includes(searchTerm)) {
+        relevance = 400;
+      }
+    }
+    
+    if (relevance > 0) {
+      results.push({ ...plant, relevance });
+      seenIds.add(plant.id);
     }
   }
 
-  return results;
+  results.sort((a, b) => b.relevance - a.relevance);
+  
+  return results.map(({ relevance, ...plant }) => plant);
 }
 
-// Function to get a plant by name (handles case and plurals)
 export function getPlantByName(plantName) {
   const searchTerm = plantName.toLowerCase().trim();
   
-  // Try exact match first
   if (plantDatabase[searchTerm]) {
     return plantDatabase[searchTerm];
   }
   
-  // Try removing 's' or 'es' for plurals
   const singular1 = searchTerm.endsWith('s') ? searchTerm.slice(0, -1) : searchTerm;
   if (plantDatabase[singular1]) {
     return plantDatabase[singular1];
@@ -1651,7 +2708,6 @@ export function getPlantByName(plantName) {
     return plantDatabase[singular2];
   }
   
-  // Try partial match
   for (const [key, plant] of Object.entries(plantDatabase)) {
     if (key.includes(searchTerm) || searchTerm.includes(key)) {
       return plant;
@@ -1660,3 +2716,6 @@ export function getPlantByName(plantName) {
   
   return null;
 }
+
+// END OF PART 3 - This is the complete database!
+// To use: Copy parts 1, 2, and 3 into a single file named plantDatabase.js
