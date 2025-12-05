@@ -1,0 +1,137 @@
+// plantVisibility.js
+// Update this file whenever inventory changes
+// Simply add or remove plant IDs from the Set below to control visibility
+
+export const visiblePlants = new Set([
+  // TREES
+  'local_maple',
+  'local_japanese_maple',
+  'local_dogwood',
+  'local_redbud',
+  'local_magnolia',
+  'local_norway_spruce',
+  'local_green_giants',
+  'local_blue_spruce',
+  'local_juniper_general',
+  'local_birch',
+  'local_beech',
+  'local_cherry',
+  'local_pear',
+  'local_columnar_juniper',
+  'local_spartan_juniper',
+  'local_dwarf_japanese_white_pine',
+  'local_oriental_spruce',
+  'local_golden_spruce',
+  'local_deodar_cedar',
+  'local_alberta_spruce',
+  'local_franky_boy_arborvitae',
+  'local_weeping_japanese_maple',
+  'local_twombly_maple',
+  'local_dwarf_redbud',
+  'local_bloodgood_maple',
+  'local_flowering_trees',
+
+  // SHRUBS - EVERGREEN
+  'local_juniper',
+  'local_boxwood',
+  'local_holly',
+  'local_osmanthus',
+  'local_leucothoe',
+  'local_andromeda',
+  'local_camellia',
+  'local_blue_point_juniper',
+  'local_gold_mop',
+  'local_leatherleaf_mahonia',
+  'local_small_plum_yew',
+  'local_cryptomeria_globe',
+  'local_dwarf_mugo_pine',
+  'local_dwarf_norway_spruce',
+  'local_nest_spruce',
+  'local_whipcord_cedar',
+  'local_globe_thuja',
+  'local_soft_touch_holly',
+  'local_ilex_helleri',
+  'local_shamrock_holly',
+  'local_sky_pencil_holly',
+  'local_globe_blue_spruce',
+  'local_steeds_holly',
+  'local_schip_laurels',
+  'local_otto_luyken',
+  'local_manhattan_euonymus',
+
+  // SHRUBS - DECIDUOUS
+  'local_roses',
+  'local_hydrangea',
+  'local_azalea',
+  'local_weigela',
+  'local_ninebark',
+  'local_butterfly_bush',
+  'local_viburnum',
+  'local_spirea',
+  'local_barberry',
+  'local_rose_of_sharon',
+  'local_lilac',
+  'local_caryopteris',
+  'local_itea',
+  'local_fothergilla',
+  'local_winterberry',
+  'local_abelia',
+  'local_burning_bush',
+  'local_deutzia',
+  'local_clethra',
+  'local_aronia',
+  'local_calycanthus',
+  'local_spicebush',
+  'local_witch_hazel',
+  'local_euonymus',
+  'local_st_johns_wort',
+  'local_sageleaf_willow',
+  'local_bush_honeysuckle',
+  'local_vitex',
+  'local_nishiki_willow',
+  'local_diervilla',
+  'local_annabelle_hydrangea',
+  'local_oakleaf_hydrangea',
+  'local_specimens',
+
+  // PERENNIALS
+  'local_hosta',
+  'local_daylily',
+  'local_lirope',
+  'local_lavender',
+  'local_yucca',
+  'local_carex',
+  'local_shade_perennials',
+
+  // GROUNDCOVERS
+  'local_vinca',
+  'local_vinca_bowles',
+
+  // GRASSES
+  'local_hameln_grass',
+  'local_panicum',
+  'local_standing_ovation',
+  'local_mexican_feather_grass',
+  'local_karl_forester',
+  'local_miscanthus_morning_light',
+  'local_maiden_grass',
+
+  // ANNUALS & HERBS
+  'local_tomato',
+  'local_basil',
+]);
+
+// Helper function to quickly check if a plant is visible
+export function isPlantInStock(plantId) {
+  return visiblePlants.has(plantId);
+}
+
+// Get count of visible plants
+export function getVisiblePlantCount() {
+  return visiblePlants.size;
+}
+
+// Get all visible plant IDs as an array
+export function getVisiblePlantIds() {
+  return Array.from(visiblePlants);
+}

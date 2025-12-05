@@ -1,6 +1,7 @@
 // src/plantDatabase.js - PART 1 OF 3
 // Updated with native status information based on BONAP (Biota of North America Program) data
-// Copy all three parts and combine them into one file
+// Import visibility configuration
+import { visiblePlants } from './plantVisibility.js';
 
 export const plantDatabase = {
   // Roses
@@ -577,6 +578,7 @@ export const plantDatabase = {
     native_status: "Varies",
     native_region: "Many species native to North America, some from Asia and Europe"
   },
+// PART 2 OF 3 - Continue from Part 1
 
   "lirope": {
     id: "local_lirope",
@@ -829,9 +831,6 @@ export const plantDatabase = {
     native_status: "Introduced",
     native_region: "Native to Asia; considered invasive in some states"
   },
-
-// END OF PART 1 - Continue with Part 2
-// PART 2 OF 3 - Continue from Part 1
 
   "leucothoe": {
     id: "local_leucothoe",
@@ -1420,6 +1419,7 @@ export const plantDatabase = {
     native_status: "Native",
     native_region: "Eastern North America"
   },
+// PART 3 OF 3 - Final part - Continue from Part 2
 
   "alberta spruce": {
     id: "local_alberta_spruce",
@@ -1756,9 +1756,6 @@ export const plantDatabase = {
     native_status: "Introduced",
     native_region: "Cultivar of species native to Europe"
   },
-
-// END OF PART 2 - Continue with Part 3
-// PART 3 OF 3 - Final part - Continue from Part 2
 
   "franky boy oriental arborvitae": {
     id: "local_franky_boy_arborvitae",
@@ -2158,7 +2155,6 @@ export const plantDatabase = {
     native_status: "Native",
     native_region: "North American prairies"
   },
-
   "maiden grass": {
     id: "local_maiden_grass",
     name: "Maiden Grass",
@@ -2645,12 +2641,17 @@ export const plantDatabase = {
 };
 
 // Function to search the local database
-export function searchLocalPlants(query) {
+export function searchLocalPlants(query, includeHidden = false) {
   const searchTerm = query.toLowerCase().trim();
   const results = [];
   const seenIds = new Set();
 
   for (const [key, plant] of Object.entries(plantDatabase)) {
+    // Skip plants not in stock unless explicitly requested
+    if (!includeHidden && !visiblePlants.has(plant.id)) {
+      continue;
+    }
+    
     if (seenIds.has(plant.id)) {
       continue;
     }
@@ -2691,31 +2692,41 @@ export function searchLocalPlants(query) {
   return results.map(({ relevance, ...plant }) => plant);
 }
 
-export function getPlantByName(plantName) {
+export function getPlantByName(plantName, includeHidden = false) {
   const searchTerm = plantName.toLowerCase().trim();
   
   if (plantDatabase[searchTerm]) {
-    return plantDatabase[searchTerm];
+    const plant = plantDatabase[searchTerm];
+    if (includeHidden || visiblePlants.has(plant.id)) {
+      return plant;
+    }
   }
   
   const singular1 = searchTerm.endsWith('s') ? searchTerm.slice(0, -1) : searchTerm;
   if (plantDatabase[singular1]) {
-    return plantDatabase[singular1];
+    const plant = plantDatabase[singular1];
+    if (includeHidden || visiblePlants.has(plant.id)) {
+      return plant;
+    }
   }
   
   const singular2 = searchTerm.endsWith('es') ? searchTerm.slice(0, -2) : searchTerm;
   if (plantDatabase[singular2]) {
-    return plantDatabase[singular2];
+    const plant = plantDatabase[singular2];
+    if (includeHidden || visiblePlants.has(plant.id)) {
+      return plant;
+    }
   }
   
   for (const [key, plant] of Object.entries(plantDatabase)) {
     if (key.includes(searchTerm) || searchTerm.includes(key)) {
-      return plant;
+      if (includeHidden || visiblePlants.has(plant.id)) {
+        return plant;
+      }
     }
   }
   
   return null;
 }
 
-// END OF PART 3 - This is the complete database!
-// To use: Copy parts 1, 2, and 3 into a single file named plantDatabase.js
+// END OF plantDatabase.js - Complete file!

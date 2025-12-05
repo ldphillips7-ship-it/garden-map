@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./index.css";
-import { searchLocalPlants, getPlantByName } from "./plantDatabase.js";
+import { searchLocalPlants, getPlantByName } from './plantDatabase.js';
 
 const IMAGE_SRC = "/garden-layout.png";
 // ❌ REMOVED LINE 6 - THIS WAS CAUSING THE ERROR:
@@ -626,25 +626,39 @@ function App() {
         ) : (
           <>
             {selected ? (
-              <>
-                <h2 className="font-semibold text-base md:text-lg mb-2">{selected}</h2>
-                <ul className="list-disc list-inside text-xs md:text-sm">
-                  {gardenData[selected].map((plant) => (
-                    <li
-                      key={plant}
-                      className="cursor-pointer hover:text-sky-600 py-1"
-                      onClick={() => handlePlantClick(plant)}
-                    >
-                      {plant}
-                    </li>
-                  ))}
-                </ul>
-              </>
-            ) : (
-              <p className="text-gray-500 text-xs md:text-sm">
-                Click a section on the map to see plants.
-              </p>
-            )}
+  <>
+    <h2 className="font-semibold text-base md:text-lg mb-2">{selected}</h2>
+    <ul className="list-disc list-inside text-xs md:text-sm">
+      {gardenData[selected]
+        .filter((plantName) => {
+          // Filter out hidden plants
+          const plant = getPlantByName(plantName);
+          return plant !== null;
+        })
+        .map((plant) => (
+          <li
+            key={plant}
+            className="cursor-pointer hover:text-sky-600 py-1"
+            onClick={() => handlePlantClick(plant)}
+          >
+            {plant}
+          </li>
+        ))}
+    </ul>
+    {gardenData[selected].filter((plantName) => {
+      const plant = getPlantByName(plantName);
+      return plant !== null;
+    }).length === 0 && (
+      <p className="text-xs md:text-sm text-gray-500 italic mt-2">
+        No plants currently available in this section.
+      </p>
+    )}
+  </>
+) : (
+  <p className="text-gray-500 text-xs md:text-sm">
+    Click a section on the map to see plants.
+  </p>
+)}
           </>
         )}
       </aside>
@@ -785,24 +799,36 @@ function App() {
             </button>
 
             {selected && !showSearch && (
-              <>
-                <h3 className="font-bold text-base md:text-lg mb-2 pr-8">Section: {selected}</h3>
-                <ul className="text-sm mb-4 max-h-40 overflow-auto">
-                  {gardenData[selected].map((plant) => (
-                    <li
-                      key={plant}
-                      className="border-b last:border-0 py-2 cursor-pointer hover:text-sky-600 hover:bg-sky-50 px-2 -mx-2 rounded transition"
-                      onClick={() => {
-                        handlePlantClick(plant);
-                        setShowSidebar(false);
-                      }}
-                    >
-                      {plant}
-                    </li>
-                  ))}
-                </ul>
-              </>
-            )}
+  <>
+    <h3 className="font-bold text-base md:text-lg mb-2 pr-8">Section: {selected}</h3>
+    <ul className="text-sm mb-4 max-h-40 overflow-auto">
+      {gardenData[selected]
+        .filter((plantName) => {
+          // Filter out hidden plants
+          const plant = getPlantByName(plantName);
+          return plant !== null; // getPlantByName now checks visibility
+        })
+        .map((plant) => (
+          <li
+            key={plant}
+            className="border-b last:border-0 py-2 cursor-pointer hover:text-sky-600 hover:bg-sky-50 px-2 -mx-2 rounded transition"
+            onClick={() => {
+              handlePlantClick(plant);
+              setShowSidebar(false);
+            }}
+          >
+            {plant}
+          </li>
+        ))}
+    </ul>
+    {gardenData[selected].filter((plantName) => {
+      const plant = getPlantByName(plantName);
+      return plant !== null;
+    }).length === 0 && (
+      <p className="text-sm text-gray-500 italic">No plants currently available in this section.</p>
+    )}
+  </>
+)}
 
             {loadingPlant && (
               <p className="text-xs md:text-sm text-gray-500">Loading plant details...</p>
