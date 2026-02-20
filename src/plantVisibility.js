@@ -1,7 +1,6 @@
 // plantVisibility.js
 // Update this file whenever inventory changes
 // Simply add or remove plant IDs from the Set below to control visibility
-
 export const visiblePlants = new Set([
   // TREES
   'local_maple',
@@ -30,7 +29,9 @@ export const visiblePlants = new Set([
   'local_dwarf_redbud',
   'local_bloodgood_maple',
   'local_flowering_trees',
-
+  'local_carpinus',
+  'local_crapemyrtle',
+  'local_leyland_cypress',
   // SHRUBS - EVERGREEN
   'local_juniper',
   'local_boxwood',
@@ -58,7 +59,10 @@ export const visiblePlants = new Set([
   'local_schip_laurels',
   'local_otto_luyken',
   'local_manhattan_euonymus',
-
+  'local_aucuba',
+  'local_photinia',
+  'local_microbiota',
+  'local_ligustrum',
   // SHRUBS - DECIDUOUS
   'local_roses',
   'local_hydrangea',
@@ -93,7 +97,20 @@ export const visiblePlants = new Set([
   'local_annabelle_hydrangea',
   'local_oakleaf_hydrangea',
   'local_specimens',
-
+  'local_callicarpa',
+  'local_cotinus',
+  'local_cotoneaster',
+  'local_cornus_shrub',
+  'local_forsythia',
+  'local_nandina',
+  'local_potentilla',
+  'local_rhododendron',
+  'local_myrica',
+  'local_cytisus',
+  'local_lonicera',
+  'local_rhamnus',
+  'local_hibiscus',
+  'local_wisteria',
   // PERENNIALS
   'local_hosta',
   'local_daylily',
@@ -102,11 +119,11 @@ export const visiblePlants = new Set([
   'local_yucca',
   'local_carex',
   'local_shade_perennials',
-
+  'local_sun_perennials',
+  'local_perovskia',
   // GROUNDCOVERS
   'local_vinca',
   'local_vinca_bowles',
-
   // GRASSES
   'local_hameln_grass',
   'local_panicum',
@@ -115,7 +132,7 @@ export const visiblePlants = new Set([
   'local_karl_forester',
   'local_miscanthus_morning_light',
   'local_maiden_grass',
-
+  'local_ornamental_grasses',
   // ANNUALS & HERBS
   'local_tomato',
   'local_basil',
