@@ -32,6 +32,31 @@ export const visiblePlants = new Set([
   'local_carpinus',
   'local_crapemyrtle',
   'local_leyland_cypress',
+  // TREES - NEW 2026
+  'local_ginkgo',
+  'local_amelanchier',
+  'local_chionanthus',
+  'local_crataegus',
+  'local_gleditsia',
+  'local_heptacodium',
+  'local_liquidambar',
+  'local_liriodendron',
+  'local_metasequoia',
+  'local_nyssa',
+  'local_parrotia',
+  'local_stewartia',
+  'local_styrax',
+  'local_tilia',
+  'local_zelkova',
+  'local_quercus',
+  'local_acer_griseum',
+  'local_syringa_reticulata',
+  // CONIFERS - NEW 2026
+  'local_tsuga',
+  'local_picea_omorika',
+  'local_pinus_strobus',
+  'local_sciadopitys',
+  'local_cryptomeria',
   // SHRUBS - EVERGREEN
   'local_juniper',
   'local_boxwood',
@@ -63,6 +88,10 @@ export const visiblePlants = new Set([
   'local_photinia',
   'local_microbiota',
   'local_ligustrum',
+  // SHRUBS - EVERGREEN NEW 2026
+  'local_sarcococca',
+  'local_skimmia',
+  'local_kalmia',
   // SHRUBS - DECIDUOUS
   'local_roses',
   'local_hydrangea',
@@ -111,6 +140,14 @@ export const visiblePlants = new Set([
   'local_rhamnus',
   'local_hibiscus',
   'local_wisteria',
+  // SHRUBS - DECIDUOUS NEW 2026
+  'local_aralia',
+  'local_sambucus',
+  'local_fargesia',
+  'local_corylus',
+  'local_ficus',
+  // VINES - NEW 2026
+  'local_campsis',
   // PERENNIALS
   'local_hosta',
   'local_daylily',
