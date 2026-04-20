@@ -3,8 +3,6 @@ import "./index.css";
 import { searchLocalPlants, getPlantByName } from './plantDatabase.js';
 
 const IMAGE_SRC = "/garden-layout.png";
-// ❌ REMOVED LINE 6 - THIS WAS CAUSING THE ERROR:
-// const [showTapHint, setShowTapHint] = useState(true);
 
 const gardenData = {
   "Section 1": ["Azaleas"],
@@ -42,8 +40,8 @@ const gardenData = {
   "Section 33": ["Green Giants"],
   "Section 34": ["Green Giants"],
   "Section A": ["Roses", "Ground cover juniper"],
-  "Section B": ["Hosta", "Asstd. Shade Perennials", "Manhattan Euonymus", "Annabelle Hydrangea", "Oakleaf Hydrangea"],
-  "Section C": [],
+  "Fruit Trees": [ ],
+  "Butterfly Garden": [],
 };
 
 const hotspots = [
@@ -95,8 +93,8 @@ const hotspots = [
   
   // Letter sections (bottom)
   { id: "Section A", left: "39.5%", top: "60%", width: "5.5%", height: "8%" },
-  { id: "Section B", left: "86%", top: "84%", width: "12%", height: "6%" },
-  { id: "Section C", left: "86%", top: "92.5%", width: "12%", height: "6%" },
+  { id: "Fruit Trees", left: "86%", top: "86.5%", width: "12%", height: "1.5%" },
+{ id: "Butterfly Garden", left: "63%", top: "89%", width: "20%", height: "1%" },
 ];
 
 const mobileHotspots = [
@@ -148,8 +146,8 @@ const mobileHotspots = [
   
   // Letter sections (bottom)
   { id: "Section A", left: "39.5%", top: "60%", width: "5.5%", height: "8%" },
-  { id: "Section B", left: "86%", top: "84%", width: "12%", height: "6%" },
-  { id: "Section C", left: "86%", top: "92.5%", width: "12%", height: "6%" },
+  { id: "Fruit Trees", left: "86%", top: "84%", width: "12%", height: "3%" },
+{ id: "Butterfly Garden", left: "57%", top: "83%", width: "25%", height: "3%" },
 ];
 
 // Helper function to match plant names flexibly
@@ -224,7 +222,6 @@ function matchPlantNames(plantName, gardenPlantName) {
 }
 
 function App() {
-  // ✅ ALL useState HOOKS MUST GO HERE - INSIDE THE FUNCTION
   const [selected, setSelected] = useState(null);
   const [plantInfo, setPlantInfo] = useState(null);
   const [loadingPlant, setLoadingPlant] = useState(false);
@@ -252,11 +249,8 @@ function App() {
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
   const [isMobile, setIsMobile] = useState(false);
-  
-  // ✅ ADDED THIS LINE HERE - INSIDE THE FUNCTION (this fixes the line 6 error)
   const [showTapHint, setShowTapHint] = useState(true);
 
-  // ✅ useEffect hooks
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
@@ -266,7 +260,6 @@ function App() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
   
-  // ✅ FIXED: Removed showTapHint from dependency array (this fixes the warning)
   useEffect(() => {
     if (isMobile) {
       const timer = setTimeout(() => setShowTapHint(false), 5000);
@@ -283,7 +276,6 @@ function App() {
     
     if (plant) {
       const sections = [];
-      
       for (const [sectionName, plants] of Object.entries(gardenData)) {
         if (plants.some(p => matchPlantNames(plant.name, p))) {
           sections.push(sectionName);
@@ -328,7 +320,6 @@ function App() {
     
     const resultsWithSections = results.map(plant => {
       const sections = [];
-      
       for (const [sectionName, plants] of Object.entries(gardenData)) {
         if (plants.some(p => matchPlantNames(plant.name, p))) {
           sections.push(sectionName);
@@ -435,6 +426,7 @@ function App() {
     setScale(1);
     setPosition({ x: 0, y: 0 });
   };
+
   return (
     <div className="flex h-screen relative">
       {/* Mobile Menu Button */}
@@ -477,7 +469,6 @@ function App() {
                 onChange={(e) => {
                   const value = e.target.value;
                   setSearchQuery(value);
-                  
                   if (value.trim().length > 0) {
                     const results = searchLocalPlants(value);
                     setSuggestions(results.slice(0, 5));
@@ -599,21 +590,15 @@ function App() {
                     >
                       <div className="flex items-start gap-2">
                         <div className="flex-1 min-w-0">
-                          <p className="font-medium text-xs md:text-sm truncate">
-                            {plant.name}
-                          </p>
-                          <p className="text-xs text-gray-500 italic truncate">
-                            {plant.scientific_name}
-                          </p>
+                          <p className="font-medium text-xs md:text-sm truncate">{plant.name}</p>
+                          <p className="text-xs text-gray-500 italic truncate">{plant.scientific_name}</p>
                           {plant.sections && plant.sections.length > 0 && (
                             <p className="text-xs text-sky-600 font-medium mt-1">
                               📍 {plant.sections.join(", ")}
                             </p>
                           )}
                           {plant.watering && (
-                            <p className="text-xs text-gray-600">
-                              💧 {plant.watering}
-                            </p>
+                            <p className="text-xs text-gray-600">💧 {plant.watering}</p>
                           )}
                         </div>
                       </div>
@@ -626,46 +611,45 @@ function App() {
         ) : (
           <>
             {selected ? (
-  <>
-    <h2 className="font-semibold text-base md:text-lg mb-2">{selected}</h2>
-    <ul className="list-disc list-inside text-xs md:text-sm">
-      {gardenData[selected]
-        .filter((plantName) => {
-          // Filter out hidden plants
-          const plant = getPlantByName(plantName);
-          return plant !== null;
-        })
-        .map((plant) => (
-          <li
-            key={plant}
-            className="cursor-pointer hover:text-sky-600 py-1"
-            onClick={() => handlePlantClick(plant)}
-          >
-            {plant}
-          </li>
-        ))}
-    </ul>
-    {gardenData[selected].filter((plantName) => {
-      const plant = getPlantByName(plantName);
-      return plant !== null;
-    }).length === 0 && (
-      <p className="text-xs md:text-sm text-gray-500 italic mt-2">
-        No plants currently available in this section.
-      </p>
-    )}
-  </>
-) : (
-  <p className="text-gray-500 text-xs md:text-sm">
-    Click a section on the map to see plants.
-  </p>
-)}
+              <>
+                <h2 className="font-semibold text-base md:text-lg mb-2">{selected}</h2>
+                <ul className="list-disc list-inside text-xs md:text-sm">
+                  {gardenData[selected]
+                    .filter((plantName) => {
+                      const plant = getPlantByName(plantName);
+                      return plant !== null;
+                    })
+                    .map((plant) => (
+                      <li
+                        key={plant}
+                        className="cursor-pointer hover:text-sky-600 py-1"
+                        onClick={() => handlePlantClick(plant)}
+                      >
+                        {plant}
+                      </li>
+                    ))}
+                </ul>
+                {gardenData[selected].filter((plantName) => {
+                  const plant = getPlantByName(plantName);
+                  return plant !== null;
+                }).length === 0 && (
+                  <p className="text-xs md:text-sm text-gray-500 italic mt-2">
+                    No plants currently available in this section.
+                  </p>
+                )}
+              </>
+            ) : (
+              <p className="text-gray-500 text-xs md:text-sm">
+                Click a section on the map to see plants.
+              </p>
+            )}
           </>
         )}
       </aside>
 
       {/* Backdrop */}
       {showSidebar && (
-        <div 
+        <div
           className="md:hidden fixed inset-0 bg-black bg-opacity-50 z-30"
           onClick={() => setShowSidebar(false)}
         />
@@ -699,8 +683,8 @@ function App() {
             </button>
           )}
         </div>
-        
-        <div 
+
+        <div
           className="relative mx-auto max-w-4xl h-full overflow-auto"
           onWheel={handleWheel}
           onTouchStart={handleTouchStart}
@@ -710,7 +694,7 @@ function App() {
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}
           onMouseLeave={handleMouseUp}
-          style={{ 
+          style={{
             cursor: scale > 1 ? (isDragging ? 'grabbing' : 'grab') : 'default',
             touchAction: scale > 1 ? 'none' : 'pan-y'
           }}
@@ -730,32 +714,32 @@ function App() {
               className="w-full h-auto pointer-events-none"
               draggable={false}
             />
-            
-            {/* ✅ TAP HINT - ADDED HERE */}
+
+            {/* Tap hint for mobile */}
             {isMobile && showTapHint && (
-  <div 
-    className="absolute top-4 left-1/2 transform -translate-x-1/2 z-30 bg-sky-500 text-white px-4 py-2 rounded-lg shadow-lg text-sm animate-pulse"
-    style={{ pointerEvents: 'auto', maxWidth: '90vw' }}
-  >
-    <div className="flex items-start gap-2">
-  <div className="text-center">
-    <div>👆 Tap sections to explore plants</div>
-    <div>Use ☰ menu to search</div>
-  </div>
-  <button 
-    onClick={(e) => {
-      e.stopPropagation();
-      setShowTapHint(false);
-    }}
-    className="text-white hover:text-gray-200 font-bold"
-  >
-    ✕
-  </button>
-</div>
-  </div>
-)}
-            
-            {/* ✅ HOTSPOTS - UPDATED STYLING */}
+              <div
+                className="absolute top-4 left-1/2 transform -translate-x-1/2 z-30 bg-sky-500 text-white px-4 py-2 rounded-lg shadow-lg text-sm animate-pulse"
+                style={{ pointerEvents: 'auto', maxWidth: '90vw' }}
+              >
+                <div className="flex items-start gap-2">
+                  <div className="text-center">
+                    <div>👆 Tap sections to explore plants</div>
+                    <div>Use ☰ menu to search</div>
+                  </div>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setShowTapHint(false);
+                    }}
+                    className="text-white hover:text-gray-200 font-bold"
+                  >
+                    ✕
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {/* Hotspots */}
             {(isMobile ? mobileHotspots : hotspots).map((h) => (
               <button
                 key={h.id}
@@ -769,22 +753,23 @@ function App() {
                 title={h.id}
                 className={`touch-manipulation ${!isMobile ? 'hover:bg-sky-100/30 hover:border hover:border-sky-400/50' : ''}`}
                 style={{
-  position: "absolute",
-  left: h.left,
-  top: h.top,
-  width: h.width,
-  height: h.height,
-  border: "none",
-  borderRadius: 8,
-  background: "transparent",
-  cursor: "pointer",
-  minWidth: window.innerWidth < 768 ? "0px" : "44px",
-  minHeight: window.innerWidth < 768 ? "0px" : "44px",
-}}
+                  position: "absolute",
+                  left: h.left,
+                  top: h.top,
+                  width: h.width,
+                  height: h.height,
+                  border: "none",
+                  borderRadius: 8,
+                  background: "transparent",
+                  cursor: "pointer",
+                  minWidth: window.innerWidth < 768 ? "0px" : "44px",
+                  minHeight: window.innerWidth < 768 ? "0px" : "44px",
+                }}
               />
             ))}
           </div>
         </div>
+
         {/* Plant info panel */}
         {(selected || plantInfo) && (
           <div className="fixed md:absolute bottom-0 left-0 right-0 md:right-6 md:bottom-6 md:left-auto w-full md:w-96 max-h-[60vh] md:max-h-[80vh] overflow-auto p-4 bg-white md:rounded-lg shadow-lg z-20 border-t-4 md:border-t-0 border-sky-500">
@@ -799,36 +784,35 @@ function App() {
             </button>
 
             {selected && !showSearch && (
-  <>
-    <h3 className="font-bold text-base md:text-lg mb-2 pr-8">Section: {selected}</h3>
-    <ul className="text-sm mb-4 max-h-40 overflow-auto">
-      {gardenData[selected]
-        .filter((plantName) => {
-          // Filter out hidden plants
-          const plant = getPlantByName(plantName);
-          return plant !== null; // getPlantByName now checks visibility
-        })
-        .map((plant) => (
-          <li
-            key={plant}
-            className="border-b last:border-0 py-2 cursor-pointer hover:text-sky-600 hover:bg-sky-50 px-2 -mx-2 rounded transition"
-            onClick={() => {
-              handlePlantClick(plant);
-              setShowSidebar(false);
-            }}
-          >
-            {plant}
-          </li>
-        ))}
-    </ul>
-    {gardenData[selected].filter((plantName) => {
-      const plant = getPlantByName(plantName);
-      return plant !== null;
-    }).length === 0 && (
-      <p className="text-sm text-gray-500 italic">No plants currently available in this section.</p>
-    )}
-  </>
-)}
+              <>
+                <h3 className="font-bold text-base md:text-lg mb-2 pr-8">Section: {selected}</h3>
+                <ul className="text-sm mb-4 max-h-40 overflow-auto">
+                  {gardenData[selected]
+                    .filter((plantName) => {
+                      const plant = getPlantByName(plantName);
+                      return plant !== null;
+                    })
+                    .map((plant) => (
+                      <li
+                        key={plant}
+                        className="border-b last:border-0 py-2 cursor-pointer hover:text-sky-600 hover:bg-sky-50 px-2 -mx-2 rounded transition"
+                        onClick={() => {
+                          handlePlantClick(plant);
+                          setShowSidebar(false);
+                        }}
+                      >
+                        {plant}
+                      </li>
+                    ))}
+                </ul>
+                {gardenData[selected].filter((plantName) => {
+                  const plant = getPlantByName(plantName);
+                  return plant !== null;
+                }).length === 0 && (
+                  <p className="text-sm text-gray-500 italic">No plants currently available in this section.</p>
+                )}
+              </>
+            )}
 
             {loadingPlant && (
               <p className="text-xs md:text-sm text-gray-500">Loading plant details...</p>
@@ -843,40 +827,24 @@ function App() {
                     📍 Located in: {plantInfo.sections.join(", ")}
                   </p>
                 )}
-                <p className="italic text-gray-600 mb-1 text-xs md:text-sm">
-                  {plantInfo.scientific_name}
-                </p>
+                <p className="italic text-gray-600 mb-1 text-xs md:text-sm">{plantInfo.scientific_name}</p>
                 {plantInfo.family && (
-                  <p className="text-gray-600 mb-3 text-xs md:text-sm">
-                    Family: {plantInfo.family}
-                  </p>
+                  <p className="text-gray-600 mb-3 text-xs md:text-sm">Family: {plantInfo.family}</p>
                 )}
                 <p className="mb-3 text-xs md:text-sm">{plantInfo.description}</p>
 
                 <div className="space-y-2 bg-gray-50 p-3 rounded text-xs md:text-sm">
                   {plantInfo.type && (
-                    <p>
-                      <span className="font-semibold">Type:</span>{" "}
-                      {plantInfo.type}
-                    </p>
+                    <p><span className="font-semibold">Type:</span> {plantInfo.type}</p>
                   )}
                   {plantInfo.cycle && (
-                    <p>
-                      <span className="font-semibold">Cycle:</span>{" "}
-                      {plantInfo.cycle}
-                    </p>
+                    <p><span className="font-semibold">Cycle:</span> {plantInfo.cycle}</p>
                   )}
                   {plantInfo.sunlight && (
-                    <p>
-                      <span className="font-semibold">☀️ Sunlight:</span>{" "}
-                      {plantInfo.sunlight}
-                    </p>
+                    <p><span className="font-semibold">☀️ Sunlight:</span> {plantInfo.sunlight}</p>
                   )}
                   {plantInfo.watering && (
-                    <p>
-                      <span className="font-semibold">💧 Watering:</span>{" "}
-                      {plantInfo.watering}
-                    </p>
+                    <p><span className="font-semibold">💧 Watering:</span> {plantInfo.watering}</p>
                   )}
                   {plantInfo.deer_resistance && (
                     <p>
@@ -889,8 +857,8 @@ function App() {
                       }>
                         {plantInfo.deer_resistance}
                       </span>
-                      <sup 
-                        className="text-blue-500 cursor-help ml-1" 
+                      <sup
+                        className="text-blue-500 cursor-help ml-1"
                         title="Deer resistance ratings from Rutgers University Cooperative Extension"
                       >
                         *
@@ -920,38 +888,26 @@ function App() {
                     </p>
                   )}
                   {plantInfo.care_level && (
-                    <p>
-                      <span className="font-semibold">Care Level:</span>{" "}
-                      {plantInfo.care_level}
-                    </p>
+                    <p><span className="font-semibold">Care Level:</span> {plantInfo.care_level}</p>
                   )}
                   {plantInfo.growth_rate && (
-                    <p>
-                      <span className="font-semibold">Growth Rate:</span>{" "}
-                      {plantInfo.growth_rate}
-                    </p>
+                    <p><span className="font-semibold">Growth Rate:</span> {plantInfo.growth_rate}</p>
                   )}
                   {plantInfo.flowering_season && (
-                    <p>
-                      <span className="font-semibold">🌸 Flowers:</span>{" "}
-                      {plantInfo.flowering_season}
-                    </p>
+                    <p><span className="font-semibold">🌸 Flowers:</span> {plantInfo.flowering_season}</p>
                   )}
                   {plantInfo.attracts && (
-                    <p>
-                      <span className="font-semibold">🦋 Attracts:</span>{" "}
-                      {plantInfo.attracts}
-                    </p>
+                    <p><span className="font-semibold">🦋 Attracts:</span> {plantInfo.attracts}</p>
                   )}
                 </div>
-                {/* Rutgers Attribution */}
+
                 {plantInfo.deer_resistance && plantInfo.deer_resistance !== "Varies" && (
                   <div className="mt-4 pt-3 border-t border-gray-200">
                     <p className="text-xs text-gray-500 italic">
                       <sup>*</sup> Deer resistance ratings based on{" "}
-                      <a 
-                        href="https://extension.rutgers.edu/deer-resistant-plants" 
-                        target="_blank" 
+                      <a
+                        href="https://extension.rutgers.edu/deer-resistant-plants"
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="text-blue-500 hover:underline"
                       >
@@ -970,4 +926,3 @@ function App() {
 }
 
 export default App;
-
