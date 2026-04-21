@@ -5,12 +5,12 @@ import { searchLocalPlants, getPlantByName } from './plantDatabase.js';
 const IMAGE_SRC = "/garden-layout.png";
 
 const gardenData = {
-  "Section 1": ["Azaleas"],
-  "Section 2": ["Hydrangea", "Rose of Sharon"],
-  "Section 3": ["Roses", "Gold mop", "Weigela", "Caryopteris", "St. John's Wort", "Aronia", "Sageleaf Willow", "Bush honeysuckle", "Itea", "Ninebark", "Calycanthus", "Camellia", "Leatherleaf Mahonia", "Vitex agnis castus", "Butterfly Bush"],
-  "Section 4": ["Nishiki willow", "Osmanthus", "Abelia", "Winterberry", "Fothergilla", "American witch-hazel", "Burning bush", "Leucothoe", "Deutzia", "Yucca", "Andromeda", "Lilac", "Clethra", "Diervilla", "Spicebush", "Itea"],
-  "Section 5": ["Hydrangea"],
-  "Section 6": ["Alberta spruce", "Blue point juniper", "Columnar juniper", "Spartan juniper", "Container green giants", "Dwarf Japanese white pine", "Oriental spruce", "Golden spruce", "Nest spruce", "Whipcord western red cedar", "Globe Thuja Rhein gold", "Deodar cedar", "Small plum yew", "Cryptomeria globe", "Dwarf mugo pine", "Dwarf Norway spruce", "Franky boy oriental arborvitae", "Soft touch holly", "Ilex Crenshaw helleri", "Shamrock holly", "Sky pencil holly"],
+  "Section 1": ["Hydrangea", "Aucuba", "Manhattan Euonymus"],
+  "Section 2": ["Hydrangea", "Oakleaf Hydrangea"],
+  "Section 3": ["Gold mop", "Rose of Sharon", "Weeping Pussy Willow", "Hypericum", "Lilac Tree", "Dwarf River Birch", "Ninebark", "Daphne", "Potentilla", "Itea", "Caryopteris", "Flowering Quince", "Butterfly Bush", "Weigela"],
+  "Section 4": ["Leucothoe", "Deutzia", "Callicarpa", "Burning Bush", "Aronia", "Itea", "Abelia", "Nishiki Willow", "Sageleaf Willow", "Smokebush", "Osmanthus", "Lilac", "Fothergilla"],
+  "Section 5": ["Rhododendron", "Andromeda"],
+  "Section 6": ["Azalea", "Andromeda", "Scotch Pine", "Tree Form Juniper", "Franky Boy Arborvitae", "Globe Blue Spruce", "Dwarf Norway Spruce", "Nest Spruce", "Weeping Blue Atlas Cedar", "Dwarf Serbian Spruce", "Arborvitae", "Dwarf Mugo Pine", "Boulevard Cypress", "Dwarf Alberta Spruce", "Blue Point Juniper", "Dwarf Japanese White Pine"],
   "Section 7": ["Globe blue spruce", "Globosa", "Steeds holly", "Weeping Japanese maple", "Twombly maple", "Dwarf redbud", "Bloodgood maple", "Lace leaf maple"],
   "Section 8": ["Standing ovation blue stem", "Mexican feather grass", "Karl forester grass", "Miscanthus morning light", "Panicum virgatum", "Maiden grass", "Daylilly", "Carex"],
   "Section 9": ["Hameln grass", "Carex", "Lirope", "Maiden grass", "Vinca bowles"],
@@ -40,7 +40,7 @@ const gardenData = {
   "Section 33": ["Green Giants"],
   "Section 34": ["Green Giants"],
   "Section A": ["Roses", "Ground cover juniper"],
-  "Fruit Trees": [ ],
+  "Fruit Trees": ["Apple", "Pear", "Persimmon"],
   "Butterfly Garden": [],
 };
 
