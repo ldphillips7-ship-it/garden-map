@@ -445,7 +445,7 @@ function App() {
         w-80 h-full
         p-4 bg-white 
         border-r 
-        overflow-auto
+        overflow-y-auto
         z-40
         transition-transform duration-300
         md:block
@@ -482,7 +482,7 @@ function App() {
                 className="w-full px-3 py-2 border rounded mb-2 text-sm md:text-base"
               />
               {showSuggestions && suggestions.length > 0 && (
-                <ul className="absolute z-50 w-full bg-white border rounded shadow-lg max-h-48 overflow-auto">
+                <ul className="absolute z-50 w-full bg-white border rounded shadow-lg max-h-48 overflow-y-auto">
                   {suggestions.map((plant) => (
                     <li
                       key={plant.id}
@@ -685,7 +685,7 @@ function App() {
         </div>
 
         <div
-          className="relative mx-auto max-w-4xl h-full overflow-auto"
+          className="relative mx-auto max-w-4xl h-full overflow-y-auto"
           onWheel={handleWheel}
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
