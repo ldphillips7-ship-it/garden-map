@@ -3650,28 +3650,6 @@ export const plantDatabase = {
     native_status: "Native",
     native_region: "Eastern North America"
   },
-
-  "ninebark": {
-    id: "local_ninebark",
-    name: "Ninebark",
-    scientific_name: "Physocarpus opulifolius",
-    family: "Rosaceae",
-    description: "Hardy native shrub with attractive foliage ranging from chartreuse to deep purple depending on variety, plus exfoliating bark for winter interest. Also known as Physocarpus. Very low maintenance and adaptable.",
-    type: "Shrub",
-    cycle: "Perennial",
-    watering: "Minimum",
-    sunlight: "Full sun, Part shade",
-    care_level: "Low",
-    growth_rate: "Fast",
-    flowering_season: "Spring, Summer",
-    attracts: "Bees, Butterflies, Birds",
-    maintenance: "Low",
-    deer_resistance: "B",
-    deer_resistance_note: "Seldom severely damaged",
-    native_status: "Native",
-    native_region: "Eastern and central North America"
-  },
-
   "physocarpus": {
     id: "local_ninebark",
     name: "Ninebark",
