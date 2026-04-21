@@ -786,7 +786,7 @@ function App() {
             {selected && !showSearch && (
               <>
                 <h3 className="font-bold text-base md:text-lg mb-2 pr-8">Section: {selected}</h3>
-                <ul className="text-sm mb-4 max-h-40 overflow-auto">
+                <ul className="text-sm mb-4 max-h-40 overflow-y-scroll">
                   {gardenData[selected]
                     .filter((plantName) => {
                       const plant = getPlantByName(plantName);
