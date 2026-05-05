@@ -147,6 +147,13 @@ export const visiblePlants = new Set([
   'local_apple',
   'local_fruit_pear',
   'local_persimmon',
+  'local_tree_form_hydrangea',
+  'local_fountain_grass',
+  'local_allium',
+  'local_catmint',
+  'local_blue_fescue',
+  'local_miscanthus',
+  'local_hinoki_cypress',
   // ANNUALS & HERBS
   'local_tomato',
   'local_basil',
