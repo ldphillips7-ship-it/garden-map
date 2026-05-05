@@ -495,8 +495,10 @@ function App() {
                     ))}
                   </ul>
                   {sectionPlants.length > 4 && (
-                    <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-white to-transparent" />
-                  )}
+  <div className="pointer-events-none absolute bottom-0 left-0 right-0 flex justify-center pb-1">
+    <span className="text-sky-500 text-xl animate-bounce">⬇</span>
+  </div>
+)}
                 </div>
                 {sectionPlants.length === 0 && <p className="text-sm text-gray-500 italic">No plants currently available in this section.</p>}
               </>
