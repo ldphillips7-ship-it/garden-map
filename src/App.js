@@ -5,42 +5,42 @@ import { searchLocalPlants, getPlantByName } from './plantDatabase.js';
 const IMAGE_SRC = "/garden-layout.png";
 
 const gardenData = {
-  "Section 1": ["Hydrangea", "Aucuba", "Euonymus"],
-  "Section 2": ["Hydrangea", "Oakleaf Hydrangea"],
-  "Section 3": ["Gold Mop", "Rose of Sharon", "Weeping Pussy Willow", "Hypericum", "Lilac Tree", "Dwarf River Birch", "Ninebark", "Daphne", "Potentilla", "Itea", "Caryopteris", "Flowering Quince", "Butterfly Bush", "Weigela"],
-  "Section 4": ["Leucothoe", "Deutzia", "Callicarpa", "Burning Bush", "Aronia", "Itea", "Abelia", "Nishiki Willow", "Sage Leaf Willow", "Smoketree", "Osmanthus", "Lilac", "Fothergilla", "Yucca"],
-  "Section 5": ["Rhododendron", "Andromeda"],
-  "Section 6": ["Azalea", "Andromeda", "Scotch Pine", "Juniper", "Arborvitae", "Spruce", "Mugo Pine", "Japanese White Pine"],
-  "Section 7": ["Spruce", "Cypress", "Juniper", "Holly"],
-  "Section 8": ["Japanese Maple", "Allium", "Catmint", "Birch", "Vinca", "Fountain Grass", "Karl Foerster", "Blue Fescue"],
-  "Section 9": ["Miscanthus", "Karl Foerster", "Carex", "Daylily", "Liriope", "Vinca"],
-  "Section 10": ["Spirea", "Barberry"],
+  "Section A": ["Knockout Rose", "Drift Rose", "Carpet Rose", "Microbiota", "Juniper"],
+  "Section 1": ["Hydrangea", "Annabelle Hydrangea", "Oakleaf Hydrangea", "Aucuba", "Manhattan Euonymus", "Red Twig Dogwood"],
+  "Section 2": ["Panicle Hydrangea"],
+  "Section 3": ["Gold Mop", "Rose of Sharon", "Weeping Pussy Willow", "Hypericum", "Lilac Tree", "Dwarf River Birch", "Ninebark", "Daphne", "Potentilla", "Itea", "Caryopteris", "Flowering Quince", "Butterfly Bush", "Weigela", "Buckthorn", "Calycanthus"],
+  "Section 4": ["Leucothoe", "Deutzia", "Callicarpa", "Burning Bush", "Aronia", "Itea", "Abelia", "Salix Hakuro Nishiki", "Sage Leaf Willow", "Smoketree", "Osmanthus", "Lilac", "Fothergilla", "Yucca", "Cotoneaster", "Clethra"],
+  "Section 5": ["Rhododendron", "PJM Rhododendron", "Andromeda"],
+  "Section 6": ["Azalea", "Andromeda", "Mountain Laurel", "Dwarf Evergreens", "Topiary", "Dwarf Cedar", "Dwarf White Pine", "Smoketree"],
+  "Section 7": ["Globosa", "Dwarf Evergreens", "Holly", "Birds Nest Spruce"],
+  "Section 8": ["Allium", "Catmint", "Weeping Japanese Maple", "Fountain Grass", "Karl Foerster", "Blue Fescue", "Vinca Bowles"],
+  "Section 9": ["Miscanthus", "Karl Foerster", "Carex EverGold", "Stella Doro Daylily", "Liriope", "Vinca Bowles"],
+  "Section 10": ["Spirea"],
   "Section 11": ["Barberry", "Boxwood"],
-  "Section 12": ["Japanese Maples"],
-  "Section 13": ["Asstd. Specimens"],
-  "Section 14": ["Flowering Trees (container)"],
-  "Section 15": ["Boxwood", "Green Giants"],
-  "Section 16": ["Rhododendron", "Andromeda", "Plum Yew", "Viburnum"],
-  "Section 17": ["Green Giants", "Tree Form Hydrangea", "Blue Spruce", "Globe Blue Spruce"],
-  "Section 18": ["Flowering Trees"],
-  "Section 19": ["Holly"],
-  "Section 20": ["Beech", "Asstd. Flowering Trees"],
-  "Section 21": ["Japanese Maples"],
-  "Section 22": ["Dogwoods"],
-  "Section 23": ["Magnolias", "Dogwood"],
-  "Section 24": ["Redbud", "Asstd. Flowering Trees"],
-  "Section 25": ["Schip Laurels", "Otto Luyken"],
-  "Section 26": ["Viburnum"],
-  "Section 27": ["Birch", "Maple"],
-  "Section 28": ["Cherry", "Pear"],
-  "Section 29": ["Norway Spruce"],
-  "Section 30": ["Norway Spruce", "Green Giants"],
-  "Section 31": ["Norway Spruce", "Green Giants"],
+  "Section 12": ["Silver Fir", "Weeping Blue Atlas Cedar", "Weeping Norway Spruce", "Weeping Serbian Spruce", "Columnar Blue Spruce"],
+  "Section 13": ["Dwarf Alberta Spruce", "Paperbark Maple", "Blue Atlas Cedar", "Weeping Blue Atlas Cedar", "Blue Spruce", "Weeping Blue Spruce", "Gold Hinoki Cypress", "Dwarf Japanese Pine", "Weeping White Pine", "Thunderhead Pine", "Weeping Hemlock", "Weeping Alaskan Cedar", "Norway Maple", "Hornbeam", "Lilac Tree", "Columnar Oak", "Weeping Norway Spruce", "Oriental Spruce", "Crape Myrtle", "Ginkgo", "Rhododendron"],
+  "Section 14": ["Weeping Japanese Maple", "Dwarf Japanese Maple", "Kousa Dogwood", "Palabin Lilac", "Ruby Falls Redbud", "Ginkgo", "Weeping Cherry", "Umbrella Pine"],
+  "Section 15": ["Boxwood", "Weeping Japanese Maple"],
+  "Section 16": ["Rhododendron", "Andromeda", "Plum Yew", "Viburnum", "Boxwood"],
+  "Section 17": ["Tree Form Hydrangea", "Weeping Redbud", "Globosa", "Bizon Blue Colorado Spruce"],
+  "Section 18": ["Upright Juniper", "Crabapple", "Forsythia", "Panicle Hydrangea"],
+  "Section 19": ["Witch Hazel", "Holly", "Rose of Sharon", "Lilac", "Serviceberry", "Crape Myrtle"],
+  "Section 20": ["Fringe Tree", "Weeping Cherry", "Bloodgood", "Redbud", "Cryptomeria", "Hornbeam", "Sweetgum", "Columnar Oak", "Dawn Redwood"],
+  "Section 21": ["Heptacodium", "Zelkova", "Japanese Maple"],
+  "Section 22": ["Upright Juniper", "Alaskan Cedar", "Florida Dogwood", "Kousa Dogwood"],
+  "Section 23": ["Kousa Dogwood", "Stewartia", "Styrax", "Florida Dogwood", "Single Stem Southern Magnolia", "Zelkova", "Magnolia", "Parrotia"],
+  "Section 24": ["Black Gum", "Zelkova", "Linden", "Crape Myrtle", "Redbud", "Tree Lilac", "Japanese Maple"],
+  "Section 25": ["Common Boxwood", "Otto Luyken", "Upright Red Oak", "Burning Bush", "Schip Laurels"],
+  "Section 26": ["Green Giants", "Emerald Green Arborvitae"],
+  "Section 27": ["Snow Goose Cherry", "Hawthorn", "Maple", "Bloodgood", "Beech", "Shade Maple", "Pear", "Birch"],
+  "Section 28": ["Kwanzan Cherry", "Okame Cherry", "Yoshino Cherry"],
+  "Section 29": ["Green Giants", "Norway Spruce"],
+  "Section 30": ["Green Giants", "Norway Spruce"],
+  "Section 31": ["Norway Spruce"],
   "Section 32": ["Green Giants"],
-  "Section 33": ["Green Giants"],
-  "Section 34": ["Green Giants"],
-  "Section A": ["Roses", "Groundcover Juniper"],
-  "Fruit Trees": ["Apple", "Pear", "Persimmon"],
+  "Section 33": ["Green Giants", "Leyland Cypress"],
+  "Section 34": ["Green Giants", "Leyland Cypress", "Viburnum"],
+  "Fruit Trees": ["Apple", "Pear", "Persimmon", "Blueberry"],
   "Butterfly Garden": [],
 };
 
@@ -284,12 +284,14 @@ function App() {
   };
 
   const handleTouchEnd = () => { setIsDragging(false); setDragStart({ x: 0, y: 0 }); };
+
   const handleMouseDown = (e) => {
     if (scale > 1 && window.innerWidth < 768) {
       setIsDragging(true);
       setDragStart({ x: e.clientX - position.x, y: e.clientY - position.y });
     }
   };
+
   const handleMouseMove = (e) => { if (isDragging) setPosition({ x: e.clientX - dragStart.x, y: e.clientY - dragStart.y }); };
   const handleMouseUp = () => setIsDragging(false);
   const resetZoom = () => { setScale(1); setPosition({ x: 0, y: 0 }); };
@@ -495,10 +497,10 @@ function App() {
                     ))}
                   </ul>
                   {sectionPlants.length > 4 && (
-  <div className="pointer-events-none absolute bottom-0 left-0 right-0 flex justify-center pb-1">
-    <span className="text-sky-500 text-xl animate-bounce">⬇</span>
-  </div>
-)}
+                    <div className="pointer-events-none absolute bottom-0 left-0 right-0 flex justify-center pb-1">
+                      <span className="text-sky-500 text-xl animate-bounce">⬇</span>
+                    </div>
+                  )}
                 </div>
                 {sectionPlants.length === 0 && <p className="text-sm text-gray-500 italic">No plants currently available in this section.</p>}
               </>
