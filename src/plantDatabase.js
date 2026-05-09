@@ -1142,7 +1142,7 @@ export const plantDatabase = {
   },
 
   "hameln grass": {
-id: "local_ornamental_grasses"
+id: "local_ornamental_grasses",
     name: "Hameln Grass",
     scientific_name: "Pennisetum alopecuroides 'Hameln'",
     family: "Poaceae",
@@ -2297,7 +2297,7 @@ id: "local_ornamental_grasses"
   },
 
   "standing ovation blue stem": {
-id: "local_ornamental_grasses"
+id: "local_ornamental_grasses",
     name: "Standing Ovation Little Bluestem",
     scientific_name: "Schizachyrium scoparium 'Standing Ovation'",
     family: "Poaceae",
@@ -2318,7 +2318,7 @@ id: "local_ornamental_grasses"
   },
 
   "standing ovation grass": {
-    id: "local_standing_ovation",
+id: "local_ornamental_grasses",
     name: "Standing Ovation Little Bluestem",
     scientific_name: "Schizachyrium scoparium 'Standing Ovation'",
     family: "Poaceae",
@@ -2339,7 +2339,8 @@ id: "local_ornamental_grasses"
   },
 
   "mexican feather grass": {
-id: "local_ornamental_grasses"    name: "Mexican Feather Grass",
+id: "local_ornamental_grasses",
+    name: "Mexican Feather Grass",
     scientific_name: "Nassella tenuissima",
     family: "Poaceae",
     description: "Fine-textured ornamental grass with graceful, flowing movement. Soft green turning golden.",
@@ -2359,7 +2360,7 @@ id: "local_ornamental_grasses"    name: "Mexican Feather Grass",
   },
 
   "karl forester grass": {
-id: "local_ornamental_grasses"
+id: "local_ornamental_grasses",
     name: "Karl Foerster Grass",
     scientific_name: "Calamagrostis x acutiflora 'Karl Foerster'",
     family: "Poaceae",
@@ -2380,7 +2381,7 @@ id: "local_ornamental_grasses"
   },
 
   "karl foerster": {
-    id: "local_karl_forester",
+id: "local_ornamental_grasses",
     name: "Karl Foerster Grass",
     scientific_name: "Calamagrostis x acutiflora 'Karl Foerster'",
     family: "Poaceae",
@@ -2401,7 +2402,7 @@ id: "local_ornamental_grasses"
   },
 
   "panicum virgatum": {
-id: "local_ornamental_grasses"
+id: "local_ornamental_grasses",
     name: "Switchgrass",
     scientific_name: "Panicum virgatum",
     family: "Poaceae",
@@ -2422,7 +2423,7 @@ id: "local_ornamental_grasses"
   },
 
   "switchgrass": {
-    id: "local_panicum",
+id: "local_ornamental_grasses",
     name: "Switchgrass",
     scientific_name: "Panicum virgatum",
     family: "Poaceae",
@@ -4147,7 +4148,7 @@ id: "local_ornamental_grasses"
     native_region: "Native to Asia and Australia"
   },
   "blue fescue": {
-id: "local_ornamental_grasses"
+id: "local_ornamental_grasses",
     name: "Blue Fescue",
     scientific_name: "Festuca glauca",
     family: "Poaceae",
@@ -4168,7 +4169,7 @@ id: "local_ornamental_grasses"
   },
 
   "blue fescue grass": {
-id: "local_ornamental_grasses"
+id: "local_ornamental_grasses",
     name: "Blue Fescue",
     scientific_name: "Festuca glauca",
     family: "Poaceae",
@@ -4210,7 +4211,7 @@ id: "local_ornamental_grasses"
   },
 
   "fountain grass": {
-    id: "local_ornamental_grasses"
+    id: "local_ornamental_grasses",
     name: "Fountain Grass",
     scientific_name: "Pennisetum alopecuroides",
     family: "Poaceae",
@@ -4231,7 +4232,7 @@ id: "local_ornamental_grasses"
   },
 
   "miscanthus": {
-id: "local_ornamental_grasses"
+id: "local_ornamental_grasses",
     name: "Miscanthus",
     scientific_name: "Miscanthus sinensis",
     family: "Poaceae",
@@ -4422,7 +4423,7 @@ id: "local_ornamental_grasses"
   },
 
   "miscanthus adagio": {
-    id: "local_miscanthus",
+id: "local_ornamental_grasses",
     name: "Miscanthus 'Adagio'",
     scientific_name: "Miscanthus sinensis 'Adagio'",
     family: "Poaceae",
@@ -4443,7 +4444,7 @@ id: "local_ornamental_grasses"
   },
 
   "miscanthus gracillimus": {
-    id: "local_miscanthus",
+  id: "local_ornamental_grasses",
     name: "Maiden Grass",
     scientific_name: "Miscanthus sinensis 'Gracillimus'",
     family: "Poaceae",
@@ -4464,7 +4465,7 @@ id: "local_ornamental_grasses"
   },
 
   "miscanthus morning light": {
-    id: "local_miscanthus",
+id: "local_ornamental_grasses",
     name: "Morning Light Miscanthus",
     scientific_name: "Miscanthus sinensis 'Morning Light'",
     family: "Poaceae",
@@ -4485,7 +4486,7 @@ id: "local_ornamental_grasses"
   },
 
   "miscanthus dixieland": {
-    id: "local_miscanthus",
+id: "local_ornamental_grasses",
     name: "Dixieland Miscanthus",
     scientific_name: "Miscanthus sinensis 'Dixieland'",
     family: "Poaceae",
@@ -6423,7 +6424,7 @@ id: "local_ornamental_grasses"
     description: "Majestic broadleaf evergreen tree with enormous fragrant white flowers up to 12 inches across in summer. Bold, glossy dark green leaves. Trained as a single-stem specimen. Hardy in warmer zones — marginal in northern NJ.",
     type: "Tree",
     cycle: "Perennial",
-    watering: "Average"
+    watering: "Average",
     sunlight: "Full sun",
     care_level: "Low",
     growth_rate: "Medium",
