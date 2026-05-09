@@ -173,6 +173,7 @@ export const visiblePlants = new Set([
   'local_rhamnus',
   'local_hibiscus',
   'local_wisteria',
+  'local_clematis',
   'local_daphne',
   'local_flowering_quince',
   // NEW DECIDUOUS SHRUBS
