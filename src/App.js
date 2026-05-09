@@ -8,13 +8,13 @@ const gardenData = {
   "Section A": ["Knockout Rose", "Drift Rose", "Carpet Rose", "Microbiota", "Juniper"],
   "Section 1": ["Hydrangea", "Annabelle Hydrangea", "Oakleaf Hydrangea", "Aucuba", "Manhattan Euonymus", "Red Twig Dogwood"],
   "Section 2": ["Panicle Hydrangea"],
-  "Section 3": ["Gold Mop", "Rose of Sharon", "Weeping Pussy Willow", "Hypericum", "Lilac Tree", "Dwarf River Birch", "Ninebark", "Daphne", "Potentilla", "Itea", "Caryopteris", "Flowering Quince", "Butterfly Bush", "Weigela", "Buckthorn", "Calycanthus"],
-  "Section 4": ["Leucothoe", "Deutzia", "Callicarpa", "Burning Bush", "Aronia", "Itea", "Abelia", "Salix Hakuro Nishiki", "Sage Leaf Willow", "Smoketree", "Osmanthus", "Lilac", "Fothergilla", "Yucca", "Cotoneaster", "Clethra"],
+  "Section 3": ["Gold Mop", "Rose of Sharon", "Weeping Pussy Willow", "Hypericum", "Lilac Tree", "Dwarf River Birch", "Ninebark", "Daphne", "Potentilla", "Sweetspire", "Caryopteris", "Flowering Quince", "Butterfly Bush", "Weigela", "Buckthorn", "Sweetshrub"],
+  "Section 4": ["Leucothoe", "Deutzia", "Beautyberry", "Burning Bush", "Chokeberry", "Sweetspire", "Abelia", "Salix Hakuro Nishiki", "Sage Leaf Willow", "Smokebush", "Osmanthus", "Lilac", "Fothergilla", "Yucca", "Cotoneaster", "Clethra"],
   "Section 5": ["Rhododendron", "PJM Rhododendron", "Andromeda"],
-  "Section 6": ["Azalea", "Andromeda", "Mountain Laurel", "Dwarf Evergreens", "Topiary", "Dwarf Cedar", "Dwarf White Pine", "Smoketree"],
+  "Section 6": ["Azalea", "Andromeda", "Mountain Laurel", "Dwarf Evergreens", "Topiary", "Dwarf Cedar", "Dwarf White Pine", "Smokebush"],
   "Section 7": ["Globosa", "Dwarf Evergreens", "Holly", "Birds Nest Spruce"],
   "Section 8": ["Allium", "Catmint", "Weeping Japanese Maple", "Fountain Grass", "Karl Foerster", "Blue Fescue", "Vinca Bowles"],
-  "Section 9": ["Miscanthus", "Karl Foerster", "Carex EverGold", "Stella Doro Daylily", "Liriope", "Vinca Bowles"],
+  "Section 9": ["Miscanthus", "Karl Foerster", "Carex EverGold", "Stella d'Oro Daylily", "Liriope", "Vinca Bowles"],
   "Section 10": ["Spirea"],
   "Section 11": ["Barberry", "Boxwood"],
   "Section 12": ["Silver Fir", "Weeping Blue Atlas Cedar", "Weeping Norway Spruce", "Weeping Serbian Spruce", "Columnar Blue Spruce"],
@@ -26,11 +26,11 @@ const gardenData = {
   "Section 18": ["Upright Juniper", "Crabapple", "Forsythia", "Panicle Hydrangea"],
   "Section 19": ["Witch Hazel", "Holly", "Rose of Sharon", "Lilac", "Serviceberry", "Crape Myrtle"],
   "Section 20": ["Fringe Tree", "Weeping Cherry", "Bloodgood", "Redbud", "Cryptomeria", "Hornbeam", "Sweetgum", "Columnar Oak", "Dawn Redwood"],
-  "Section 21": ["Heptacodium", "Zelkova", "Japanese Maple"],
-  "Section 22": ["Upright Juniper", "Alaskan Cedar", "Florida Dogwood", "Kousa Dogwood"],
-  "Section 23": ["Kousa Dogwood", "Stewartia", "Styrax", "Florida Dogwood", "Single Stem Southern Magnolia", "Zelkova", "Magnolia", "Parrotia"],
+  "Section 21": ["Seven Son Flower", "Zelkova", "Japanese Maple"],
+  "Section 22": ["Upright Juniper", "Alaskan Cedar", "Flowering Dogwood", "Kousa Dogwood"],
+  "Section 23": ["Kousa Dogwood", "Stewartia", "Japanese Snowbell", "Flowering Dogwood", "Single Stem Southern Magnolia", "Zelkova", "Magnolia", "Persian Ironwood"],
   "Section 24": ["Black Gum", "Zelkova", "Linden", "Crape Myrtle", "Redbud", "Tree Lilac", "Japanese Maple"],
-  "Section 25": ["Common Boxwood", "Otto Luyken", "Upright Red Oak", "Burning Bush", "Schip Laurels"],
+  "Section 25": ["Common Boxwood", "Otto Luyken", "Upright Red Oak", "Burning Bush", "Skip Laurel"],
   "Section 26": ["Green Giants", "Emerald Green Arborvitae"],
   "Section 27": ["Snow Goose Cherry", "Hawthorn", "Maple", "Bloodgood", "Beech", "Shade Maple", "Pear", "Birch"],
   "Section 28": ["Kwanzan Cherry", "Okame Cherry", "Yoshino Cherry"],
@@ -40,6 +40,7 @@ const gardenData = {
   "Section 32": ["Green Giants"],
   "Section 33": ["Green Giants", "Leyland Cypress"],
   "Section 34": ["Green Giants", "Leyland Cypress", "Viburnum"],
+  "Flowering Vines": ["Climbing Hydrangea", "Wisteria", "Clematis"],
   "Fruit Trees": ["Apple", "Pear", "Persimmon", "Blueberry"],
   "Butterfly Garden": [],
 };
@@ -57,6 +58,7 @@ const hotspots = [
   { id: "Section 10", left: "36%", top: "50%", width: "9%", height: "2%" },
   { id: "Section 11", left: "16%", top: "49%", width: "15%", height: "4%" },
   { id: "Section 12", left: "88%", top: "73%", width: "9%", height: "9%" },
+  { id: "Flowering Vines", left: "88%", top: "82%", width: "9%", height: "3%" },
   { id: "Section 13", left: "88%", top: "63%", width: "9%", height: "9%" },
   { id: "Section 14", left: "88%", top: "51%", width: "9%", height: "11%" },
   { id: "Section 15", left: "80%", top: "40%", width: "13%", height: "8%" },
@@ -85,23 +87,24 @@ const hotspots = [
 ];
 
 const mobileHotspots = [
-  { id: "Section 1", left: "57%", top: "79%", width: "25%", height: "3%" },
-  { id: "Section 2", left: "57%", top: "75.5%", width: "25%", height: "3%" },
-  { id: "Section 3", left: "57%", top: "72%", width: "25%", height: "3%" },
+  { id: "Section 1", left: "57%", top: "79.5%", width: "25%", height: "3%" },
+  { id: "Section 2", left: "57%", top: "76%", width: "25%", height: "3%" },
+  { id: "Section 3", left: "57%", top: "72.5%", width: "25%", height: "3%" },
   { id: "Section 4", left: "57%", top: "69%", width: "25%", height: "3%" },
   { id: "Section 5", left: "57%", top: "65%", width: "25%", height: "3%" },
-  { id: "Section 6", left: "57%", top: "61%", width: "25%", height: "3%" },
+  { id: "Section 6", left: "57%", top: "61.5%", width: "25%", height: "3%" },
   { id: "Section 7", left: "57%", top: "58%", width: "25%", height: "3%" },
   { id: "Section 8", left: "57%", top: "54%", width: "25%", height: "3%" },
-  { id: "Section 9", left: "57%", top: "50%", width: "25%", height: "3%" },
+  { id: "Section 9", left: "57%", top: "50.5%", width: "25%", height: "3%" },
   { id: "Section 10", left: "36%", top: "50%", width: "9%", height: "3%" },
-  { id: "Section 11", left: "16%", top: "50%", width: "15%", height: "3%" },
+  { id: "Section 11", left: "16%", top: "49%", width: "15%", height: "4%" },
   { id: "Section 12", left: "88%", top: "73%", width: "9%", height: "9%" },
+  { id: "Flowering Vines", left: "92%", top: "83%", width: "7%", height: "3%" },
   { id: "Section 13", left: "88%", top: "63%", width: "9%", height: "9%" },
   { id: "Section 14", left: "88%", top: "51%", width: "9%", height: "11%" },
   { id: "Section 15", left: "80%", top: "40%", width: "13%", height: "8%" },
   { id: "Section 16", left: "80%", top: "32%", width: "13%", height: "7%" },
-  { id: "Section 17", left: "21%", top: "44%", width: "22%", height: "2%" },
+  { id: "Section 17", left: "21%", top: "44%", width: "22%", height: "3%" },
   { id: "Section 18", left: "80%", top: "26%", width: "13%", height: "5%" },
   { id: "Section 19", left: "37%", top: "32%", width: "8%", height: "3%" },
   { id: "Section 20", left: "27%", top: "32%", width: "8%", height: "3%" },
@@ -109,56 +112,80 @@ const mobileHotspots = [
   { id: "Section 22", left: "37%", top: "28%", width: "8%", height: "3%" },
   { id: "Section 23", left: "27%", top: "28%", width: "8%", height: "3%" },
   { id: "Section 24", left: "16%", top: "28%", width: "8%", height: "3%" },
-  { id: "Section 25", left: "17%", top: "22%", width: "32%", height: "2%" },
-  { id: "Section 26", left: "17%", top: "18%", width: "30%", height: "2%" },
-  { id: "Section 27", left: "17%", top: "15%", width: "26%", height: "2%" },
-  { id: "Section 28", left: "17%", top: "12.5%", width: "26%", height: "2%" },
-  { id: "Section 29", left: "17%", top: "10%", width: "26%", height: "2%" },
-  { id: "Section 30", left: "17%", top: "7.5%", width: "26%", height: "2%" },
+  { id: "Section 25", left: "17%", top: "22%", width: "32%", height: "3%" },
+  { id: "Section 26", left: "17%", top: "18%", width: "30%", height: "3%" },
+  { id: "Section 27", left: "17%", top: "15.5%", width: "26%", height: "2%" },
+  { id: "Section 28", left: "17%", top: "13%", width: "26%", height: "2%" },
+  { id: "Section 29", left: "17%", top: "10.5%", width: "26%", height: "2%" },
+  { id: "Section 30", left: "17%", top: "8%", width: "26%", height: "2%" },
   { id: "Section 31", left: "17.5%", top: "3%", width: "23%", height: "4%" },
   { id: "Section 32", left: "80%", top: "1%", width: "13%", height: "4%" },
   { id: "Section 33", left: "80%", top: "6%", width: "13%", height: "4%" },
   { id: "Section 34", left: "80%", top: "10.5%", width: "13%", height: "4%" },
   { id: "Section A", left: "39.5%", top: "60%", width: "5.5%", height: "8%" },
-  { id: "Fruit Trees", left: "86%", top: "84%", width: "12%", height: "3%" },
-  { id: "Butterfly Garden", left: "57%", top: "83%", width: "25%", height: "3%" },
+  { id: "Fruit Trees", left: "86%", top: "86.5%", width: "12%", height: "3%" },
+  { id: "Butterfly Garden", left: "63%", top: "89.5%", width: "20%", height: "3%" },
 ];
 
-function matchPlantNames(plantName, gardenPlantName) {
-  const pLower = plantName.toLowerCase();
-  const gLower = gardenPlantName.toLowerCase();
-  const pWords = pLower.split(/\s+/);
-  const gWords = gLower.split(/\s+/);
+// Generic names that must not fuzzy-match MORE SPECIFIC variants when finding sections.
+// e.g. "Hydrangea" must not claim sections that belong only to "Panicle Hydrangea".
+// This only affects section-location lookup — search results are unaffected.
+const GENERIC_NAMES = new Set([
+  'hydrangea',
+  'dogwood',
+  'maple',
+  'cherry',
+  'juniper',
+  'spruce',
+  'redbud',
+  'lilac',
+  'boxwood',
+  'oak',
+  'laurel',
+  'rhododendron',
+  'rose',
+]);
 
+function matchPlantNames(plantName, gardenPlantName) {
+  const pLower = plantName.toLowerCase().trim();
+  const gLower = gardenPlantName.toLowerCase().trim();
+
+  // Exact match always wins
   if (pLower === gLower) return true;
-  if (pLower === gLower + 's' || pLower === gLower + 'es' || gLower === pLower + 's' || gLower === pLower + 'es') return true;
+
+  // Simple plural forms
+  if (pLower === gLower + 's' || pLower === gLower + 'es') return true;
+  if (gLower === pLower + 's' || gLower === pLower + 'es') return true;
+
+  // Match via shared database entry — same plant id = same plant
+  const plantEntry = getPlantByName(plantName);
+  const gardenEntry = getPlantByName(gardenPlantName);
+  if (plantEntry && gardenEntry && plantEntry.id === gardenEntry.id) return true;
+
+  // If the plant being looked up is a generic name, it must not absorb
+  // sections that belong to more specific variants.
+  // e.g. "Hydrangea" (generic) should NOT match "Panicle Hydrangea" in a section.
+  // But "Panicle Hydrangea" (specific) CAN match "Panicle Hydrangea" in a section.
+  if (GENERIC_NAMES.has(pLower) && gLower !== pLower) return false;
+  if (GENERIC_NAMES.has(gLower) && pLower !== gLower) return false;
+
+  // Normalize spaces and hyphens
+  const pNoSpace = pLower.replace(/[\s-]+/g, '');
+  const gNoSpace = gLower.replace(/[\s-]+/g, '');
+  if (pNoSpace === gNoSpace) return true;
+  if (pNoSpace === gNoSpace + 's' || gNoSpace === pNoSpace + 's') return true;
+
+  // One fully contains the other
   if (gLower.includes(pLower) || pLower.includes(gLower)) return true;
 
-  const pNoSpace = pLower.replace(/\s+/g, '').replace(/-/g, '');
-  const gNoSpace = gLower.replace(/\s+/g, '').replace(/-/g, '');
-  if (pNoSpace === gNoSpace || pNoSpace === gNoSpace + 's' || gNoSpace === pNoSpace + 's') return true;
-
-  const plantEntry = getPlantByName(plantName);
-  if (plantEntry && plantEntry.scientific_name) {
-    const scientificLower = plantEntry.scientific_name.toLowerCase();
-    const scientificGenus = scientificLower.split(' ')[0];
-    if (gLower === scientificLower || scientificLower.includes(gLower) || gLower.includes(scientificLower)) return true;
-    if (gLower === scientificGenus || gLower.includes(scientificGenus) || scientificGenus.includes(gLower)) return true;
-  }
-
-  const gardenPlantEntry = getPlantByName(gardenPlantName);
-  if (gardenPlantEntry && gardenPlantEntry.scientific_name) {
-    const scientificLower = gardenPlantEntry.scientific_name.toLowerCase();
-    const scientificGenus = scientificLower.split(' ')[0];
-    if (pLower === scientificLower || scientificLower.includes(pLower) || pLower.includes(scientificLower)) return true;
-    if (pLower === scientificGenus || pLower.includes(scientificGenus) || scientificGenus.includes(pLower)) return true;
-  }
-
-  const pSignificant = pWords.filter(w => w.length > 2);
-  const gSignificant = gWords.filter(w => w.length > 2);
-  if (pSignificant.length >= 2 && gSignificant.length >= 2) {
-    const matches = pSignificant.filter(pw => gSignificant.some(gw => gw === pw || gw === pw + 's' || pw === gw + 's' || gw.includes(pw) || pw.includes(gw)));
-    if (matches.length >= Math.min(pSignificant.length, gSignificant.length, 2)) return true;
+  // Multi-word: all significant words of the shorter name appear in the longer
+  const pWords = pLower.split(/\s+/).filter(w => w.length > 2);
+  const gWords = gLower.split(/\s+/).filter(w => w.length > 2);
+  if (pWords.length >= 2 && gWords.length >= 2) {
+    const shorter = pWords.length <= gWords.length ? pWords : gWords;
+    const longer  = pWords.length <= gWords.length ? gWords : pWords;
+    const allMatch = shorter.every(sw => longer.some(lw => lw === sw || lw === sw + 's' || sw === lw + 's'));
+    if (allMatch) return true;
   }
 
   return false;
@@ -469,9 +496,37 @@ function App() {
                 key={h.id}
                 onClick={() => { setSelected(h.id); setPlantInfo(null); setPlantError(null); setShowSearch(false); setShowSidebar(false); }}
                 title={h.id}
-                className={`touch-manipulation ${!isMobile ? 'hover:bg-sky-100/30 hover:border hover:border-sky-400/50' : ''}`}
-                style={{ position: "absolute", left: h.left, top: h.top, width: h.width, height: h.height, border: "none", borderRadius: 8, background: "transparent", cursor: "pointer", minWidth: window.innerWidth < 768 ? "0px" : "44px", minHeight: window.innerWidth < 768 ? "0px" : "44px" }}
-              />
+                className="touch-manipulation"
+                style={{
+                  position: "absolute",
+                  left: h.left,
+                  top: h.top,
+                  width: h.width,
+                  height: h.height,
+                  border: "2px solid rgba(14, 165, 233, 0.8)",
+                  borderRadius: 4,
+                  background: "rgba(14, 165, 233, 0.15)",
+                  cursor: "pointer",
+                  minWidth: window.innerWidth < 768 ? "0px" : "44px",
+                  minHeight: "18px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  overflow: "hidden",
+                }}
+              >
+                <span style={{
+                  fontSize: "9px",
+                  fontWeight: "700",
+                  color: "rgba(7, 89, 133, 0.9)",
+                  pointerEvents: "none",
+                  whiteSpace: "nowrap",
+                  textShadow: "0 0 3px white, 0 0 3px white",
+                  lineHeight: 1,
+                }}>
+                  {h.id}
+                </span>
+              </button>
             ))}
           </div>
         </div>
