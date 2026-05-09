@@ -206,6 +206,9 @@ export const visiblePlants = new Set([
   'local_ornamental_grasses',
   'local_fountain_grass',
   'local_blue_fescue',
+  'local_ornamental_grasses',
+'local_black_mondo',
+'local_hakone_grass',
   // FRUIT
   'local_apple',
   'local_fruit_pear',

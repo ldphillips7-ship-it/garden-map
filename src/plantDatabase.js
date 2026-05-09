@@ -1142,7 +1142,7 @@ export const plantDatabase = {
   },
 
   "hameln grass": {
-    id: "local_hameln_grass",
+id: "local_ornamental_grasses"
     name: "Hameln Grass",
     scientific_name: "Pennisetum alopecuroides 'Hameln'",
     family: "Poaceae",
@@ -2297,7 +2297,7 @@ export const plantDatabase = {
   },
 
   "standing ovation blue stem": {
-    id: "local_standing_ovation",
+id: "local_ornamental_grasses"
     name: "Standing Ovation Little Bluestem",
     scientific_name: "Schizachyrium scoparium 'Standing Ovation'",
     family: "Poaceae",
@@ -2339,8 +2339,7 @@ export const plantDatabase = {
   },
 
   "mexican feather grass": {
-    id: "local_mexican_feather_grass",
-    name: "Mexican Feather Grass",
+id: "local_ornamental_grasses"    name: "Mexican Feather Grass",
     scientific_name: "Nassella tenuissima",
     family: "Poaceae",
     description: "Fine-textured ornamental grass with graceful, flowing movement. Soft green turning golden.",
@@ -2360,7 +2359,7 @@ export const plantDatabase = {
   },
 
   "karl forester grass": {
-    id: "local_karl_forester",
+id: "local_ornamental_grasses"
     name: "Karl Foerster Grass",
     scientific_name: "Calamagrostis x acutiflora 'Karl Foerster'",
     family: "Poaceae",
@@ -2402,7 +2401,7 @@ export const plantDatabase = {
   },
 
   "panicum virgatum": {
-    id: "local_panicum",
+id: "local_ornamental_grasses"
     name: "Switchgrass",
     scientific_name: "Panicum virgatum",
     family: "Poaceae",
@@ -4022,9 +4021,133 @@ export const plantDatabase = {
     native_status: "Introduced",
     native_region: "Hybrid of European species"
   },
-
+"black mondo grass": {
+    id: "local_black_mondo",
+    name: "Black Mondo Grass",
+    scientific_name: "Ophiopogon planiscapus 'Nigrescens'",
+    family: "Asparagaceae",
+    description: "One of the darkest foliage plants available, with nearly black strap-like leaves. Small pinkish-white flowers in summer are followed by black berries. Technically not a true grass but sold and used as one. Outstanding as a contrast plant alongside silver, gold, or chartreuse foliage.",
+    type: "Ornamental Grass",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Full sun, Part shade",
+    care_level: "Low",
+    growth_rate: "Slow",
+    flowering_season: "Summer",
+    attracts: "Birds",
+    maintenance: "Low",
+    deer_resistance: "B",
+    deer_resistance_note: "Seldom severely damaged",
+    native_status: "Introduced",
+    native_region: "Native to Japan"
+  },
+ 
+  "hakone grass": {
+    id: "local_hakone_grass",
+    name: "Hakone Grass",
+    scientific_name: "Hakonechloa macra",
+    family: "Poaceae",
+    description: "Elegant Japanese forest grass with gracefully cascading bright green or golden-variegated foliage. One of the finest shade grasses available. The golden variety 'Aureola' lights up shady spots beautifully. Turns pinkish-red in fall. Slow to establish but stunning once mature.",
+    type: "Ornamental Grass",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Part shade, Full shade",
+    care_level: "Low",
+    growth_rate: "Slow",
+    flowering_season: "Summer",
+    attracts: "Birds",
+    maintenance: "Low",
+    deer_resistance: "B",
+    deer_resistance_note: "Seldom severely damaged",
+    native_status: "Introduced",
+    native_region: "Native to Japan"
+  },
+ 
+  "japanese forest grass": {
+    id: "local_hakone_grass",
+    name: "Hakone Grass",
+    scientific_name: "Hakonechloa macra",
+    family: "Poaceae",
+    description: "Elegant Japanese forest grass with gracefully cascading foliage. Excellent for shaded areas. Also known as Hakone Grass.",
+    type: "Ornamental Grass",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Part shade, Full shade",
+    care_level: "Low",
+    growth_rate: "Slow",
+    flowering_season: "Summer",
+    attracts: "Birds",
+    maintenance: "Low",
+    deer_resistance: "B",
+    deer_resistance_note: "Seldom severely damaged",
+    native_status: "Introduced",
+    native_region: "Native to Japan"
+  },
+ 
+  "cassian grass": {
+    id: "local_ornamental_grasses",
+    name: "Cassian Fountain Grass",
+    scientific_name: "Pennisetum alopecuroides 'Cassian'",
+    family: "Poaceae",
+    description: "Compact fountain grass with golden-tan flower plumes and excellent golden fall color. Similar to Hameln but with a slightly more open habit. Very reliable and low maintenance.",
+    type: "Ornamental Grass",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Full sun",
+    care_level: "Low",
+    growth_rate: "Medium",
+    flowering_season: "Summer, Fall",
+    attracts: "Birds",
+    maintenance: "Low",
+    deer_resistance: "A",
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Introduced",
+    native_region: "Cultivar of species native to Asia"
+  },
+ 
+  "cassian": {
+    id: "local_ornamental_grasses",
+    name: "Cassian Fountain Grass",
+    scientific_name: "Pennisetum alopecuroides 'Cassian'",
+    family: "Poaceae",
+    description: "Compact fountain grass with golden-tan plumes and excellent fall color. A reliable Pennisetum variety.",
+    type: "Ornamental Grass",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Full sun",
+    care_level: "Low",
+    growth_rate: "Medium",
+    flowering_season: "Summer, Fall",
+    attracts: "Birds",
+    maintenance: "Low",
+    deer_resistance: "A",
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Introduced",
+    native_region: "Cultivar of species native to Asia"
+  },
+ 
+  "pennisetum": {
+    id: "local_ornamental_grasses",
+    name: "Fountain Grass",
+    scientific_name: "Pennisetum alopecuroides",
+    family: "Poaceae",
+    description: "Graceful ornamental grass with arching foliage and bottlebrush flower plumes. Varieties include Hameln, Cassian, and others.",
+    type: "Ornamental Grass",
+    cycle: "Perennial",
+    watering: "Average",
+    sunlight: "Full sun, Part shade",
+    care_level: "Low",
+    growth_rate: "Medium",
+    flowering_season: "Summer, Fall",
+    attracts: "Birds",
+    maintenance: "Low",
+    deer_resistance: "A",
+    deer_resistance_note: "Rarely damaged",
+    native_status: "Introduced",
+    native_region: "Native to Asia and Australia"
+  },
   "blue fescue": {
-    id: "local_blue_fescue",
+id: "local_ornamental_grasses"
     name: "Blue Fescue",
     scientific_name: "Festuca glauca",
     family: "Poaceae",
@@ -4045,7 +4168,7 @@ export const plantDatabase = {
   },
 
   "blue fescue grass": {
-    id: "local_blue_fescue",
+id: "local_ornamental_grasses"
     name: "Blue Fescue",
     scientific_name: "Festuca glauca",
     family: "Poaceae",
@@ -4087,7 +4210,7 @@ export const plantDatabase = {
   },
 
   "fountain grass": {
-    id: "local_fountain_grass",
+    id: "local_ornamental_grasses"
     name: "Fountain Grass",
     scientific_name: "Pennisetum alopecuroides",
     family: "Poaceae",
@@ -4108,7 +4231,7 @@ export const plantDatabase = {
   },
 
   "miscanthus": {
-    id: "local_miscanthus",
+id: "local_ornamental_grasses"
     name: "Miscanthus",
     scientific_name: "Miscanthus sinensis",
     family: "Poaceae",
@@ -6300,7 +6423,7 @@ export const plantDatabase = {
     description: "Majestic broadleaf evergreen tree with enormous fragrant white flowers up to 12 inches across in summer. Bold, glossy dark green leaves. Trained as a single-stem specimen. Hardy in warmer zones — marginal in northern NJ.",
     type: "Tree",
     cycle: "Perennial",
-    watering: "Average",
+    watering: "Average"
     sunlight: "Full sun",
     care_level: "Low",
     growth_rate: "Medium",
