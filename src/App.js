@@ -496,37 +496,9 @@ function App() {
                 key={h.id}
                 onClick={() => { setSelected(h.id); setPlantInfo(null); setPlantError(null); setShowSearch(false); setShowSidebar(false); }}
                 title={h.id}
-                className="touch-manipulation"
-                style={{
-                  position: "absolute",
-                  left: h.left,
-                  top: h.top,
-                  width: h.width,
-                  height: h.height,
-                  border: "2px solid rgba(14, 165, 233, 0.8)",
-                  borderRadius: 4,
-                  background: "rgba(14, 165, 233, 0.15)",
-                  cursor: "pointer",
-                  minWidth: window.innerWidth < 768 ? "0px" : "44px",
-                  minHeight: "18px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  overflow: "hidden",
-                }}
-              >
-                <span style={{
-                  fontSize: "9px",
-                  fontWeight: "700",
-                  color: "rgba(7, 89, 133, 0.9)",
-                  pointerEvents: "none",
-                  whiteSpace: "nowrap",
-                  textShadow: "0 0 3px white, 0 0 3px white",
-                  lineHeight: 1,
-                }}>
-                  {h.id}
-                </span>
-              </button>
+                className={`touch-manipulation ${!isMobile ? 'hover:bg-sky-100/30 hover:border hover:border-sky-400/50' : ''}`}
+                style={{ position: "absolute", left: h.left, top: h.top, width: h.width, height: h.height, border: "none", borderRadius: 4, background: "transparent", cursor: "pointer", minWidth: window.innerWidth < 768 ? "0px" : "44px", minHeight: "18px" }}
+              />
             ))}
           </div>
         </div>
